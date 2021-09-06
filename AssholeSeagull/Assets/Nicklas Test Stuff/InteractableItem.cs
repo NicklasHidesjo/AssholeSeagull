@@ -5,7 +5,14 @@ using UnityEngine;
 
 public class InteractableItem : MonoBehaviour
 {
+	[SerializeField] float followSpeed; 
+
+	public Vector3 Velocity => body.velocity;
+
 	GameObject pickedUpBy;
+
+	public GameObject PickeUpBy => pickedUpBy;
+
 	Rigidbody body;
 
 	Vector3 offset;
@@ -37,9 +44,11 @@ public class InteractableItem : MonoBehaviour
 	{
 		if(pickedUpBy != null)
 		{
-			transform.position = pickedUpBy.transform.position + offset;
+			Vector3 targetPos = Vector3.MoveTowards(transform.position,pickedUpBy.transform.position + offset, followSpeed * Time.deltaTime);
+
+			body.AddForce(targetPos - transform.position, ForceMode.Impulse);
+
 			transform.rotation = Quaternion.Euler(rotation);
 		}
 	}
-
 }

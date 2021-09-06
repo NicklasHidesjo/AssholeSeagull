@@ -12,15 +12,19 @@ public class MouseControlledHand : MonoBehaviour
 	[SerializeField] float handSpeed;
 	[SerializeField] float rotationSpeed;
 
+	[SerializeField] float forceMultiplier;
+
     float handHeight = 0f;
 
 	[SerializeField] InteractableItem Interactable;
 
 	bool itemInHand;
 	Vector3 throwForce;
+	Rigidbody body;
 	
 	void Start()
     {
+		body = GetComponent<Rigidbody>();
         handHeight = 3f;
     }
 
@@ -36,7 +40,7 @@ public class MouseControlledHand : MonoBehaviour
 		{
 			if (itemInHand)
 			{
-				Interactable.DropItem(throwForce);
+				Interactable.DropItem(throwForce * forceMultiplier);
 				Interactable = null;
 				itemInHand = false;
 				return;
@@ -62,7 +66,9 @@ public class MouseControlledHand : MonoBehaviour
 		float t = (handHeight - camPos.y) / mouseDir.y;
 
 		Vector3 intersPos = camPos + t * mouseDir;
-		transform.position = Vector3.MoveTowards(transform.position, intersPos, handSpeed * Time.deltaTime);
+		Vector3 targetPos = Vector3.MoveTowards(transform.position, intersPos, handSpeed * Time.deltaTime);
+
+		body.AddForce(targetPos - transform.position, ForceMode.Impulse);
 
 		throwForce = intersPos - transform.position;
 	}
