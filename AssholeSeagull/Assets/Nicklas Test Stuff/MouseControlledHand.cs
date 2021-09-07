@@ -88,7 +88,6 @@ public class MouseControlledHand : MonoBehaviour
 		handHeight = Mathf.Clamp(handHeight, minHeight, maxHeight);
 	}
 
-
 	private void OnTriggerEnter(Collider other)
 	{
 		if (itemInHand) { return; }
@@ -106,5 +105,4 @@ public class MouseControlledHand : MonoBehaviour
 			Interactable = null;
 		}
 	}
-
 }
