@@ -34,8 +34,14 @@ public class MouseControlledHand : MonoBehaviour
 		ChangeMouseHeight();
 		RotateMouse();
 
-		if (Interactable == null) { return; }
+		if (Interactable == null)
+		{ return; }
 
+		PickUpDropWithMouse();
+	}
+
+	private void PickUpDropWithMouse()
+	{
 		if (Input.GetButtonDown("pickUp"))
 		{
 			if (itemInHand)
@@ -49,11 +55,6 @@ public class MouseControlledHand : MonoBehaviour
 			Interactable.PickUp(gameObject);
 			itemInHand = true;
 		}
-
-		if (!itemInHand) { return; }
-
-		RotateItemInHand();
-
 	}
 
 	private void MoveMouse()
@@ -74,23 +75,18 @@ public class MouseControlledHand : MonoBehaviour
 	}
 	private void RotateMouse()
 	{
-		transform.rotation = Quaternion.Euler(Vector3.zero);
-	}
-	private void ChangeMouseHeight()
-	{
-		handHeight += -Input.GetAxisRaw("Mouse ScrollWheel") * Time.deltaTime * scrollSpeed;
-		handHeight = Mathf.Clamp(handHeight, minHeight, maxHeight);
-	}
-
-	private void RotateItemInHand()
-	{
-		Vector3 rotation = Vector3.zero;
+		Vector3 rotation = transform.rotation.eulerAngles;
 
 		rotation.x += Input.GetAxis("Rotation(X)") * Time.deltaTime * rotationSpeed;
 		rotation.y += Input.GetAxis("Rotation(Y)") * Time.deltaTime * rotationSpeed;
 		rotation.z += Input.GetAxis("Rotation(Z)") * Time.deltaTime * rotationSpeed;
 
-		Interactable.Rotate(rotation);
+		transform.rotation = Quaternion.Euler(rotation);
+	}
+	private void ChangeMouseHeight()
+	{
+		handHeight += -Input.GetAxisRaw("Mouse ScrollWheel") * Time.deltaTime * scrollSpeed;
+		handHeight = Mathf.Clamp(handHeight, minHeight, maxHeight);
 	}
 
 

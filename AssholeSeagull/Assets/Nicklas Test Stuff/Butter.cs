@@ -15,7 +15,7 @@ public class Butter : MonoBehaviour
 	[SerializeField] MeshCollider meshCollider;
 
 
-    Rigidbody knife;
+    [SerializeField] Rigidbody knife;
 
 
     void Start()
