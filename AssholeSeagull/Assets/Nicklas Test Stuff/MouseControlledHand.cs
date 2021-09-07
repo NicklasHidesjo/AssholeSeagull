@@ -34,8 +34,7 @@ public class MouseControlledHand : MonoBehaviour
 		ChangeMouseHeight();
 		RotateMouse();
 
-		if (Interactable == null)
-		{ return; }
+		if (Interactable == null) { return; }
 
 		PickUpDropWithMouse();
 	}
