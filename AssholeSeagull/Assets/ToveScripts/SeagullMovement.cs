@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class SeagullMovement : MonoBehaviour
 {
-    Pooping pooping;
-    Vector3 direction;
-    Vector3 targetPosition = new Vector3(0, 10, 0);
+    public Transform sandwich;
 
-    float speed = 6f;
+    Pooping pooping;
+
+    Vector3 targetPosition;
+
+    [SerializeField] float speed = 10f;
+
 
     private void Start()
     {
         pooping = gameObject.GetComponent<Pooping>();
-        direction = (targetPosition - transform.position).normalized;
+        targetPosition = new Vector3(sandwich.position.x, transform.position.y, sandwich.position.z);
+
+        transform.LookAt(targetPosition);
     }
 
     void Update()
     {
-        transform.position += direction * speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)

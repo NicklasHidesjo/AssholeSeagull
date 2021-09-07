@@ -1027,7 +1027,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 798200215}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.51, y: 1.31, z: 0}
+  m_LocalPosition: {x: -1.51, y: 1.31, z: -0.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1082,7 +1082,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.45, y: 1, z: 2.6}
+  m_Size: {x: 0.3, y: 0.1, z: 0.3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &824279246
 MeshRenderer:
@@ -1673,8 +1673,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea464184fcc4be34d84b97f070c5ab1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sandwich: {fileID: 798200216}
   seagullSpawnPoints: {fileID: 155752384}
-  seagullPrefab: {fileID: 3469906486034026684, guid: b717ccc36f0f58d45a7abbb5f61916ed,
+  seagullPrefab: {fileID: 8138993589962793014, guid: b717ccc36f0f58d45a7abbb5f61916ed,
     type: 3}
 --- !u!4 &1857034149
 Transform:

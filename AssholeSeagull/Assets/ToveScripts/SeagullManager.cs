@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SeagullManager : MonoBehaviour
 {
+    [SerializeField] Transform sandwich;
     public Transform seagullSpawnPoints;
-    public GameObject seagullPrefab;
+    public SeagullMovement seagullPrefab;
 
     string seagullClone = "Seagull_Prefab(Clone)";
 
@@ -51,7 +52,8 @@ public class SeagullManager : MonoBehaviour
             WaitForSeconds wait = new WaitForSeconds(spawnIntervalls);
 
             //    int seagullIndex = seagullPrefab.Length;
-            Instantiate(seagullPrefab, seagullSpawnPoints.position, Quaternion.identity);
+            SeagullMovement seagullMovement = Instantiate(seagullPrefab, seagullSpawnPoints.position, Quaternion.identity);
+            seagullMovement.sandwich = sandwich;
 
             currentNumberOfSeagulls++;
 
