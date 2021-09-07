@@ -11,7 +11,7 @@ public class BottomBun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.up, out hit, Mathf.Infinity, layer.value ))
         {
-            InteractableItem item = hit.transform.gameObject.GetComponent<InteractableItem>();
+            InteractableItem item = hit.transform.gameObject.GetComponentInChildren<InteractableItem>();
 
             if (item.InHand) { return; }
             if (item.Velocity.sqrMagnitude > 0.01) { return; }
