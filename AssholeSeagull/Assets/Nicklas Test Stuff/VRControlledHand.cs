@@ -21,6 +21,7 @@ public class VRControlledHand : MonoBehaviour
 
 	private void Gripped(InputAction.CallbackContext context)
 	{
+		Debug.LogError("I am retarded");
 		if (itemInHand)
 		{
 			interactable.DropItem(throwForce * forceMultiplier);
