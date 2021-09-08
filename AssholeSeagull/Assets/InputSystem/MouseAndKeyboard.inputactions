@@ -1,0 +1,77 @@
+{
+    "name": "MouseAndKeyboard",
+    "maps": [
+        {
+            "name": "Keyboard",
+            "id": "a5d46976-96c3-4e50-a53e-716de4a8aa48",
+            "actions": [
+                {
+                    "name": "Space",
+                    "type": "Button",
+                    "id": "783af312-7691-4097-8828-b6e8286d620a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "34f366a2-9060-4298-9126-0b466a930e33",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Space",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Mouse",
+            "id": "1da6f4a5-9106-47c7-9c5c-cf91ade392a2",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "6e61318c-2ffa-4b48-89e4-21e51a0e9307",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f224471e-a469-48f9-b2f9-d0f11dd735e8",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Mouse and Keyboard",
+            "bindingGroup": "Mouse and Keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

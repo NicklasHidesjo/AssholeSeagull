@@ -1,0 +1,50 @@
+{
+    "name": "LeftHand",
+    "maps": [
+        {
+            "name": "LeftHand",
+            "id": "11a3ed10-41f3-4260-ba72-9610d5402244",
+            "actions": [
+                {
+                    "name": "Grab",
+                    "type": "Value",
+                    "id": "3f827722-c174-46d3-9085-0bf5b5e6616a",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8a114c51-f5ec-4897-be7a-c59e51e366aa",
+                    "path": "<HPMixedRealityController>{LeftHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "LeftHand",
+                    "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "LeftHand",
+            "bindingGroup": "LeftHand",
+            "devices": [
+                {
+                    "devicePath": "<HPMixedRealityController>{LeftHand}",
+                    "isOptional": true,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<ViveController>{LeftHand}",
+                    "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

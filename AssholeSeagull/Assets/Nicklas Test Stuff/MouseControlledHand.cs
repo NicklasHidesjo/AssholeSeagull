@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MouseControlledHand : MonoBehaviour
 {
@@ -35,22 +36,18 @@ public class MouseControlledHand : MonoBehaviour
 		RotateMouse();
 
 		if (Interactable == null) { return; }
-
-		PickUpDropWithMouse();
 	}
 
-	private void PickUpDropWithMouse()
+	public void PickUpDropWithMouse(InputAction.CallbackContext context)
 	{
-		if (Input.GetButtonDown("pickUp"))
+		if (itemInHand)
 		{
-			if (itemInHand)
-			{
-				Interactable.DropItem(throwForce * forceMultiplier);
-				Interactable = null;
-				itemInHand = false;
-				return;
-			}
-
+			Interactable.DropItem(throwForce * forceMultiplier);
+			Interactable = null;
+			itemInHand = false;
+		}
+		else if (Interactable != null)
+		{
 			Interactable.PickUp(gameObject);
 			itemInHand = true;
 		}
