@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class VRControlledHand : MonoBehaviour
 {
@@ -14,9 +15,20 @@ public class VRControlledHand : MonoBehaviour
 
 	[SerializeField] InputActionReference grabInteraction;
 
+	XRController hand;
+
 	private void Start()
 	{
 		grabInteraction.action.performed += Gripped;
+		hand = GetComponentInParent<XRController>();
+	}
+
+	private void Update()
+	{
+		if(hand.activateUsage == InputHelpers.Button.TriggerPressed)
+		{
+			Debug.Log("I am retarded");
+		}
 	}
 
 	private void Gripped(InputAction.CallbackContext context)
