@@ -15,9 +15,9 @@
                 },
                 {
                     "name": "Trigger",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "5c8cf249-a01c-4b19-8eea-152b951f6a5a",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
                 },
@@ -141,21 +141,10 @@
                 {
                     "name": "",
                     "id": "ec353a5a-6a7a-4ee6-a33e-d12a8c0b705a",
-                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "path": "<XRController>{LeftHand}/{trigger}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "XR Usage",
-                    "action": "Trigger",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "af585da8-6ed9-48ca-8b19-38ff9c9750bb",
-                    "path": "<HPMixedRealityController>{LeftHand}/triggerPressed",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "XR Usage",
+                    "groups": "",
                     "action": "Trigger",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -330,9 +319,9 @@
                 },
                 {
                     "name": "Trigger",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "2fccaf18-d578-4ac9-9d0b-08db4a2e1dc7",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
                 },
@@ -456,21 +445,10 @@
                 {
                     "name": "",
                     "id": "d1bf452d-b059-4c1e-9c23-3be1c6be789e",
-                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "path": "<XRController>{RightHand}/{trigger}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "XR Usage",
-                    "action": "Trigger",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d02a1398-bde8-41b9-81b9-5965399508de",
-                    "path": "<HPMixedRealityController>{LeftHand}/trigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "XR Usage",
+                    "groups": "",
                     "action": "Trigger",
                     "isComposite": false,
                     "isPartOfComposite": false
