@@ -141,7 +141,18 @@
                 {
                     "name": "",
                     "id": "ec353a5a-6a7a-4ee6-a33e-d12a8c0b705a",
-                    "path": "<XRController>{LeftHand}/{trigger}",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Trigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "af585da8-6ed9-48ca-8b19-38ff9c9750bb",
+                    "path": "<HPMixedRealityController>{LeftHand}/triggerPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -445,7 +456,18 @@
                 {
                     "name": "",
                     "id": "d1bf452d-b059-4c1e-9c23-3be1c6be789e",
-                    "path": "<XRController>{RightHand}/{trigger}",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Trigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d02a1398-bde8-41b9-81b9-5965399508de",
+                    "path": "<HPMixedRealityController>{LeftHand}/trigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
