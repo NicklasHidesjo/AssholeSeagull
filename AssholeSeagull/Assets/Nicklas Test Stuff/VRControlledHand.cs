@@ -25,7 +25,7 @@ public class VRControlledHand : MonoBehaviour
 
 	private void Update()
 	{
-		if(hand.activateUsage == InputHelpers.Button.TriggerPressed)
+		if(hand.activateUsage > 0)
 		{
 			Debug.Log("I am retarded");
 		}
