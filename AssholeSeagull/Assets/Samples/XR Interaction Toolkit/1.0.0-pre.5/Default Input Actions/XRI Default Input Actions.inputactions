@@ -240,7 +240,7 @@
                     "path": "<HPMixedRealityController>{LeftHand}/deviceRotation",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Generic XR Controller",
                     "action": "Rotation",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -350,7 +350,7 @@
                     "path": "<HPMixedRealityController>{LeftHand}/devicePosition",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Generic XR Controller",
                     "action": "Position",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -383,7 +383,7 @@
                     "path": "<HPMixedRealityController>{LeftHand}/triggerPressed",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Generic XR Controller",
                     "action": "Activate",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -671,7 +671,7 @@
                     "path": "<HPMixedRealityController>{RightHand}/triggerPressed",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Generic XR Controller",
                     "action": "Activate",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -726,7 +726,7 @@
                     "path": "<HPMixedRealityController>{RightHand}/deviceRotation",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Generic XR Controller",
                     "action": "Rotation",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -836,7 +836,7 @@
                     "path": "<HPMixedRealityController>{RightHand}/devicePosition",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Generic XR Controller",
                     "action": "Position",
                     "isComposite": false,
                     "isPartOfComposite": false
