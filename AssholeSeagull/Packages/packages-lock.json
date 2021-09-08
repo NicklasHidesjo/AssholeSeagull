@@ -1,11 +1,5 @@
 {
   "dependencies": {
-    "com.microsoft.mixedreality.input": {
-      "version": "file:MixedReality/com.microsoft.mixedreality.input-0.9.2006.tgz",
-      "depth": 0,
-      "source": "local-tarball",
-      "dependencies": {}
-    },
     "com.microsoft.mixedreality.openxr": {
       "version": "file:MixedReality/com.microsoft.mixedreality.openxr-1.0.2.tgz",
       "depth": 0,
@@ -161,19 +155,6 @@
       "source": "registry",
       "dependencies": {
         "com.unity.subsystemregistration": "1.1.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.xr.interaction.toolkit": {
-      "version": "1.0.0-pre.5",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.inputsystem": "1.0.2",
-        "com.unity.ugui": "1.0.0",
-        "com.unity.modules.audio": "1.0.0",
-        "com.unity.modules.imgui": "1.0.0",
-        "com.unity.xr.legacyinputhelpers": "2.1.7"
       },
       "url": "https://packages.unity.com"
     },
