@@ -827,7 +827,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceMultiplier: 0
-  Interactable: {fileID: 0}
+  interactable: {fileID: 0}
+  grabInteraction: {fileID: 8501362943725610518, guid: 181f7073d9923b544bb1044479b042bf,
+    type: 3}
 --- !u!54 &605394311
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2053,59 +2055,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655301648}
   m_Mesh: {fileID: -5506878775851055244, guid: 889e0cade568e104f9d370f1d26b3233, type: 3}
---- !u!1 &1820866885 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2269873889298901834, guid: b50259faa1b180e4b82e194f488b0c15,
-    type: 3}
-  m_PrefabInstance: {fileID: 2094826796}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1820866886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1820866885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 181f7073d9923b544bb1044479b042bf,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 605394310}
-        m_TargetAssemblyTypeName: VRControlledHand, Assembly-CSharp
-        m_MethodName: Gripped
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 3f827722-c174-46d3-9085-0bf5b5e6616a
-    m_ActionName: LeftHand/Grab
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: LeftHand
-  m_DefaultActionMap: LeftHand
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &1977274770 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2662189572573957542, guid: b50259faa1b180e4b82e194f488b0c15,
@@ -2151,7 +2100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceMultiplier: 0
-  Interactable: {fileID: 0}
+  interactable: {fileID: 0}
+  grabInteraction: {fileID: -2214158118422409855, guid: 6c6aef229d518df45861d507fe6c1dad,
+    type: 3}
 --- !u!54 &1977274774
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2363,56 +2314,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b50259faa1b180e4b82e194f488b0c15, type: 3}
---- !u!1 &2094826797 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2269873890493802936, guid: b50259faa1b180e4b82e194f488b0c15,
-    type: 3}
-  m_PrefabInstance: {fileID: 2094826796}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2094826798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094826797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 6c6aef229d518df45861d507fe6c1dad,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1977274773}
-        m_TargetAssemblyTypeName: VRControlledHand, Assembly-CSharp
-        m_MethodName: Gripped
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 675f1754-9f21-4b4a-946e-98397bb34800
-    m_ActionName: RightHand/Gripped
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Right Hand Device
-  m_DefaultActionMap: RightHand
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
