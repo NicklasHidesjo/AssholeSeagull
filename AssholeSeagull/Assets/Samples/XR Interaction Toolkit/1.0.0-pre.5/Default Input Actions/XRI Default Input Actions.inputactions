@@ -36,11 +36,33 @@
                 },
                 {
                     "name": "",
+                    "id": "1590b76f-160f-4b50-bb46-2cfdcdcf4d8c",
+                    "path": "<WMRHMD>/centerEyePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller;Continuous Move;Noncontinuous Move",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e2017383-a3f6-4c46-acb1-012b8eece9cc",
                     "path": "<XRHMD>/centerEyeRotation",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "058ae414-c025-4e95-9418-5c7fb776a7c7",
+                    "path": "<WMRHMD>/centerEyeRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller;Continuous Move;Noncontinuous Move",
                     "action": "Rotation",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -214,6 +236,17 @@
                 },
                 {
                     "name": "",
+                    "id": "537ffbc4-0c66-4279-917f-be583daff378",
+                    "path": "<HPMixedRealityController>{LeftHand}/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8da6ed3a-f621-49fe-8c76-1f6b7d7754d6",
                     "path": "<XRController>{LeftHand}/Primary2DAxis",
                     "interactions": "Sector(directions=1)",
@@ -310,6 +343,17 @@
                     "action": "Position",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "92ddd32b-86be-4417-97d8-10f1d188f569",
+                    "path": "<HPMixedRealityController>{LeftHand}/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
@@ -678,6 +722,17 @@
                 },
                 {
                     "name": "",
+                    "id": "1e48a93c-e5f2-4d87-b0b5-b7f932850ab3",
+                    "path": "<HPMixedRealityController>{RightHand}/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "62690862-4688-4010-975b-b3d9c6062157",
                     "path": "<XRController>{RightHand}/Primary2DAxis",
                     "interactions": "Sector(directions=1)",
@@ -774,6 +829,17 @@
                     "action": "Position",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "6a40f241-d093-4042-a498-5a5516b138b1",
+                    "path": "<HPMixedRealityController>{RightHand}/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
@@ -967,6 +1033,16 @@
                     "devicePath": "<WMRHMD>",
                     "isOptional": true,
                     "isOR": false
+                },
+                {
+                    "devicePath": "<HPMixedRealityController>{LeftHand}",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<HPMixedRealityController>{RightHand}",
+                    "isOptional": false,
+                    "isOR": false
                 }
             ]
         },
@@ -976,12 +1052,22 @@
             "devices": [
                 {
                     "devicePath": "<XRController>{LeftHand}",
-                    "isOptional": false,
+                    "isOptional": true,
                     "isOR": false
                 },
                 {
                     "devicePath": "<XRController>{RightHand}",
-                    "isOptional": false,
+                    "isOptional": true,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<HPMixedRealityController>{LeftHand}",
+                    "isOptional": true,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<HPMixedRealityController>{RightHand}",
+                    "isOptional": true,
                     "isOR": false
                 }
             ]
@@ -992,11 +1078,21 @@
             "devices": [
                 {
                     "devicePath": "<XRController>{LeftHand}",
-                    "isOptional": false,
+                    "isOptional": true,
                     "isOR": false
                 },
                 {
                     "devicePath": "<XRController>{RightHand}",
+                    "isOptional": true,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<HPMixedRealityController>{LeftHand}",
+                    "isOptional": true,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<HPMixedRealityController>{RightHand}",
                     "isOptional": false,
                     "isOR": false
                 }
