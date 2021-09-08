@@ -15,9 +15,9 @@
                 },
                 {
                     "name": "Trigger",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "5c8cf249-a01c-4b19-8eea-152b951f6a5a",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
@@ -144,7 +144,7 @@
                     "path": "<XRController>{RightHand}/triggerPressed",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Trigger",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -155,7 +155,7 @@
                     "path": "<HPMixedRealityController>{LeftHand}/triggerPressed",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Trigger",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -330,9 +330,9 @@
                 },
                 {
                     "name": "Trigger",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "2fccaf18-d578-4ac9-9d0b-08db4a2e1dc7",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
@@ -459,7 +459,7 @@
                     "path": "<XRController>{RightHand}/triggerPressed",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Trigger",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -470,7 +470,7 @@
                     "path": "<HPMixedRealityController>{LeftHand}/trigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Trigger",
                     "isComposite": false,
                     "isPartOfComposite": false

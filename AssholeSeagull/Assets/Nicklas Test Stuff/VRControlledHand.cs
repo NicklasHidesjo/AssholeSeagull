@@ -15,12 +15,9 @@ public class VRControlledHand : MonoBehaviour
 
 	[SerializeField] InputActionReference grabInteraction;
 
-	XRController hand;
-
 	private void Start()
 	{
 		grabInteraction.action.performed += Gripped;
-		hand = GetComponentInParent<XRController>();
 	}
 
 	private void Gripped(InputAction.CallbackContext context)
