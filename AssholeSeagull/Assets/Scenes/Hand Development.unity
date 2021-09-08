@@ -291,16 +291,16 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: f43743c5-b80b-4cad-a62d-8fe123552c62
-      m_Path: <XRHMD>/centerEyePosition
+      m_Id: ffe8eca2-cd6c-46f1-9143-4cf4ec7b0690
+      m_Path: <WMRHMD>/centerEyePosition
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Main Camera - TPD - Position
       m_Flags: 0
     - m_Name: 
-      m_Id: ffe8eca2-cd6c-46f1-9143-4cf4ec7b0690
-      m_Path: <WMRHMD>/centerEyePosition
+      m_Id: f43743c5-b80b-4cad-a62d-8fe123552c62
+      m_Path: <XRHMD>/centerEyePosition
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -315,16 +315,16 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: dafe6528-e05a-411d-a253-c89f43449376
-      m_Path: <XRHMD>/centerEyeRotation
+      m_Id: f824b118-9c22-422e-b7e5-0a982e78f1c4
+      m_Path: <WMRHMD>/centerEyeRotation
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Main Camera - TPD - Rotation
       m_Flags: 0
     - m_Name: 
-      m_Id: f824b118-9c22-422e-b7e5-0a982e78f1c4
-      m_Path: <WMRHMD>/centerEyeRotation
+      m_Id: dafe6528-e05a-411d-a253-c89f43449376
+      m_Path: <XRHMD>/centerEyeRotation
       m_Interactions: 
       m_Processors: 
       m_Groups: 
