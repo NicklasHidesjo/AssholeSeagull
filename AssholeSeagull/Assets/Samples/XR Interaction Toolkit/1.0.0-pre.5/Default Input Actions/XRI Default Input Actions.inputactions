@@ -335,6 +335,17 @@
                 },
                 {
                     "name": "",
+                    "id": "af9802f8-9d37-4000-a2ee-9ab8da5a0e3a",
+                    "path": "<HPMixedRealityController>{LeftHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Activate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "99cb7ad1-51ec-4611-af68-92a85f2c17d6",
                     "path": "<XRController>{LeftHand}/Primary2DAxis",
                     "interactions": "Sector(directions=12,sweepBehavior=1)",
@@ -606,6 +617,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
+                    "action": "Activate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a61fd4a5-5c3e-4517-acb1-7a5c7434d7a2",
+                    "path": "<HPMixedRealityController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Activate",
                     "isComposite": false,
                     "isPartOfComposite": false
