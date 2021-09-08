@@ -1,0 +1,45 @@
+{
+    "name": "VRController",
+    "maps": [
+        {
+            "name": "Right Hand",
+            "id": "7c07796c-73c5-46d0-9b70-790a1ce0bfe8",
+            "actions": [
+                {
+                    "name": "Grab",
+                    "type": "Button",
+                    "id": "b11e4925-a474-472d-bd22-4976dda35006",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ac86bb54-0322-4a73-9546-6b1e3cdc5a6d",
+                    "path": "<HPMixedRealityController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "RightHand",
+                    "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "RightHand",
+            "bindingGroup": "RightHand",
+            "devices": [
+                {
+                    "devicePath": "<HPMixedRealityController>{RightHand}",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
