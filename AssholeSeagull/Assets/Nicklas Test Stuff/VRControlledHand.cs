@@ -10,19 +10,26 @@ public class VRControlledHand : MonoBehaviour
 	bool itemInHand;
 	Vector3 throwForce;
 
-	[SerializeField] InteractableItem Interactable;
+	[SerializeField] InteractableItem interactable;
 
-	public void Gripped(InputAction.CallbackContext context)
+	[SerializeField] InputActionReference grabInteraction;
+
+	private void Start()
+	{
+		grabInteraction.action.performed += Gripped;
+	}
+
+	private void Gripped(InputAction.CallbackContext context)
 	{
 		if (itemInHand)
 		{
-			Interactable.DropItem(throwForce * forceMultiplier);
-			Interactable = null;
+			interactable.DropItem(throwForce * forceMultiplier);
+			interactable = null;
 			itemInHand = false;
 		}
-		else if (Interactable != null)
+		else if (interactable != null)
 		{
-			Interactable.PickUp(gameObject);
+			interactable.PickUp(gameObject);
 			itemInHand = true;
 		}
 	}
@@ -34,7 +41,7 @@ public class VRControlledHand : MonoBehaviour
 		{ return; }
 		if (other.gameObject.GetComponent<InteractableItem>() != null)
 		{
-			Interactable = other.gameObject.GetComponent<InteractableItem>();
+			interactable = other.gameObject.GetComponent<InteractableItem>();
 		}
 	}
 
@@ -44,7 +51,7 @@ public class VRControlledHand : MonoBehaviour
 		{ return; }
 		if (other.gameObject.GetComponent<InteractableItem>() != null)
 		{
-			Interactable = null;
+			interactable = null;
 		}
 	}
 }

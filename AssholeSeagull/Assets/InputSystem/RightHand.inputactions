@@ -25,6 +25,28 @@
                     "action": "Grab",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3fdf73be-1be3-424c-9aff-bcec8bc9da81",
+                    "path": "<ViveController>{RightHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Right Hand Device",
+                    "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cc990d16-7a85-4076-b2dc-8b7a7ed066c7",
+                    "path": "<XRController>{RightHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Right Hand Device",
+                    "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
