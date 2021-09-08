@@ -36,11 +36,33 @@
                 },
                 {
                     "name": "",
+                    "id": "9bbd449f-64a7-423e-947f-27ff1cb26f27",
+                    "path": "<HPMixedRealityController>/devicePose/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e2017383-a3f6-4c46-acb1-012b8eece9cc",
                     "path": "<XRHMD>/centerEyeRotation",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c0130880-2d6f-4a7b-96c7-65859a733bf9",
+                    "path": "<HPMixedRealityController>/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Rotation",
                     "isComposite": false,
                     "isPartOfComposite": false
