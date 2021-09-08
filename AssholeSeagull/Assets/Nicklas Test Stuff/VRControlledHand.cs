@@ -23,11 +23,6 @@ public class VRControlledHand : MonoBehaviour
 		hand = GetComponentInParent<XRController>();
 	}
 
-	private void Update()
-	{
-
-	}
-
 	private void Gripped(InputAction.CallbackContext context)
 	{
 		Debug.Log("I am retarded");

@@ -235,6 +235,50 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "Quaternion Fallback",
+                    "id": "e542ded5-78bf-4e62-b364-0335c54cd935",
+                    "path": "QuaternionFallback",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "first",
+                    "id": "413bbc63-b08d-42ee-b498-43e2fe238198",
+                    "path": "<HPMixedRealityController>{LeftHand}/pointerRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "second",
+                    "id": "8d2aaa77-e5dd-4c3e-8dcb-9de1aaa5ba84",
+                    "path": "<HPMixedRealityController>{LeftHand}/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "third",
+                    "id": "604edef2-b58d-418f-a223-f290ee3cf18f",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "537ffbc4-0c66-4279-917f-be583daff378",
                     "path": "<HPMixedRealityController>{LeftHand}/deviceRotation",
@@ -336,6 +380,50 @@
                 {
                     "name": "third",
                     "id": "ae101942-9eaa-4c53-a388-cafc3fd89bdf",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Vector 3 Fallback",
+                    "id": "a4525d98-185b-435c-8b77-63637e63c790",
+                    "path": "Vector3Fallback",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "first",
+                    "id": "a6300e93-80bc-4e91-acc2-a8f07bfe2652",
+                    "path": "<HPMixedRealityController>{LeftHand}/pointerPosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "second",
+                    "id": "ef13df54-52f4-4b47-b2a9-572339587b3c",
+                    "path": "<HPMixedRealityController>{LeftHand}/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "third",
+                    "id": "fcc29666-de7e-4e4d-9f97-e2bb11b2954f",
                     "path": "",
                     "interactions": "",
                     "processors": "",
@@ -721,6 +809,50 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "Quaternion Fallback",
+                    "id": "fb641b3d-0bb4-4827-a199-88f374944132",
+                    "path": "QuaternionFallback",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "first",
+                    "id": "2fb91993-76d0-48d2-809a-d9984af536fd",
+                    "path": "<HPMixedRealityController>{RightHand}/pointerRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "second",
+                    "id": "fedc30ad-cad3-45bc-ac29-4a3d4b05b798",
+                    "path": "<HPMixedRealityController>{RightHand}/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "third",
+                    "id": "54b8c4e7-5db3-4f1d-b285-d94f3a8f3b2f",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "1e48a93c-e5f2-4d87-b0b5-b7f932850ab3",
                     "path": "<HPMixedRealityController>{RightHand}/deviceRotation",
@@ -822,6 +954,50 @@
                 {
                     "name": "third",
                     "id": "3ef0a781-60c5-48bc-a584-f95553f8ae0a",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Vector 3 Fallback",
+                    "id": "c88bdb35-cf6e-4d98-9e87-244e58684e30",
+                    "path": "Vector3Fallback",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "first",
+                    "id": "478a479f-b008-47c2-951e-cc6aeeab540f",
+                    "path": "<HPMixedRealityController>{RightHand}/pointerPosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "second",
+                    "id": "eec5b5ec-8a6b-41ba-b761-78f94c9d228e",
+                    "path": "<HPMixedRealityController>{RightHand}/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "third",
+                    "id": "9be0b460-0274-46bb-9432-ba2ab06cf75d",
                     "path": "",
                     "interactions": "",
                     "processors": "",
