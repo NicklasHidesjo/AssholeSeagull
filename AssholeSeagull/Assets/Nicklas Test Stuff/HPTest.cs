@@ -7,6 +7,12 @@ public class HPTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         var inputDevices = new List<UnityEngine.XR.InputDevice>();
         UnityEngine.XR.InputDevices.GetDevices(inputDevices);
 
@@ -14,11 +20,5 @@ public class HPTest : MonoBehaviour
         {
             Debug.Log(string.Format("Device found with name '{0}' and role '{1}'", device.name, device.characteristics.ToString()));
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
