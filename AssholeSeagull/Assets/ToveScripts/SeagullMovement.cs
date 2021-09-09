@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SeagullMovement : MonoBehaviour
 {
+    [SerializeField] Animator seagullAnimator;
     public Transform sandwich;
     public Transform flightEnd;
     public SeagullManager seagullManager;
@@ -12,9 +13,12 @@ public class SeagullMovement : MonoBehaviour
 
     Vector3 targetPosition;
     
-    [SerializeField] float speed = 10f;
+    [SerializeField] float speed = 44f;
 
     bool hasPooped = false;
+    bool flyingAway = false;
+
+    float poopingTimer;
 
 
     private void Start()
@@ -33,14 +37,28 @@ public class SeagullMovement : MonoBehaviour
         {
             Debug.Log("Pooping");
             pooping.Poop();
-
-            targetPosition = flightEnd.position;
-            transform.LookAt(targetPosition);
+            seagullAnimator.SetBool("Pooping", true);
 
             hasPooped = true;
         }
 
-        if(transform.position == targetPosition && hasPooped)
+        if(hasPooped == true)
+        {
+            poopingTimer += Time.deltaTime;
+
+            if(poopingTimer > 1f && !flyingAway)
+            {
+                seagullAnimator.SetBool("Pooping", false);
+                seagullAnimator.SetTrigger("FlyAway");
+
+                targetPosition = flightEnd.position;
+                transform.LookAt(targetPosition);
+
+                flyingAway = true;
+            }
+        }
+
+        if(transform.position == targetPosition && hasPooped && flyingAway)
         {
             seagullManager.Despawn(gameObject);
         }
