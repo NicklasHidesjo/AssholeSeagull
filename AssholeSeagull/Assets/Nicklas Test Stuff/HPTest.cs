@@ -25,7 +25,7 @@ public class HPTest : MonoBehaviour
             bool triggerValue;
             if (leftHand.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue) && triggerValue)
             {
-                Debug.Log("Trigger button is pressed.");
+                Debug.Log("Left trigger button is pressed.");
             }
         }
         else if (leftHandDevices.Count > 1)
@@ -44,7 +44,7 @@ public class HPTest : MonoBehaviour
             bool triggerValue;
             if (rightHand.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue) && triggerValue)
             {
-                Debug.Log("Trigger button is pressed.");
+                Debug.Log("right Trigger button is pressed.");
             }
         }
         else if (leftHandDevices.Count > 1)
