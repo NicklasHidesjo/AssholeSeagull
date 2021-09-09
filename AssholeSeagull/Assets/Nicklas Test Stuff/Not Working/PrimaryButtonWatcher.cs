@@ -32,6 +32,8 @@ public class PrimaryButtonWatcher : MonoBehaviour
 
         InputDevices.deviceConnected += InputDevices_deviceConnected;
         InputDevices.deviceDisconnected += InputDevices_deviceDisconnected;
+
+        Debug.Log(allDevices.Count);
     }
 
     private void OnDisable()
