@@ -21,12 +21,12 @@ public class HPTest : MonoBehaviour
             UnityEngine.XR.InputDevice leftHand = leftHandDevices[0];
             Debug.Log(string.Format("Device name '{0}' with role '{1}'", leftHand.name, leftHand.characteristics.ToString()));
 
-            bool triggerValue;
+/*            bool triggerValue;
             if (leftHand.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue))
             {
                 Debug.Log("Left trigger button is pressed.");
             }
-            Debug.Log(triggerValue);
+            Debug.Log(triggerValue);*/
 
 /*            var inputFeatures = new List<UnityEngine.XR.InputFeatureUsage>();
             if (leftHand.TryGetFeatureUsages(inputFeatures))
@@ -58,13 +58,13 @@ public class HPTest : MonoBehaviour
             UnityEngine.XR.InputDevice rightHand = rightHandDevices[0];
             Debug.Log(string.Format("Device name '{0}' with role '{1}'", rightHand.name, rightHand.characteristics.ToString()));
 
-            bool triggerValue;
+/*            bool triggerValue;
             if (rightHand.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue))
             {
                 Debug.Log("right Trigger button is pressed.");
             }
             Debug.Log(triggerValue);
-
+*/
 
 /*            var inputFeatures = new List<UnityEngine.XR.InputFeatureUsage>();
             if (rightHand.TryGetFeatureUsages(inputFeatures))
