@@ -19,18 +19,6 @@ public class VRControlledHand : MonoBehaviour
 		grabInteraction.action.performed += Gripped;
 	}
 
-	private void Update()
-	{
-		if(Input.GetAxis("TriggerLeft") > 0)
-		{
-			Debug.Log("I pressed the left trigger using unity API");
-		}
-		if (Input.GetAxis("TriggerRight") > 0)
-		{
-			Debug.Log("I pressed the right trigger using unity API");
-		}
-	}
-
 	private void Gripped(InputAction.CallbackContext context)
 	{
 		Debug.Log("I am retarded");
