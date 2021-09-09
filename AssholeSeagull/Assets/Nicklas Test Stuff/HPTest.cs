@@ -20,6 +20,13 @@ public class HPTest : MonoBehaviour
         {
             UnityEngine.XR.InputDevice leftHand = leftHandDevices[0];
             Debug.Log(string.Format("Device name '{0}' with role '{1}'", leftHand.name, leftHand.characteristics.ToString()));
+
+
+            bool triggerValue;
+            if (leftHand.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue) && triggerValue)
+            {
+                Debug.Log("Trigger button is pressed.");
+            }
         }
         else if (leftHandDevices.Count > 1)
         {
@@ -33,6 +40,12 @@ public class HPTest : MonoBehaviour
         {
             UnityEngine.XR.InputDevice rightHand = rightHandDevices[0];
             Debug.Log(string.Format("Device name '{0}' with role '{1}'", rightHand.name, rightHand.characteristics.ToString()));
+
+            bool triggerValue;
+            if (rightHand.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue) && triggerValue)
+            {
+                Debug.Log("Trigger button is pressed.");
+            }
         }
         else if (leftHandDevices.Count > 1)
         {
