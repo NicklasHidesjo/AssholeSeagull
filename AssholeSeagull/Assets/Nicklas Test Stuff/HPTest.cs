@@ -21,12 +21,28 @@ public class HPTest : MonoBehaviour
             UnityEngine.XR.InputDevice leftHand = leftHandDevices[0];
             Debug.Log(string.Format("Device name '{0}' with role '{1}'", leftHand.name, leftHand.characteristics.ToString()));
 
-
             bool triggerValue;
-            if (leftHand.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue) && triggerValue)
+            if (leftHand.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue))
             {
                 Debug.Log("Left trigger button is pressed.");
             }
+
+            var inputFeatures = new List<UnityEngine.XR.InputFeatureUsage>();
+            if (leftHand.TryGetFeatureUsages(inputFeatures))
+            {
+                foreach (var feature in inputFeatures)
+                {
+                    if (feature.type == typeof(bool))
+                    {
+                        bool featureValue;
+                        if (leftHand.TryGetFeatureValue(feature.As<bool>(), out featureValue))
+                        {
+                            Debug.Log(string.Format("Bool feature {0}'s value is {1}", feature.name, featureValue.ToString()));
+                        }
+                    }
+                }
+            }
+
         }
         else if (leftHandDevices.Count > 1)
         {
@@ -42,10 +58,28 @@ public class HPTest : MonoBehaviour
             Debug.Log(string.Format("Device name '{0}' with role '{1}'", rightHand.name, rightHand.characteristics.ToString()));
 
             bool triggerValue;
-            if (rightHand.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue) && triggerValue)
+            if (rightHand.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue))
             {
                 Debug.Log("right Trigger button is pressed.");
             }
+
+
+            var inputFeatures = new List<UnityEngine.XR.InputFeatureUsage>();
+            if (rightHand.TryGetFeatureUsages(inputFeatures))
+            {
+                foreach (var feature in inputFeatures)
+                {
+                    if (feature.type == typeof(bool))
+                    {
+                        bool featureValue;
+                        if (rightHand.TryGetFeatureValue(feature.As<bool>(), out featureValue))
+                        {
+                            Debug.Log(string.Format("Bool feature {0}'s value is {1}", feature.name, featureValue.ToString()));
+                        }
+                    }
+                }
+            }
+
         }
         else if (leftHandDevices.Count > 1)
         {
