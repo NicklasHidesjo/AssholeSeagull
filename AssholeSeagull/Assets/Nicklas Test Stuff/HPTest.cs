@@ -26,8 +26,9 @@ public class HPTest : MonoBehaviour
             {
                 Debug.Log("Left trigger button is pressed.");
             }
+            Debug.Log(triggerValue);
 
-            var inputFeatures = new List<UnityEngine.XR.InputFeatureUsage>();
+/*            var inputFeatures = new List<UnityEngine.XR.InputFeatureUsage>();
             if (leftHand.TryGetFeatureUsages(inputFeatures))
             {
                 foreach (var feature in inputFeatures)
@@ -41,7 +42,7 @@ public class HPTest : MonoBehaviour
                         }
                     }
                 }
-            }
+            }*/
 
         }
         else if (leftHandDevices.Count > 1)
@@ -62,9 +63,10 @@ public class HPTest : MonoBehaviour
             {
                 Debug.Log("right Trigger button is pressed.");
             }
+            Debug.Log(triggerValue);
 
 
-            var inputFeatures = new List<UnityEngine.XR.InputFeatureUsage>();
+/*            var inputFeatures = new List<UnityEngine.XR.InputFeatureUsage>();
             if (rightHand.TryGetFeatureUsages(inputFeatures))
             {
                 foreach (var feature in inputFeatures)
@@ -78,7 +80,7 @@ public class HPTest : MonoBehaviour
                         }
                     }
                 }
-            }
+            }*/
 
         }
         else if (leftHandDevices.Count > 1)
