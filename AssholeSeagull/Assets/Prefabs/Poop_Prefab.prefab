@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7817635015049973822}
   - component: {fileID: -8278995975875907562}
   m_Layer: 0
-  m_Name: PoopPrefab
+  m_Name: Poop_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

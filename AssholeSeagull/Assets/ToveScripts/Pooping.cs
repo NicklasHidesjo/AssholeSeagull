@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class Pooping : MonoBehaviour
 {
-    GameObject poopPrefab;
-    Transform spawnPosition;
+    [SerializeField] GameObject poopPrefab;
+    [SerializeField] Transform spawnPosition;
 
-    string poopClone = "PoopPrefab(Clone)";
+ //   string poopClone = "PoopPrefab(Clone)";
 
     float despawnTimer;
 
     public void Poop()
     {
-        GameObject spawnPosition = GameObject.Find("PoopSpawnPoint");
-        poopPrefab = Instantiate(Resources.Load("Prefabs/PoopPrefab") as GameObject, spawnPosition.transform.position, Quaternion.identity);
+        Instantiate(poopPrefab, spawnPosition.transform.position, Quaternion.identity);
     }
 
     private void Update()

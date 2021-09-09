@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &56209590 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7147270393534787711, guid: 66a151860be4b4842b82efda60444a9f, type: 3}
+  m_PrefabInstance: {fileID: 1004856207}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &156957410
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -900,19 +905,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1709186159823088714, guid: 9b1c76de4f645ad448a89cc3fef9c5f4, type: 3}
   m_PrefabInstance: {fileID: 947057800}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &947057802
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947057801}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.2663989, y: 0.29437897, z: 65.55}
-  m_Center: {x: 0, y: 0, z: 0.018246524}
 --- !u!54 &947057803
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -934,6 +926,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2086274304604157680, guid: 9b1c76de4f645ad448a89cc3fef9c5f4, type: 3}
   m_PrefabInstance: {fileID: 947057800}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &947057805
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947057801}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2663989, y: 0.29437897, z: 0.03776957}
+  m_Center: {x: 0, y: 0, z: 0.018246524}
 --- !u!1 &994809412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,7 +1070,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7147270393534787696, guid: 66a151860be4b4842b82efda60444a9f, type: 3}
       propertyPath: m_Name
-      value: TargetPoint
+      value: EndPoint
       objectReference: {fileID: 0}
     - target: {fileID: 7147270393534787711, guid: 66a151860be4b4842b82efda60444a9f, type: 3}
       propertyPath: m_RootOrder
@@ -1073,15 +1078,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147270393534787711, guid: 66a151860be4b4842b82efda60444a9f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.13
+      value: 9.26
       objectReference: {fileID: 0}
     - target: {fileID: 7147270393534787711, guid: 66a151860be4b4842b82efda60444a9f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.31
+      value: 12.3
       objectReference: {fileID: 0}
     - target: {fileID: 7147270393534787711, guid: 66a151860be4b4842b82efda60444a9f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.1
+      value: -17.65
       objectReference: {fileID: 0}
     - target: {fileID: 7147270393534787711, guid: 66a151860be4b4842b82efda60444a9f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1368,6 +1373,10 @@ PrefabInstance:
       propertyPath: sandwich
       value: 
       objectReference: {fileID: 947057804}
+    - target: {fileID: 1518335571043901340, guid: 96a155e26252f754689853dcd00e210e, type: 3}
+      propertyPath: endFlight
+      value: 
+      objectReference: {fileID: 56209590}
     - target: {fileID: 1518335571043901340, guid: 96a155e26252f754689853dcd00e210e, type: 3}
       propertyPath: seagullPrefab
       value: 
