@@ -16,12 +16,6 @@ public class SeagullManager : MonoBehaviour
 
     [SerializeField] float spawnIntervalls = 5f;
 
-    float despawnTimer;
-    float startTimer;
-
-    bool spawningSeagull = false;
-    bool firstSeagullSpawned = false;
-
     private void OnEnable()
     {
         StartCoroutine("SpawnSeagull");
@@ -37,7 +31,6 @@ public class SeagullManager : MonoBehaviour
         //Skicka till despawnlistan
         Destroy(seagull);
         currentNumberOfSeagulls--;
-        despawnTimer = 0f;
     }
 
     IEnumerator SpawnSeagull()
