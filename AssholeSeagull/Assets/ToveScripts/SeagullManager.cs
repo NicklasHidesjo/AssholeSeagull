@@ -5,15 +5,16 @@ using UnityEngine;
 public class SeagullManager : MonoBehaviour
 {
     [SerializeField] Transform sandwich;
-    public Transform seagullSpawnPoints;
-    public SeagullMovement seagullPrefab;
+    [SerializeField] Transform endFlight;
+    [SerializeField] Transform seagullSpawnPoints;
+    [SerializeField] SeagullMovement seagullPrefab;
 
     string seagullClone = "Seagull_Prefab(Clone)";
 
     int currentNumberOfSeagulls = 0;
     int maxNumberOfSeagulls = 1;
 
-    float spawnIntervalls = 5f;
+    [SerializeField] float spawnIntervalls = 5f;
 
     float despawnTimer;
     float startTimer;
@@ -21,43 +22,42 @@ public class SeagullManager : MonoBehaviour
     bool spawningSeagull = false;
     bool firstSeagullSpawned = false;
 
-    private void Update()
+    private void OnEnable()
     {
-        startTimer += Time.deltaTime;
+        StartCoroutine("SpawnSeagull");
+    }
 
-        if(startTimer > 0f && firstSeagullSpawned == false)
-        {
-            firstSeagullSpawned = true;
-            StartCoroutine("SpawnSeagull");
-        }
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
 
-        if(currentNumberOfSeagulls == maxNumberOfSeagulls)
-        {
-            despawnTimer += Time.deltaTime;
-
-            if(despawnTimer > 20f)
-            {
-                GameObject clonedSegaull = GameObject.Find(seagullClone);
-                Destroy(clonedSegaull);
-                currentNumberOfSeagulls--;
-                despawnTimer = 0f;
-            }
-        }
+    public void Despawn(GameObject seagull)
+    {
+        //Skicka till despawnlistan
+        Destroy(seagull);
+        currentNumberOfSeagulls--;
+        despawnTimer = 0f;
     }
 
     IEnumerator SpawnSeagull()
     {
-        if(currentNumberOfSeagulls < maxNumberOfSeagulls)
+        while(true)
         {
-            WaitForSeconds wait = new WaitForSeconds(spawnIntervalls);
+            if(currentNumberOfSeagulls < maxNumberOfSeagulls)
+            {
+                SeagullMovement seagullMovement = Instantiate(seagullPrefab, seagullSpawnPoints.position, Quaternion.identity);
+                seagullMovement.sandwich = sandwich;
+                seagullMovement.flightEnd = endFlight;
 
-            //    int seagullIndex = seagullPrefab.Length;
-            SeagullMovement seagullMovement = Instantiate(seagullPrefab, seagullSpawnPoints.position, Quaternion.identity);
-            seagullMovement.sandwich = sandwich;
+                seagullMovement.seagullManager = this;
 
-            currentNumberOfSeagulls++;
+                currentNumberOfSeagulls++;
 
-            yield return wait;
+                yield return new WaitForSeconds(spawnIntervalls);
+            }
+
+            yield return new WaitForSeconds(0.1f);
         }
     }
 }
