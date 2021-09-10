@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class Poop : MonoBehaviour
 {
-  //  [SerializeField] Animator poopAnimator;
+    [SerializeField] Animator poopAnimator;
 
-    private void OnCollisionEnter(Collision other)
+    private void OntriggerEnter(Collider other)
     {
         Debug.Log("poop landed");
-        //   poopAnimator.SetTrigger("Splatt");
+        poopAnimator.SetTrigger("Splatt");
 
         Destroy(gameObject);
 
-/*        if (other.gameObject.CompareTag("Food"))
+        if (other.gameObject.CompareTag("UpTrigger"))
         {
-            Vector3 position = other.transform.position;
+
+/*            Vector3 position = other.transform.position;
             Vector3 myPosition = new Vector3(position.x, other.transform.position.y, position.z);
 
             transform.position = myPosition;
@@ -24,16 +25,7 @@ public class Poop : MonoBehaviour
             Destroy(GetComponent<Rigidbody>());
 
             Vector3 rotation = new Vector3(0, 0, transform.rotation.z);
-            transform.localRotation = Quaternion.Euler(rotation);
-        }*/
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("PoopKiller"))
-        {
-            Debug.Log("Kill poop");
-            Destroy(gameObject);
+            transform.localRotation = Quaternion.Euler(rotation);*/
         }
     }
 }

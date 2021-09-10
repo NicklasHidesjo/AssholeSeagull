@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SeagullManager : MonoBehaviour
 {
-    [SerializeField] Transform sandwich;
+    [SerializeField] Transform foodTarget;
     [SerializeField] Transform endFlight;
     [SerializeField] Transform seagullSpawnPoints;
     [SerializeField] SeagullMovement seagullPrefab;
@@ -40,7 +40,7 @@ public class SeagullManager : MonoBehaviour
             if(currentNumberOfSeagulls < maxNumberOfSeagulls)
             {
                 SeagullMovement seagullMovement = Instantiate(seagullPrefab, seagullSpawnPoints.position, Quaternion.identity);
-                seagullMovement.sandwich = sandwich;
+                seagullMovement.sandwich = foodTarget;
                 seagullMovement.flightEnd = endFlight;
 
                 seagullMovement.seagullManager = this;
