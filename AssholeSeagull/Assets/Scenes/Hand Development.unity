@@ -813,7 +813,7 @@ GameObject:
   m_Component:
   - component: {fileID: 430990917}
   - component: {fileID: 430990918}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: ButterCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1381,7 +1381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
 --- !u!114 &831882663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1560,7 +1560,7 @@ GameObject:
   - component: {fileID: 994809415}
   - component: {fileID: 994809414}
   - component: {fileID: 994809418}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
