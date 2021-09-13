@@ -17,6 +17,7 @@ public class SeagullMovement : MonoBehaviour
     
     [SerializeField] float speed = 44f;
 
+    bool isPoopingTime = false;
     bool hasPooped = false;
     bool flyingAway = false;
 
@@ -80,24 +81,28 @@ public class SeagullMovement : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
         
-        if(transform.position == targetPosition && !hasPooped)
+        if(transform.position == targetPosition && !isPoopingTime)
         {
             Debug.Log("Pooping");
-            pooping.Poop();
             seagullAnimator.SetBool("Pooping", true);
 
-            hasPooped = true;
+            isPoopingTime = true;
         }
 
-        if(hasPooped == true)
+        if(isPoopingTime == true)
         {
             poopingTimer += Time.deltaTime;
 
-            if(poopingTimer > 1.5f && !flyingAway)
+            if(poopingTimer > 1f && !hasPooped)
             {
-                seagullAnimator.SetBool("Pooping", false);
+                pooping.Poop();
+                hasPooped = true;
                 seagullAnimator.SetTrigger("FlyAway");
+                seagullAnimator.SetBool("Pooping", false);
+            }
 
+            if(poopingTimer > 2.8f && !flyingAway)
+            {
                 targetPosition = flightEnd.position;
                 transform.LookAt(targetPosition);
 
@@ -105,7 +110,7 @@ public class SeagullMovement : MonoBehaviour
             }
         }
 
-        if(transform.position == targetPosition && hasPooped && flyingAway)
+        if(transform.position == targetPosition && isPoopingTime && flyingAway)
         {
             seagullManager.Despawn(gameObject);
         }
