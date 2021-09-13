@@ -1,4 +1,4 @@
-using System.Collections;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -21,11 +21,12 @@ public class MainMenuPointer : MonoBehaviour
     {
         if (e.target.name == "Cube")
         {
-            SceneManager.LoadScene("gameScene");
+            SceneManager.LoadScene("GameScene");
             Debug.Log("Cube was clicked");
         }
         else if (e.target.name == "Button")
         {
+            SceneManager.LoadScene("GameScene");
             Debug.Log("Button was clicked");
         }
     }
