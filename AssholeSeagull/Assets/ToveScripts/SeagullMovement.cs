@@ -32,6 +32,7 @@ public class SeagullMovement : MonoBehaviour
     void Update()
     {    
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+
         
         if(transform.position == targetPosition && !hasPooped)
         {

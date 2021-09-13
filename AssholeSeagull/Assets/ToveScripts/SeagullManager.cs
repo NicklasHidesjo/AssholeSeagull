@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SeagullManager : MonoBehaviour
 {
-    [SerializeField] Transform sandwich;
+    [SerializeField] Transform foodTarget;
     [SerializeField] Transform endFlight;
     [SerializeField] Transform seagullSpawnPoints;
     [SerializeField] SeagullMovement seagullPrefab;
@@ -15,12 +15,6 @@ public class SeagullManager : MonoBehaviour
     int maxNumberOfSeagulls = 1;
 
     [SerializeField] float spawnIntervalls = 5f;
-
-    float despawnTimer;
-    float startTimer;
-
-    bool spawningSeagull = false;
-    bool firstSeagullSpawned = false;
 
     private void OnEnable()
     {
@@ -37,7 +31,6 @@ public class SeagullManager : MonoBehaviour
         //Skicka till despawnlistan
         Destroy(seagull);
         currentNumberOfSeagulls--;
-        despawnTimer = 0f;
     }
 
     IEnumerator SpawnSeagull()
@@ -47,7 +40,7 @@ public class SeagullManager : MonoBehaviour
             if(currentNumberOfSeagulls < maxNumberOfSeagulls)
             {
                 SeagullMovement seagullMovement = Instantiate(seagullPrefab, seagullSpawnPoints.position, Quaternion.identity);
-                seagullMovement.sandwich = sandwich;
+                seagullMovement.sandwich = foodTarget;
                 seagullMovement.flightEnd = endFlight;
 
                 seagullMovement.seagullManager = this;
