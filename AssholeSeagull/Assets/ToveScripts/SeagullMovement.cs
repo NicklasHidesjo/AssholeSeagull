@@ -93,7 +93,7 @@ public class SeagullMovement : MonoBehaviour
         {
             poopingTimer += Time.deltaTime;
 
-            if(poopingTimer > 1f && !flyingAway)
+            if(poopingTimer > 1.5f && !flyingAway)
             {
                 seagullAnimator.SetBool("Pooping", false);
                 seagullAnimator.SetTrigger("FlyAway");

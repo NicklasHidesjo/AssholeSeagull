@@ -9,8 +9,18 @@ public class SeagullManager : MonoBehaviour
     [SerializeField] Transform cheesePackage;
     [SerializeField] Transform hamPackage;
 
-    [SerializeField] Transform endFlight;
-    [SerializeField] Transform seagullSpawnPoints;
+    SeagullMovement seagullMovement;
+
+    [SerializeField] Transform endFlightOne;
+    [SerializeField] Transform endFlightTwo;
+    [SerializeField] Transform endFlightTree;
+
+    [SerializeField] Transform seagullSpawnPointsOne;
+    [SerializeField] Transform seagullSpawnPointsTwo;
+    [SerializeField] Transform seagullSpawnPointsTree;
+
+    int randomSpawnPoint;
+
     [SerializeField] SeagullMovement seagullPrefab;
 
     string seagullClone = "Seagull_Prefab(Clone)";
@@ -43,27 +53,27 @@ public class SeagullManager : MonoBehaviour
         {
             if(currentNumberOfSeagulls < maxNumberOfSeagulls)
             {
-                SeagullMovement seagullMovement = Instantiate(seagullPrefab, seagullSpawnPoints.position, Quaternion.identity);
+                randomSpawnPoint = Random.Range(0, 3);
+
+                if (randomSpawnPoint == 0)
+                {
+                    seagullMovement = Instantiate(seagullPrefab, seagullSpawnPointsOne.position, Quaternion.identity);
+                    RandomEndPoint();
+                }
+                else if(randomSpawnPoint == 1)
+                {
+                    seagullMovement = Instantiate(seagullPrefab, seagullSpawnPointsTwo.position, Quaternion.identity);
+                    RandomEndPoint();
+                }
+                else if(randomSpawnPoint ==2)
+                {
+                    seagullMovement = Instantiate(seagullPrefab, seagullSpawnPointsTree.position, Quaternion.identity);
+                    RandomEndPoint();
+                }
 
                 seagullMovement.BreadPackage = breadPackage;
                 seagullMovement.HamPackage = hamPackage;
                 seagullMovement.CheesePackage = cheesePackage;
-
-/*                if (seagullMovement.randomPackage == 0)
-                {
-                }
-                else if (seagullMovement.randomPackage == 1)
-                {
-                }
-                else if (seagullMovement.randomPackage == 2)
-                {
-                }
-                else
-                {
-                    Debug.LogError("No food was found!");
-                }*/
-
-                seagullMovement.flightEnd = endFlight;
 
                 seagullMovement.seagullManager = this;
 
@@ -75,6 +85,24 @@ public class SeagullManager : MonoBehaviour
             }
 
             yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    void RandomEndPoint()
+    {
+        randomSpawnPoint = Random.Range(0, 3);
+
+        if (randomSpawnPoint == 0)
+        {
+            seagullMovement.flightEnd = endFlightOne;
+        }
+        else if(randomSpawnPoint == 1)
+        {
+            seagullMovement.flightEnd = endFlightTwo;
+        }
+        else if(randomSpawnPoint == 2)
+        {
+            seagullMovement.flightEnd = endFlightTree;
         }
     }
 }
