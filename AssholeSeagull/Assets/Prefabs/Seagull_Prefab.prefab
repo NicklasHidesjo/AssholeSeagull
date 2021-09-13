@@ -451,6 +451,8 @@ GameObject:
   - component: {fileID: 8964828962561856375}
   - component: {fileID: 2974699690583459776}
   - component: {fileID: 3272717194131652221}
+  - component: {fileID: 4296194220242073953}
+  - component: {fileID: 1986341339}
   m_Layer: 0
   m_Name: Seagull_Prefab
   m_TagString: Untagged
@@ -492,12 +494,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seagullAnimator: {fileID: 2974699690583459776}
   randomPackage: 0
-  breadPackage: {fileID: 0}
-  cheesePackage: {fileID: 0}
-  hamPackage: {fileID: 0}
   flightEnd: {fileID: 0}
   seagullManager: {fileID: 0}
   speed: 10
+  inDistance: 0
+  breadPackage: {fileID: 0}
+  cheesePackage: {fileID: 0}
+  hamPackage: {fileID: 0}
 --- !u!95 &2974699690583459776
 Animator:
   serializedVersion: 3
@@ -531,6 +534,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poopPrefab: {fileID: 4467274387238071332, guid: 691e3f3ec5c030d4b9ebe76376bd84c1, type: 3}
   spawnPosition: {fileID: 6982129938083659594}
+--- !u!65 &4296194220242073953
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3469906486034026684}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.32, z: 0}
+--- !u!54 &1986341339
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3469906486034026684}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &3532075845921308182
 GameObject:
   m_ObjectHideFlags: 0

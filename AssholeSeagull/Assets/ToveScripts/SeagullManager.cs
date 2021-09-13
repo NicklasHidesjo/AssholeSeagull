@@ -71,6 +71,9 @@ public class SeagullManager : MonoBehaviour
                     RandomEndPoint();
                 }
 
+                ScareBird scareBird = GameObject.Find("GameManager").GetComponent<ScareBird>();
+                scareBird.seagullMovement = seagullMovement;
+
                 seagullMovement.BreadPackage = breadPackage;
                 seagullMovement.HamPackage = hamPackage;
                 seagullMovement.CheesePackage = cheesePackage;

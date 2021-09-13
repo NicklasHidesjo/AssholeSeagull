@@ -17,9 +17,11 @@ public class SeagullMovement : MonoBehaviour
     
     [SerializeField] float speed = 44f;
 
-    bool isPoopingTime = false;
+    public bool isPoopingTime = false;
     bool hasPooped = false;
     bool flyingAway = false;
+    public bool inDistance = false;
+    bool isScared = false;
 
     float poopingTimer;
 
@@ -79,9 +81,8 @@ public class SeagullMovement : MonoBehaviour
     void Update()
     {    
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-
         
-        if(transform.position == targetPosition && !isPoopingTime)
+        if(transform.position == targetPosition && !isPoopingTime && !isScared)
         {
             Debug.Log("Pooping");
             seagullAnimator.SetBool("Pooping", true);
@@ -110,10 +111,19 @@ public class SeagullMovement : MonoBehaviour
             }
         }
 
-        if(transform.position == targetPosition && isPoopingTime && flyingAway)
+        if(transform.position == targetPosition && flyingAway)
         {
             seagullManager.Despawn(gameObject);
         }
+    }
+
+    public void Scared()
+    {
+        isScared = true;
+        targetPosition = flightEnd.position;
+        transform.LookAt(targetPosition);
+
+        flyingAway = true;
     }
 
     private void FoodTarget()
@@ -136,12 +146,12 @@ public class SeagullMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
-/*        if (other.name == "Player")
+        if(collider.gameObject.name == "ScareDistance" && !flyingAway)
         {
-            Debug.Log("Pooping");
-            pooping.Poop();
-        }*/
+            Debug.Log("In distance to be scared");
+            inDistance = true;
+        }
     }
 }
