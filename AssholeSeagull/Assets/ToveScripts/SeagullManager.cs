@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class SeagullManager : MonoBehaviour
 {
-    [SerializeField] Transform foodTarget;
+    //Food Packages
+    [SerializeField] Transform breadPackage;
+    [SerializeField] Transform cheesePackage;
+    [SerializeField] Transform hamPackage;
+
     [SerializeField] Transform endFlight;
     [SerializeField] Transform seagullSpawnPoints;
     [SerializeField] SeagullMovement seagullPrefab;
@@ -40,12 +44,32 @@ public class SeagullManager : MonoBehaviour
             if(currentNumberOfSeagulls < maxNumberOfSeagulls)
             {
                 SeagullMovement seagullMovement = Instantiate(seagullPrefab, seagullSpawnPoints.position, Quaternion.identity);
-                seagullMovement.sandwich = foodTarget;
+
+                seagullMovement.BreadPackage = breadPackage;
+                seagullMovement.HamPackage = hamPackage;
+                seagullMovement.CheesePackage = cheesePackage;
+
+/*                if (seagullMovement.randomPackage == 0)
+                {
+                }
+                else if (seagullMovement.randomPackage == 1)
+                {
+                }
+                else if (seagullMovement.randomPackage == 2)
+                {
+                }
+                else
+                {
+                    Debug.LogError("No food was found!");
+                }*/
+
                 seagullMovement.flightEnd = endFlight;
 
                 seagullMovement.seagullManager = this;
 
                 currentNumberOfSeagulls++;
+
+                seagullMovement.Init();
 
                 yield return new WaitForSeconds(spawnIntervalls);
             }

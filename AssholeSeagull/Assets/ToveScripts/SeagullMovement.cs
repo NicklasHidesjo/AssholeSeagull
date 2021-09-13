@@ -5,8 +5,10 @@ using UnityEngine;
 public class SeagullMovement : MonoBehaviour
 {
     [SerializeField] Animator seagullAnimator;
-    public Transform sandwich;
+
+    public int randomPackage;
     public Transform flightEnd;
+
     public SeagullManager seagullManager;
 
     Pooping pooping;
@@ -20,11 +22,55 @@ public class SeagullMovement : MonoBehaviour
 
     float poopingTimer;
 
-
-    private void Start()
+    //Food Packages
+    [SerializeField] Transform breadPackage;
+    public Transform BreadPackage
     {
+        get
+        {
+            return breadPackage;
+        }
+        set
+        {
+            breadPackage = value;
+        }
+    }
+
+    [SerializeField] Transform cheesePackage;
+    public Transform CheesePackage
+    {
+        get
+        {
+            return cheesePackage;
+        }
+        set
+        {
+            cheesePackage = value;
+        }
+    }
+
+    [SerializeField] Transform hamPackage;
+    public Transform HamPackage
+    {
+        get
+        {
+            return hamPackage;
+        }
+        set
+        {
+            hamPackage = value;
+        }
+    }
+
+
+    public void Init()
+    {
+        randomPackage = Random.Range(0, 3);
+        Debug.Log("Random Package: " + randomPackage);
+
         pooping = GetComponent<Pooping>();
-        targetPosition = new Vector3(sandwich.position.x, transform.position.y, sandwich.position.z);
+
+        FoodTarget();
 
         transform.LookAt(targetPosition);
     }
@@ -62,6 +108,26 @@ public class SeagullMovement : MonoBehaviour
         if(transform.position == targetPosition && hasPooped && flyingAway)
         {
             seagullManager.Despawn(gameObject);
+        }
+    }
+
+    private void FoodTarget()
+    {
+        if (randomPackage == 0)
+        {
+            targetPosition = new Vector3(breadPackage.position.x, transform.position.y, breadPackage.position.z);
+        }
+        else if (randomPackage == 1)
+        {
+            targetPosition = new Vector3(hamPackage.position.x, transform.position.y, hamPackage.position.z);
+        }
+        else if (randomPackage == 2)
+        {
+            targetPosition = new Vector3(cheesePackage.position.x, transform.position.y, cheesePackage.position.z);
+        }
+        else
+        {
+            Debug.LogError("No food was found!");
         }
     }
 

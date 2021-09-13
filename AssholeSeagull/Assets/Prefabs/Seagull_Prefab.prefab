@@ -491,7 +491,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seagullAnimator: {fileID: 2974699690583459776}
-  sandwich: {fileID: 0}
+  randomPackage: 0
+  breadPackage: {fileID: 0}
+  cheesePackage: {fileID: 0}
+  hamPackage: {fileID: 0}
   flightEnd: {fileID: 0}
   seagullManager: {fileID: 0}
   speed: 10
