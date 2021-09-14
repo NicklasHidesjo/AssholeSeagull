@@ -7,7 +7,6 @@ using UnityEngine;
 public class FoodPackage : MonoBehaviour
 {
     [SerializeField] private FoodItem foodItem;
-    [SerializeField] private Transform parent;
     [SerializeField] private string foodName;
     [SerializeField] private GameObject poop;
     private bool shitOnPackage;
