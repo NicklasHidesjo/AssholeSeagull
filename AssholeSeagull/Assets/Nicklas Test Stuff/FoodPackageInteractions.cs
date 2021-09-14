@@ -18,6 +18,7 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		private void OnHandHoverBegin()
 		{
+			Debug.Log("Hand Hovering");
 			onHandHoverBegin.Invoke();
 		}
 
@@ -31,6 +32,8 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		private void OnAttachedToHand(Hand hand)
 		{
+			Debug.Log("Hand touched");
+
 			GameObject gameObject = package.SpawnFoodItem();
 			GrabTypes startingGrabType = hand.GetGrabStarting();
 			hand.AttachObject(gameObject, startingGrabType, attachmentFlags);
