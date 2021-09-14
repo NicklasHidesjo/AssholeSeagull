@@ -55,6 +55,14 @@ namespace Valve.VR.InteractionSystem
 				GameObject gameObject = package.SpawnFoodItem();
 				hand.AttachObject(gameObject, startingGrabType, attachmentFlags);
 			}
+			else if (isGrabEnding)
+			{
+				// Detach this object from the hand
+				hand.DetachObject(gameObject);
+
+				// Call this to undo HoverLock
+				hand.HoverUnlock(interactable);
+			}
 		}
 
 		//-------------------------------------------------
