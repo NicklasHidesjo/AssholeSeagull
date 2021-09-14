@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class SeagullMovement : MonoBehaviour
 {
+    State currentState;
+    enum State
+    {
+        PoopingPackage,
+        PoopingFood
+    }
     [SerializeField] Animator seagullAnimator;
 
     public int randomPackage;
     public Transform flightEnd;
 
     public SeagullManager seagullManager;
+    FoodTracker foodTracker;
 
     Pooping pooping;
 
-    Vector3 targetPosition;
+    [SerializeField] Vector3 targetPosition;
     
     [SerializeField] float speed = 44f;
 
@@ -65,24 +72,42 @@ public class SeagullMovement : MonoBehaviour
         }
     }
 
-
     public void Init()
     {
-        randomPackage = Random.Range(0, 3);
-        Debug.Log("Random Package: " + randomPackage);
+        int randomState = Random.Range(0, 2);
+
+        if (randomState == 0)
+        {
+            currentState = State.PoopingPackage;
+        }
+        else if (randomState == 1)
+        {
+            currentState = State.PoopingFood;
+        }
+
+        Debug.Log("current state: " + currentState);
+
+        if(currentState == State.PoopingPackage)
+        {
+            randomPackage = Random.Range(0, 3);
+            FoodTarget();
+        }
+
+        else if(currentState == State.PoopingFood)
+        {
+            FoodItemTarget();
+        }
 
         pooping = GetComponent<Pooping>();
-
-        FoodTarget();
-
         transform.LookAt(targetPosition);
     }
 
     void Update()
-    {    
+    {
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-        
-        if(transform.position == targetPosition && !isPoopingTime && !isScared)
+
+        //frammve vid food
+        if (transform.position == targetPosition && !isPoopingTime && !isScared)
         {
             Debug.Log("Pooping");
             seagullAnimator.SetBool("Pooping", true);
@@ -90,11 +115,12 @@ public class SeagullMovement : MonoBehaviour
             isPoopingTime = true;
         }
 
-        if(isPoopingTime == true)
+        //Dags att bajsa
+        if (isPoopingTime == true)
         {
             poopingTimer += Time.deltaTime;
 
-            if(poopingTimer > 1f && !hasPooped)
+            if (poopingTimer > 1f && !hasPooped)
             {
                 pooping.Poop();
                 hasPooped = true;
@@ -102,7 +128,8 @@ public class SeagullMovement : MonoBehaviour
                 seagullAnimator.SetBool("Pooping", false);
             }
 
-            if(poopingTimer > 2.8f && !flyingAway)
+            //Dags att flyga iväg
+            if (poopingTimer > 2.8f && !flyingAway)
             {
                 targetPosition = flightEnd.position;
                 transform.LookAt(targetPosition);
@@ -111,21 +138,22 @@ public class SeagullMovement : MonoBehaviour
             }
         }
 
-        if(transform.position == targetPosition && flyingAway)
-        {
+        //Despawna fågel
+        if (transform.position == targetPosition && flyingAway)
+        { 
             seagullManager.Despawn(gameObject);
         }
     }
 
-    public void Scared()
+    //FoodItems är target point
+    void FoodItemTarget()
     {
-        isScared = true;
-        targetPosition = flightEnd.position;
-        transform.LookAt(targetPosition);
-
-        flyingAway = true;
+        foodTracker = FindObjectOfType<FoodTracker>();
+        targetPosition = foodTracker.GetRandomTarget().position;
+        targetPosition.y = transform.position.y;
     }
 
+    //FoodPackage är target point
     private void FoodTarget()
     {
         if (randomPackage == 0)
@@ -144,6 +172,16 @@ public class SeagullMovement : MonoBehaviour
         {
             Debug.LogError("No food was found!");
         }
+    }
+
+    //Spelare skrämmer fågel
+    public void Scared()
+    {
+        isScared = true;
+        targetPosition = flightEnd.position;
+        transform.LookAt(targetPosition);
+
+        flyingAway = true;
     }
 
     private void OnTriggerEnter(Collider collider)
