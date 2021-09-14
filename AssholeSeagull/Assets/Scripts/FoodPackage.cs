@@ -11,11 +11,11 @@ public class FoodPackage : MonoBehaviour
     [SerializeField] private GameObject poop;
 
     [SerializeField] Transform spawnPosition;
+    [SerializeField] List<FoodItem> foodInContainer = new List<FoodItem>();
 
     private bool shitOnPackage;
     private int spoiledFoods = 0;
 
-    [SerializeField] List<FoodItem> foodInContainer = new List<FoodItem>();
 
 	private void Start()
 	{
@@ -43,10 +43,9 @@ public class FoodPackage : MonoBehaviour
 
         FoodItem newFoodItem = Instantiate(foodItem, spawnPosition.position, foodItem.transform.rotation);
 
-
         newFoodItem.name = foodName;
         newFoodItem.PoopOnFood = shitOnPackage;
-
+        newFoodItem.InPackage = true;
         spoiledFoods--;
         spoiledFoods = (int) Mathf.Clamp(spoiledFoods, 0, Mathf.Infinity);
         shitOnPackage = spoiledFoods > 0;
@@ -57,8 +56,9 @@ public class FoodPackage : MonoBehaviour
 
     public void AddFoodToContainer(FoodItem food)
 	{
+        food.InPackage = true;
+        
         bool duplicate = false;
-
 		foreach (var foodItem in foodInContainer)
 		{
             if(foodItem == food)
@@ -66,19 +66,21 @@ public class FoodPackage : MonoBehaviour
                 duplicate = true;
 			}
 		}
-
         if(duplicate)
 		{
             return;
 		}
-
         foodInContainer.Add(food);
 	}
 
     public void RemoveFoodFromContainer(FoodItem food)
 	{
+        food.InPackage = false;
+
         foodInContainer.Remove(food);
+
         foodInContainer.RemoveAll(food => food == null);
+
         if(foodInContainer.Count < 1)
 		{
             SpawnFoodItem();

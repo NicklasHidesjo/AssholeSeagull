@@ -129,7 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spoilTime: 10
-  spoilTimer: 0
+  selfDestructTime: 20
+  timer: 0
   isSpoiled: 0
 --- !u!114 &1078648721496904104
 MonoBehaviour:

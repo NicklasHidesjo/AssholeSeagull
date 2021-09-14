@@ -128,8 +128,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98b5bf510f9bc04f810d896a94b95c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spoilTime: 0
-  spoilTimer: 0
+  spoilTime: 10
+  selfDestructTime: 20
+  timer: 0
   isSpoiled: 0
 --- !u!114 &-1333095823606503833
 MonoBehaviour:

@@ -14,14 +14,22 @@ public class FoodSpawner : MonoBehaviour
 	{
 		if(other.CompareTag("Food"))
 		{
-			package.AddFoodToContainer(other.GetComponent<FoodItem>());
+			FoodItem food = other.GetComponent<FoodItem>();
+			if(food != null)
+			{
+				package.AddFoodToContainer(food);
+			}
 		}
 	}
 	private void OnTriggerExit(Collider other)
 	{
 		if(other.CompareTag("Food"))
 		{
-			package.RemoveFoodFromContainer(other.GetComponent<FoodItem>());
+			FoodItem food = other.GetComponent<FoodItem>();
+			if (food != null)
+			{
+				package.RemoveFoodFromContainer(food);
+			}
 		}
 	}
 }
