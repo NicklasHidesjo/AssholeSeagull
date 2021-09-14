@@ -7,9 +7,11 @@ public class SeagullMovement : MonoBehaviour
     [SerializeField] Animator seagullAnimator;
 
     public int randomPackage;
+    int randomState;
     public Transform flightEnd;
 
     public SeagullManager seagullManager;
+    FoodTracker foodTracker;
 
     Pooping pooping;
 
@@ -79,10 +81,11 @@ public class SeagullMovement : MonoBehaviour
     }
 
     void Update()
-    {    
+    {
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-        
-        if(transform.position == targetPosition && !isPoopingTime && !isScared)
+
+        //frammve vid food
+        if (transform.position == targetPosition && !isPoopingTime && !isScared)
         {
             Debug.Log("Pooping");
             seagullAnimator.SetBool("Pooping", true);
@@ -90,11 +93,12 @@ public class SeagullMovement : MonoBehaviour
             isPoopingTime = true;
         }
 
-        if(isPoopingTime == true)
+        //Dags att bajsa
+        if (isPoopingTime == true)
         {
             poopingTimer += Time.deltaTime;
 
-            if(poopingTimer > 1f && !hasPooped)
+            if (poopingTimer > 1f && !hasPooped)
             {
                 pooping.Poop();
                 hasPooped = true;
@@ -102,7 +106,8 @@ public class SeagullMovement : MonoBehaviour
                 seagullAnimator.SetBool("Pooping", false);
             }
 
-            if(poopingTimer > 2.8f && !flyingAway)
+            //Dags att flyga iväg
+            if (poopingTimer > 2.8f && !flyingAway)
             {
                 targetPosition = flightEnd.position;
                 transform.LookAt(targetPosition);
@@ -111,21 +116,21 @@ public class SeagullMovement : MonoBehaviour
             }
         }
 
-        if(transform.position == targetPosition && flyingAway)
+        //Despawna fågel
+        if (transform.position == targetPosition && flyingAway)
         {
             seagullManager.Despawn(gameObject);
         }
     }
 
-    public void Scared()
+    //FoodItems är target point
+    void FoodItemTarget()
     {
-        isScared = true;
-        targetPosition = flightEnd.position;
-        transform.LookAt(targetPosition);
-
-        flyingAway = true;
+        foodTracker = FindObjectOfType<FoodTracker>();
+        targetPosition = foodTracker.GetRandomTarget().position;
     }
 
+    //FoodPackage är target point
     private void FoodTarget()
     {
         if (randomPackage == 0)
@@ -144,6 +149,16 @@ public class SeagullMovement : MonoBehaviour
         {
             Debug.LogError("No food was found!");
         }
+    }
+
+    //Spelare skrämmer fågel
+    public void Scared()
+    {
+        isScared = true;
+        targetPosition = flightEnd.position;
+        transform.LookAt(targetPosition);
+
+        flyingAway = true;
     }
 
     private void OnTriggerEnter(Collider collider)
