@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7399728086355091927
 Transform:
   m_ObjectHideFlags: 0
@@ -271,7 +271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2898b5770067edf4db0e305275fa4511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poop: {fileID: 6925330863442785536}
 --- !u!1 &7458946258255764021
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +317,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodItem: {fileID: 4503281328503389362, guid: 08b209d003f23c2469fd3eb50fc53dbb, type: 3}
-  parent: {fileID: 0}
   foodName: Ham
   poop: {fileID: 6925330863442785536}

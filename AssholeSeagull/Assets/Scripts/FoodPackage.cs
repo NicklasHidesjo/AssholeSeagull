@@ -4,53 +4,82 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace Valve.VR.InteractionSystem.Sample
+public class FoodPackage : MonoBehaviour
 {
-    [RequireComponent(typeof(Interactable))]
-    public class FoodPackage : MonoBehaviour
+    [SerializeField] private FoodItem foodItem;
+    [SerializeField] private string foodName;
+    [SerializeField] private GameObject poop;
+
+    [SerializeField] Transform spawnPosition;
+
+    private bool shitOnPackage;
+    private int spoiledFoods = 0;
+
+    [SerializeField] List<FoodItem> foodInContainer = new List<FoodItem>();
+
+	private void Start()
+	{
+        SpawnFoodItem();
+	}
+
+	public bool ShitOnPackage
     {
-        [SerializeField] private FoodItem foodItem;
-        [SerializeField] private Transform parent;
-        [SerializeField] private string foodName;
-        [SerializeField] private GameObject poop;
-        private bool shitOnPackage;
-        private int spoiledFoods = 0;
-
-        public bool ShitOnPackage
+        get { return shitOnPackage; }
+        set
         {
-            get { return shitOnPackage; }
-            set
+            shitOnPackage = value;
+            poop.SetActive(value);
+            
+            if (value)
             {
-                shitOnPackage = value;
-                poop.SetActive(value);
-
-                if (value)
-                {
-                    spoiledFoods = 1;
-                }
+                spoiledFoods = 1;
             }
         }
+    }
 
-        private void Start()
-        {
-            ShitOnPackage = true;
-            SpawnFoodItem(transform);
-            SpawnFoodItem(parent);
-        }
+    private void SpawnFoodItem()
+    {
+        Debug.Log("Item spawned");
+        FoodItem newFoodItem = Instantiate(foodItem, spawnPosition.position, quaternion.identity);
 
-        public void SpawnFoodItem(Transform foodParent)
-        {
-            Debug.Log("Item spawned");
-            FoodItem newFoodItem = Instantiate(foodItem, foodParent, true);
-            newFoodItem.name = foodName;
-            newFoodItem.GetComponent<Rigidbody>().isKinematic = true; //Delete after testing
+        newFoodItem.name = foodName;
+        newFoodItem.PoopOnFood = shitOnPackage;
 
-            newFoodItem.PoopOnFood = shitOnPackage;
+        spoiledFoods--;
+        spoiledFoods = (int) Mathf.Clamp(spoiledFoods, 0, Mathf.Infinity);
+        shitOnPackage = spoiledFoods > 0;
+        poop.SetActive(shitOnPackage);
 
-            spoiledFoods--;
-            spoiledFoods = (int)Mathf.Clamp(spoiledFoods, 0, Mathf.Infinity);
-            shitOnPackage = spoiledFoods > 0;
-            poop.SetActive(shitOnPackage);
-        }
+        foodInContainer.Add(newFoodItem);
+    }
+
+    public void AddFoodToContainer(FoodItem food)
+	{
+        bool duplicate = false;
+
+		foreach (var foodItem in foodInContainer)
+		{
+            if(foodItem == food)
+			{
+                duplicate = true;
+			}
+		}
+
+        if(duplicate)
+		{
+            return;
+		}
+
+        foodInContainer.Add(food);
+	}
+
+    public void RemoveFoodFromContainer(FoodItem food)
+	{
+        foodInContainer.Remove(food);
+        foodInContainer.RemoveAll(food => food == null);
+        if(foodInContainer.Count < 1)
+		{
+            SpawnFoodItem();
+		}
     }
 }

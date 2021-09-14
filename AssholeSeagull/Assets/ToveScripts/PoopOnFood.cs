@@ -4,20 +4,14 @@ using UnityEngine;
 
 public class PoopOnFood : MonoBehaviour
 {
-    [SerializeField] GameObject poop;
-    bool poopedOn = false;
-    bool alreadyPoopedOn = false;
+    FoodPackage foodPackage;
 
-    private void Update()
-    {
-        if(poopedOn == true && alreadyPoopedOn == false)
-        {
-            poop.SetActive(true);
-            alreadyPoopedOn = true;
-        }
-    }
+	private void Start()
+	{
+        foodPackage = GetComponentInParent<FoodPackage>();
+	}
 
-    private void OnTriggerEnter(Collider other)
+	private void OnTriggerEnter(Collider other)
     {
         GameObject hittedPoop = other.gameObject;
         if (other.gameObject.tag == "Poop")
@@ -25,7 +19,11 @@ public class PoopOnFood : MonoBehaviour
             Destroy(hittedPoop);
             Debug.Log("Poop hit");
 
-            poopedOn = true;
+            if(foodPackage.ShitOnPackage)
+			{
+                return;
+			}
+            foodPackage.ShitOnPackage = true;
         }
     }
 }
