@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 248847760111916637}
   - component: {fileID: 2885326799596019538}
   - component: {fileID: 1125017510769407647}
-  - component: {fileID: -6316573157272024181}
+  - component: {fileID: -7339756543294674793}
   m_Layer: 0
   m_Name: Food_Bread_Prefab
   m_TagString: Untagged
@@ -114,7 +114,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-6316573157272024181
+--- !u!114 &-7339756543294674793
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,6 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98b5bf510f9bc04f810d896a94b95c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spoilTime: 5
+  spoilTime: 0
   spoilTimer: 0
   isSpoiled: 0

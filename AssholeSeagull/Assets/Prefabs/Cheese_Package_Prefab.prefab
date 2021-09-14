@@ -118,6 +118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4155169288328038125}
+  - component: {fileID: 4532691177100937945}
   m_Layer: 0
   m_Name: Cheese_Package_Prefab
   m_TagString: Untagged
@@ -141,6 +142,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4532691177100937945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4155169288328038126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90cfde6a096e23b4c995109436fa098b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodItem: {fileID: 6039123885260523408, guid: 18f71a434eedf5646b63261425eb2752, type: 3}
+  parent: {fileID: 0}
+  foodName: Cheese
+  poop: {fileID: 4481670777916746203}
 --- !u!1 &4481670777916746203
 GameObject:
   m_ObjectHideFlags: 0
