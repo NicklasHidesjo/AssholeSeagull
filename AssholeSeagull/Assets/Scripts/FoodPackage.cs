@@ -9,10 +9,20 @@ public class FoodPackage : MonoBehaviour
     [SerializeField] private FoodItem foodItem;
     [SerializeField] private string foodName;
     [SerializeField] private GameObject poop;
+
+    [SerializeField] Transform spawnPosition;
+
     private bool shitOnPackage;
     private int spoiledFoods = 0;
 
-    public bool ShitOnPackage
+    [SerializeField] List<FoodItem> foodInContainer = new List<FoodItem>();
+
+	private void Start()
+	{
+        SpawnFoodItem();
+	}
+
+	public bool ShitOnPackage
     {
         get { return shitOnPackage; }
         set
@@ -27,10 +37,11 @@ public class FoodPackage : MonoBehaviour
         }
     }
 
-    public GameObject SpawnFoodItem()
+    private void SpawnFoodItem()
     {
         Debug.Log("Item spawned");
-        FoodItem newFoodItem = Instantiate(foodItem);
+        FoodItem newFoodItem = Instantiate(foodItem, spawnPosition.position, quaternion.identity);
+
         newFoodItem.name = foodName;
         newFoodItem.PoopOnFood = shitOnPackage;
 
@@ -39,6 +50,36 @@ public class FoodPackage : MonoBehaviour
         shitOnPackage = spoiledFoods > 0;
         poop.SetActive(shitOnPackage);
 
-        return newFoodItem.gameObject;
+        foodInContainer.Add(newFoodItem);
+    }
+
+    public void AddFoodToContainer(FoodItem food)
+	{
+        bool duplicate = false;
+
+		foreach (var foodItem in foodInContainer)
+		{
+            if(foodItem == food)
+			{
+                duplicate = true;
+			}
+		}
+
+        if(duplicate)
+		{
+            return;
+		}
+
+        foodInContainer.Add(food);
+	}
+
+    public void RemoveFoodFromContainer(FoodItem food)
+	{
+        foodInContainer.Remove(food);
+        foodInContainer.RemoveAll(food => food == null);
+        if(foodInContainer.Count < 1)
+		{
+            SpawnFoodItem();
+		}
     }
 }
