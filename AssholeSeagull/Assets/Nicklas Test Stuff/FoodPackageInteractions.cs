@@ -15,17 +15,17 @@ namespace Valve.VR.InteractionSystem
 		public UnityEvent onHandHoverEnd;
 		public UnityEvent onAttachedToHand;
 		public UnityEvent onDetachedFromHand;
-		private Hand.AttachmentFlags attachmentFlags = Hand.defaultAttachmentFlags & (~Hand.AttachmentFlags.SnapOnAttach) & (~Hand.AttachmentFlags.DetachOthers) & (~Hand.AttachmentFlags.VelocityMovement);
 
-		public SteamVR_Action_Boolean trigger;
+		private Hand.AttachmentFlags attachmentFlags = Hand.defaultAttachmentFlags & 
+			(~Hand.AttachmentFlags.SnapOnAttach) & (~Hand.AttachmentFlags.DetachOthers) & 
+			(~Hand.AttachmentFlags.VelocityMovement);
+		private Interactable interactable;
 
-		bool hovering;
 
 		//-------------------------------------------------
 		private void OnHandHoverBegin()
 		{
 			Debug.Log("Hand Hovering");
-			hovering = true;
 			onHandHoverBegin.Invoke();
 		}
 
@@ -33,31 +33,34 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		private void OnHandHoverEnd()
 		{
-			hovering = false;
 			onHandHoverEnd.Invoke();
 		}
 
-		private void Update()
+		private void HandHoverUpdate(Hand hand)
 		{
-			if(hovering)
+			Debug.Log("hovering over");
+
+			GrabTypes startingGrabType = hand.GetGrabStarting();
+			bool isGrabEnding = hand.IsGrabEnding(gameObject);
+
+			if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
 			{
-				Debug.Log("Hovering");
-				if(trigger.active)
-				{
-					Debug.Log("triggering");
-				}
+				hand.HoverLock(interactable);
+
+				GameObject gameObject = package.SpawnFoodItem();
+				hand.AttachObject(gameObject, startingGrabType, attachmentFlags);
 			}
 		}
 
 		//-------------------------------------------------
 		private void OnAttachedToHand(Hand hand)
 		{
-			onAttachedToHand.Invoke();
+/*			onAttachedToHand.Invoke();
 			Debug.Log("Hand touched");
 
 			GameObject gameObject = package.SpawnFoodItem();
 			GrabTypes startingGrabType = hand.GetGrabStarting();
-			hand.AttachObject(gameObject, startingGrabType, attachmentFlags);
+			hand.AttachObject(gameObject, startingGrabType, attachmentFlags);*/
 		}
 
 		private void OnDetachedFromHand(Hand hand)
