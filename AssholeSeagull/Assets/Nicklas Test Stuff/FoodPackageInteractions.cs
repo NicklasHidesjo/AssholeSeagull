@@ -17,10 +17,15 @@ namespace Valve.VR.InteractionSystem
 		public UnityEvent onDetachedFromHand;
 		private Hand.AttachmentFlags attachmentFlags = Hand.defaultAttachmentFlags & (~Hand.AttachmentFlags.SnapOnAttach) & (~Hand.AttachmentFlags.DetachOthers) & (~Hand.AttachmentFlags.VelocityMovement);
 
+		public SteamVR_Action_Boolean trigger;
+
+		bool hovering;
+
 		//-------------------------------------------------
 		private void OnHandHoverBegin()
 		{
 			Debug.Log("Hand Hovering");
+			hovering = true;
 			onHandHoverBegin.Invoke();
 		}
 
@@ -28,7 +33,20 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		private void OnHandHoverEnd()
 		{
+			hovering = false;
 			onHandHoverEnd.Invoke();
+		}
+
+		private void Update()
+		{
+			if(hovering)
+			{
+				Debug.Log("Hovering");
+				if(trigger.active)
+				{
+					Debug.Log("triggering");
+				}
+			}
 		}
 
 		//-------------------------------------------------

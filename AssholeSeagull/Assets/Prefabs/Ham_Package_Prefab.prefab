@@ -361,6 +361,9 @@ MonoBehaviour:
   onDetachedFromHand:
     m_PersistentCalls:
       m_Calls: []
+  trigger:
+    actionPath: /actions/default/in/InteractUI
+    needsReinit: 0
 --- !u!114 &7458946257328173860
 MonoBehaviour:
   m_ObjectHideFlags: 0
