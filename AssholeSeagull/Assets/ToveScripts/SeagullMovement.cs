@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class SeagullMovement : MonoBehaviour
 {
+    State currentState;
+    enum State
+    {
+        PoopingPackage,
+        PoopingFood
+    }
     [SerializeField] Animator seagullAnimator;
 
     public int randomPackage;
@@ -67,16 +73,39 @@ public class SeagullMovement : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        randomState = Random.Range(0, 2);
+
+        if(randomState == 0)
+        {
+            currentState = State.PoopingPackage;
+        }
+        else if(randomState == 1)
+        {
+            currentState = State.PoopingFood;
+        }
+    }
 
     public void Init()
     {
-        randomPackage = Random.Range(0, 3);
-        Debug.Log("Random Package: " + randomPackage);
+        //Ta bort sen
+        currentState = State.PoopingFood;
+        Debug.Log("current state: " + currentState);
+
+        if(currentState == State.PoopingPackage)
+        {
+            randomPackage = Random.Range(0, 3);
+            Debug.Log("Random Package: " + randomPackage);
+            FoodTarget();
+        }
+
+        else if(currentState == State.PoopingFood)
+        {
+            FoodItemTarget();
+        }
 
         pooping = GetComponent<Pooping>();
-
-        FoodTarget();
-
         transform.LookAt(targetPosition);
     }
 
@@ -127,7 +156,8 @@ public class SeagullMovement : MonoBehaviour
     void FoodItemTarget()
     {
         foodTracker = FindObjectOfType<FoodTracker>();
-        targetPosition = foodTracker.GetRandomTarget().position;
+        targetPosition = new Vector3(foodTracker.GetRandomTarget().position.x, transform.position.y, foodTracker.GetRandomTarget().position.z);
+      //  targetPosition = foodTracker.GetRandomTarget().position;
     }
 
     //FoodPackage är target point
