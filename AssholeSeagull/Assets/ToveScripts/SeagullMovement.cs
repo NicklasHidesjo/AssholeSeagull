@@ -5,8 +5,10 @@ using UnityEngine;
 public class SeagullMovement : MonoBehaviour
 {
     [SerializeField] Animator seagullAnimator;
-    public Transform sandwich;
+
+    public int randomPackage;
     public Transform flightEnd;
+
     public SeagullManager seagullManager;
 
     Pooping pooping;
@@ -15,16 +17,63 @@ public class SeagullMovement : MonoBehaviour
     
     [SerializeField] float speed = 44f;
 
+    public bool isPoopingTime = false;
     bool hasPooped = false;
     bool flyingAway = false;
+    public bool inDistance = false;
+    bool isScared = false;
 
     float poopingTimer;
 
-
-    private void Start()
+    //Food Packages
+    [SerializeField] Transform breadPackage;
+    public Transform BreadPackage
     {
+        get
+        {
+            return breadPackage;
+        }
+        set
+        {
+            breadPackage = value;
+        }
+    }
+
+    [SerializeField] Transform cheesePackage;
+    public Transform CheesePackage
+    {
+        get
+        {
+            return cheesePackage;
+        }
+        set
+        {
+            cheesePackage = value;
+        }
+    }
+
+    [SerializeField] Transform hamPackage;
+    public Transform HamPackage
+    {
+        get
+        {
+            return hamPackage;
+        }
+        set
+        {
+            hamPackage = value;
+        }
+    }
+
+
+    public void Init()
+    {
+        randomPackage = Random.Range(0, 3);
+        Debug.Log("Random Package: " + randomPackage);
+
         pooping = GetComponent<Pooping>();
-        targetPosition = new Vector3(sandwich.position.x, transform.position.y, sandwich.position.z);
+
+        FoodTarget();
 
         transform.LookAt(targetPosition);
     }
@@ -33,24 +82,28 @@ public class SeagullMovement : MonoBehaviour
     {    
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
         
-        if(transform.position == targetPosition && !hasPooped)
+        if(transform.position == targetPosition && !isPoopingTime && !isScared)
         {
             Debug.Log("Pooping");
-            pooping.Poop();
             seagullAnimator.SetBool("Pooping", true);
 
-            hasPooped = true;
+            isPoopingTime = true;
         }
 
-        if(hasPooped == true)
+        if(isPoopingTime == true)
         {
             poopingTimer += Time.deltaTime;
 
-            if(poopingTimer > 1f && !flyingAway)
+            if(poopingTimer > 1f && !hasPooped)
             {
-                seagullAnimator.SetBool("Pooping", false);
+                pooping.Poop();
+                hasPooped = true;
                 seagullAnimator.SetTrigger("FlyAway");
+                seagullAnimator.SetBool("Pooping", false);
+            }
 
+            if(poopingTimer > 2.8f && !flyingAway)
+            {
                 targetPosition = flightEnd.position;
                 transform.LookAt(targetPosition);
 
@@ -58,18 +111,47 @@ public class SeagullMovement : MonoBehaviour
             }
         }
 
-        if(transform.position == targetPosition && hasPooped && flyingAway)
+        if(transform.position == targetPosition && flyingAway)
         {
             seagullManager.Despawn(gameObject);
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void Scared()
     {
-/*        if (other.name == "Player")
+        isScared = true;
+        targetPosition = flightEnd.position;
+        transform.LookAt(targetPosition);
+
+        flyingAway = true;
+    }
+
+    private void FoodTarget()
+    {
+        if (randomPackage == 0)
         {
-            Debug.Log("Pooping");
-            pooping.Poop();
-        }*/
+            targetPosition = new Vector3(breadPackage.position.x, transform.position.y, breadPackage.position.z);
+        }
+        else if (randomPackage == 1)
+        {
+            targetPosition = new Vector3(hamPackage.position.x, transform.position.y, hamPackage.position.z);
+        }
+        else if (randomPackage == 2)
+        {
+            targetPosition = new Vector3(cheesePackage.position.x, transform.position.y, cheesePackage.position.z);
+        }
+        else
+        {
+            Debug.LogError("No food was found!");
+        }
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if(collider.gameObject.name == "ScareDistance" && !flyingAway)
+        {
+            Debug.Log("In distance to be scared");
+            inDistance = true;
+        }
     }
 }
