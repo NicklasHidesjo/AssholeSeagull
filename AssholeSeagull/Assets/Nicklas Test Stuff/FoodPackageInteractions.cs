@@ -22,6 +22,11 @@ namespace Valve.VR.InteractionSystem
 		private Interactable interactable;
 
 
+		private void Awake()
+		{
+			interactable = GetComponent<Interactable>();
+		}
+
 		//-------------------------------------------------
 		private void OnHandHoverBegin()
 		{
