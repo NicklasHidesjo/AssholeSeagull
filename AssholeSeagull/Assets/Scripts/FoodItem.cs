@@ -36,7 +36,6 @@ public class FoodItem : MonoBehaviour
     {
         body = GetComponent<Rigidbody>();
     }
-
     private void Update()
     {
         if (onSandwich || inHand)
