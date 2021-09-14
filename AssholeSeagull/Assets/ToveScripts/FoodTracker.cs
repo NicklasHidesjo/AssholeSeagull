@@ -17,8 +17,6 @@ public class FoodTracker : MonoBehaviour
 
         int randomFoodTarget = Random.Range(0, foodTransformList.Count);
 
-        Debug.Log("food list: " + foodTransformList.Count);
-
         return foodTransformList[randomFoodTarget];
     }
 

@@ -496,7 +496,11 @@ MonoBehaviour:
   randomPackage: 0
   flightEnd: {fileID: 0}
   seagullManager: {fileID: 0}
+  poopingSound: {fileID: 8300000, guid: 779b566bc017e10478bf471723d82484, type: 3}
+  seagullSound: {fileID: 8300000, guid: 5c8e241b8b7b3d54ab3108164d72fa83, type: 3}
+  targetPosition: {x: 0, y: 0, z: 0}
   speed: 10
+  isPoopingTime: 0
   inDistance: 0
   breadPackage: {fileID: 0}
   cheesePackage: {fileID: 0}

@@ -20,6 +20,9 @@ public class SeagullMovement : MonoBehaviour
 
     Pooping pooping;
 
+    [SerializeField] AudioClip poopingSound;
+    [SerializeField] AudioClip seagullSound;
+
     [SerializeField] Vector3 targetPosition;
     
     [SerializeField] float speed = 44f;
@@ -74,6 +77,7 @@ public class SeagullMovement : MonoBehaviour
 
     public void Init()
     {
+        SoundSingleton.Instance.SeagullFx(seagullSound);
         int randomState = Random.Range(0, 2);
 
         if (randomState == 0)
@@ -106,7 +110,7 @@ public class SeagullMovement : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
-        //frammve vid food
+        //framme vid food
         if (transform.position == targetPosition && !isPoopingTime && !isScared)
         {
             Debug.Log("Pooping");
@@ -122,6 +126,7 @@ public class SeagullMovement : MonoBehaviour
 
             if (poopingTimer > 1f && !hasPooped)
             {
+                SoundSingleton.Instance.SeagullFx(poopingSound);
                 pooping.Poop();
                 hasPooped = true;
                 seagullAnimator.SetTrigger("FlyAway");
