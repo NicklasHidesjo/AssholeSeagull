@@ -108,7 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2898b5770067edf4db0e305275fa4511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poop: {fileID: 4481670777916746203}
 --- !u!1 &4155169288328038126
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,6 +138,7 @@ Transform:
   m_Children:
   - {fileID: 4155169286798963687}
   - {fileID: 4078217358795783436}
+  - {fileID: 8261342392310174348}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -155,9 +155,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodItem: {fileID: 6039123885260523408, guid: 18f71a434eedf5646b63261425eb2752, type: 3}
-  parent: {fileID: 0}
   foodName: Cheese
   poop: {fileID: 4481670777916746203}
+  spawnPosition: {fileID: 8261342392310174348}
+  foodInContainer: []
 --- !u!1 &4481670777916746203
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,3 +322,46 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5738924159768887379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8261342392310174348}
+  - component: {fileID: 5531408841073524443}
+  m_Layer: 0
+  m_Name: FoodSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8261342392310174348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5738924159768887379}
+  m_LocalRotation: {x: -0, y: -0.029453054, z: -0, w: 0.99956626}
+  m_LocalPosition: {x: -0.38347134, y: 0.0040016174, z: -0.00096977106}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4155169288328038125}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5531408841073524443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5738924159768887379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d101738ac7522414390823d09baa8859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
