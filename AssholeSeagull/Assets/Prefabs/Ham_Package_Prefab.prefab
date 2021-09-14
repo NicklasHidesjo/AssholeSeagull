@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3392547103531048245}
   - component: {fileID: 33029139387828927}
+  - component: {fileID: 1559875207572194933}
   m_Layer: 0
   m_Name: FoodSpawner
   m_TagString: Untagged
@@ -43,6 +44,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d101738ac7522414390823d09baa8859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1559875207572194933
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4530747648543478320}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.2, z: 0.15}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6925330863442785536
 GameObject:
   m_ObjectHideFlags: 0
