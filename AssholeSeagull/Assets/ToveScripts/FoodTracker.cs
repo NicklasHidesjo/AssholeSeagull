@@ -3,10 +3,9 @@ using UnityEngine;
 
 public class FoodTracker : MonoBehaviour
 {
-    List<GameObject> foodObjects = new List<GameObject>();
-    List<Transform> foodTransformList;
+    [SerializeField] List<Transform> foodTransformList;
 
-    void Start()
+    public Transform GetRandomTarget()
     {
         foodTransformList = new List<Transform>();
         GameObject[] foodArray = GameObject.FindGameObjectsWithTag("Food");
@@ -14,13 +13,12 @@ public class FoodTracker : MonoBehaviour
         foreach (GameObject food in foodArray)
         {
             foodTransformList.Add(food.transform);
-            Debug.Log("Food transforms: " + food.transform.position);
         }
-    }
 
-    public Transform GetRandomTarget()
-    {
         int randomFoodTarget = Random.Range(0, foodTransformList.Count);
+
+        Debug.Log("food list: " + foodTransformList.Count);
+
         return foodTransformList[randomFoodTarget];
     }
 

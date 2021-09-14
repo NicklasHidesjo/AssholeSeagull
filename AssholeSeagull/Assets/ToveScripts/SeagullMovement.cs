@@ -13,7 +13,6 @@ public class SeagullMovement : MonoBehaviour
     [SerializeField] Animator seagullAnimator;
 
     public int randomPackage;
-    int randomState;
     public Transform flightEnd;
 
     public SeagullManager seagullManager;
@@ -21,7 +20,7 @@ public class SeagullMovement : MonoBehaviour
 
     Pooping pooping;
 
-    Vector3 targetPosition;
+    [SerializeField] Vector3 targetPosition;
     
     [SerializeField] float speed = 44f;
 
@@ -73,30 +72,24 @@ public class SeagullMovement : MonoBehaviour
         }
     }
 
-    private void Start()
+    public void Init()
     {
-        randomState = Random.Range(0, 2);
+        int randomState = Random.Range(0, 2);
 
-        if(randomState == 0)
+        if (randomState == 0)
         {
             currentState = State.PoopingPackage;
         }
-        else if(randomState == 1)
+        else if (randomState == 1)
         {
             currentState = State.PoopingFood;
         }
-    }
 
-    public void Init()
-    {
-        //Ta bort sen
-        currentState = State.PoopingFood;
         Debug.Log("current state: " + currentState);
 
         if(currentState == State.PoopingPackage)
         {
             randomPackage = Random.Range(0, 3);
-            Debug.Log("Random Package: " + randomPackage);
             FoodTarget();
         }
 
@@ -147,7 +140,7 @@ public class SeagullMovement : MonoBehaviour
 
         //Despawna fågel
         if (transform.position == targetPosition && flyingAway)
-        {
+        { 
             seagullManager.Despawn(gameObject);
         }
     }
@@ -156,8 +149,8 @@ public class SeagullMovement : MonoBehaviour
     void FoodItemTarget()
     {
         foodTracker = FindObjectOfType<FoodTracker>();
-        targetPosition = new Vector3(foodTracker.GetRandomTarget().position.x, transform.position.y, foodTracker.GetRandomTarget().position.z);
-      //  targetPosition = foodTracker.GetRandomTarget().position;
+        targetPosition = foodTracker.GetRandomTarget().position;
+        targetPosition.y = transform.position.y;
     }
 
     //FoodPackage är target point
