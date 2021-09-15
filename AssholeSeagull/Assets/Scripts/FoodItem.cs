@@ -10,6 +10,8 @@ public class FoodItem : MonoBehaviour
     [SerializeField] private float spoilTime;
     [SerializeField] private float selfDestructTime;
 
+    private GameManager gameManager;
+
     [SerializeField] private float timer;
     [SerializeField] private bool isSpoiled;
     private bool inHand;
@@ -18,6 +20,7 @@ public class FoodItem : MonoBehaviour
     private bool poopOnFood;
     private bool inPackage;
     private bool buttered;
+    private bool onPlate;
        
     public bool InHand
     {
@@ -47,8 +50,10 @@ public class FoodItem : MonoBehaviour
     private void Start()
     {
         body = GetComponent<Rigidbody>();
+        gameManager = FindObjectOfType<GameManager>();
 
     }
+
     private void Update()
     {
         if (onSandwich || inHand || inPackage || buttered)
@@ -64,9 +69,29 @@ public class FoodItem : MonoBehaviour
         timer += Time.deltaTime;
         isSpoiled = timer > spoilTime;
 
-        if(timer > selfDestructTime)
+        if(timer > selfDestructTime && !onPlate)
 		{
             Destroy(gameObject);
 		}
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if(collider.tag == "Plate")
+        {
+            gameManager.score++;
+            onPlate = true;
+            Debug.Log("Score: " + gameManager.score);
+        }
+    }
+
+    private void OnTriggerExit(Collider collider)
+    {
+        if (collider.tag == "Plate")
+        {
+            gameManager.score--;
+            onPlate = false;
+            Debug.Log("Score: " + gameManager.score);
+        }
     }
 }
