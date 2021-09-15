@@ -93,7 +93,7 @@ public class SeagullMovement : MonoBehaviour
 
         Debug.Log("current state: " + currentState);
 
-        if(currentState == State.PoopingPackage)
+        if(currentState == State.PoopingFood)
         {
             randomPackage = Random.Range(0, 3);
             FoodTarget();
