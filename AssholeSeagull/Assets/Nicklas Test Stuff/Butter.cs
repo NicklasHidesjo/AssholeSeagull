@@ -14,7 +14,6 @@ public class Butter : MonoBehaviour
 	MeshCollider meshtrigger;
 	[SerializeField] MeshCollider meshCollider;
 
-
     [SerializeField] Rigidbody knife;
 
 
@@ -34,15 +33,15 @@ public class Butter : MonoBehaviour
 
 		if (butteringDone > butterStageInitiation[1])
 		{
-			meshCollider.sharedMesh = butterStages[2];
-			meshtrigger.sharedMesh = butterStages[2];
-			meshFilter.mesh = butterStages[2];
-		}
-		else if(butteringDone > butterStageInitiation[0])
-		{
 			meshCollider.sharedMesh = butterStages[1];
 			meshtrigger.sharedMesh = butterStages[1];
 			meshFilter.mesh = butterStages[1];
+		}
+		else if(butteringDone > butterStageInitiation[0])
+		{
+			meshCollider.sharedMesh = butterStages[0];
+			meshtrigger.sharedMesh = butterStages[0];
+			meshFilter.mesh = butterStages[0];
 		}
 	}
 

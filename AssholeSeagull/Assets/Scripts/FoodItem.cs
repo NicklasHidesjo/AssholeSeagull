@@ -17,6 +17,7 @@ public class FoodItem : MonoBehaviour
     private bool onSandwich;
     private bool poopOnFood;
     private bool inPackage;
+    private bool buttered;
        
     public bool InHand
     {
@@ -37,6 +38,11 @@ public class FoodItem : MonoBehaviour
         get { return inPackage; }
         set { inPackage = value; }
 	}
+    public bool Buttered
+	{
+		get { return buttered; }
+        set { buttered = value; }
+	}
 
     private void Start()
     {
@@ -45,7 +51,7 @@ public class FoodItem : MonoBehaviour
     }
     private void Update()
     {
-        if (onSandwich || inHand || inPackage)
+        if (onSandwich || inHand || inPackage || buttered)
         {
             return;
         }
