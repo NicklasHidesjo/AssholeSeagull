@@ -22,6 +22,7 @@ public class SeagullMovement : MonoBehaviour
 
     [SerializeField] AudioClip poopingSound;
     [SerializeField] AudioClip seagullSound;
+    SoundSingleton soundSingleton;
 
     [SerializeField] Vector3 targetPosition;
     
@@ -77,7 +78,8 @@ public class SeagullMovement : MonoBehaviour
 
     public void Init()
     {
-        SoundSingleton.Instance.SeagullFx(seagullSound);
+        soundSingleton = FindObjectOfType<SoundSingleton>();
+        soundSingleton.SeagullFx(seagullSound);
         int randomState = Random.Range(0, 2);
 
         if (randomState == 0)
