@@ -23,10 +23,10 @@ public class MainMenuPointer : MonoBehaviour
 
     private void Start()
     {
-        LoadVolume();
+      //  LoadVolume();
     }
 
-    public void SaveVolumeButton()
+/*    public void SaveVolumeButton()
     {
         float volumeValue = slider.value;
         PlayerPrefs.SetFloat("VolumeValue", volumeValue);
@@ -38,17 +38,45 @@ public class MainMenuPointer : MonoBehaviour
         float volumeValue = PlayerPrefs.GetFloat("VolumeValue");
         slider.value = volumeValue;
         AudioListener.volume = volumeValue;
+    }*/
+
+    public void MinusVolumeClick(object sender, PointerEventArgs e)
+    {
+        if (e.target.name == "Cube")
+        {
+            Debug.Log("sound -");
+            AudioListener.volume -= 0.1f;
+        }
+        else if (e.target.name == "-")
+        {
+            Debug.Log("sound -");
+            AudioListener.volume -= 0.1f;
+        }
+    }
+
+    public void PlusVolumeClick(object sender, PointerEventArgs e)
+    {
+        if (e.target.name == "Cube")
+        {
+            Debug.Log("sound +");
+            AudioListener.volume += 0.1f;
+        }
+        else if (e.target.name == "+")
+        {
+            Debug.Log("sound +");
+            AudioListener.volume += 0.1f;
+        }
     }
 
     public void SaveButtonClick(object sender, PointerEventArgs e)
     {
         if (e.target.name == "Cube")
         {
-            SaveVolumeButton();
+        //    SaveVolumeButton();
         }
         else if (e.target.name == "Save")
         {
-            SaveVolumeButton();
+          // SaveVolumeButton();
         }
     }
 
