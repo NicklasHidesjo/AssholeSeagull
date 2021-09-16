@@ -54,7 +54,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290391109}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.05}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 688129373}
   - component: {fileID: 688129372}
   - component: {fileID: 688129371}
-  - component: {fileID: 688129370}
+  - component: {fileID: 876846435}
   m_Layer: 0
   m_Name: Butter
   m_TagString: Untagged
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   butteringDone: 0
-  butterSpeed: 0
+  butterSpeed: 10
   butterStageInitiation:
   - 50
   - 100
@@ -165,8 +165,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 688129368}
   m_Mesh: {fileID: -3307813720287046777, guid: a33d1bedc61d8d741ac7b1cb85e04021, type: 3}
---- !u!64 &688129370
-MeshCollider:
+--- !u!65 &876846435
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -175,10 +175,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.19, y: 0.19, z: 0.05}
+  m_Center: {x: 0, y: 0, z: 0.000000008381903}
 --- !u!1 &1025815080
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +355,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spoilTime: 10
   selfDestructTime: 20
-  foodType: 0
   timer: 0
   isSpoiled: 0
 --- !u!114 &-1333095823606503833

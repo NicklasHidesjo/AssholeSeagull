@@ -16,18 +16,18 @@ public class ButterVelocity : MonoBehaviour
 
     void Start()
     {
-
+        previousPos = transform.TransformPoint(transform.position);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 currentPos = transform.position;
-
+        Vector3 currentPos = transform.TransformPoint(transform.position);
         float distanceTraveled = Vector3.Distance(previousPos, currentPos);
-        distanceTraveled = Mathf.Abs(distanceTraveled) * velocityMultiplier;
+        distanceTraveled = Mathf.Abs(distanceTraveled);
         Debug.Log(distanceTraveled);
+        velocity = distanceTraveled * velocityMultiplier;
 
-        previousPos = transform.position;
+        previousPos = transform.TransformPoint(transform.position);
     }
 }

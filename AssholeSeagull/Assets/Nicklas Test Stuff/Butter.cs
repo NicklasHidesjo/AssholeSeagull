@@ -11,7 +11,6 @@ public class Butter : MonoBehaviour
     [SerializeField] Mesh[] butterStages;
 
     MeshFilter meshFilter;
-	MeshCollider meshtrigger;
 	[SerializeField] MeshCollider meshCollider;
 
     [SerializeField] ButterVelocity knife;
@@ -19,7 +18,6 @@ public class Butter : MonoBehaviour
 
     void Start()
     {
-		meshtrigger = GetComponent<MeshCollider>();
         meshFilter = GetComponent<MeshFilter>();
     }
 
@@ -27,18 +25,20 @@ public class Butter : MonoBehaviour
 	{
 		if(knife == null) { return; }
 
+		Debug.Log("Buttering");
+		
 		butteringDone += knife.Velocity;
+
+		Debug.Log(knife.Velocity);
 
 		if (butteringDone > butterStageInitiation[1])
 		{
 			meshCollider.sharedMesh = butterStages[1];
-			meshtrigger.sharedMesh = butterStages[1];
 			meshFilter.mesh = butterStages[1];
 		}
 		else if(butteringDone > butterStageInitiation[0])
 		{
 			meshCollider.sharedMesh = butterStages[0];
-			meshtrigger.sharedMesh = butterStages[0];
 			meshFilter.mesh = butterStages[0];
 		}
 	}
