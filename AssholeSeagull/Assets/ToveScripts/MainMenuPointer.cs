@@ -16,6 +16,45 @@ public class MainMenuPointer : MonoBehaviour
         laserPointer.PointerOut += PointerOutside;
         laserPointer.PointerClick += PointerClick;
     }
+    /// <summary>
+    /// /SOUNDMANAGER
+    /// </summary>
+    public Slider slider = null;
+
+    private void Start()
+    {
+        LoadVolume();
+    }
+
+    public void SaveVolumeButton()
+    {
+        float volumeValue = slider.value;
+        PlayerPrefs.SetFloat("VolumeValue", volumeValue);
+        LoadVolume();
+    }
+
+    void LoadVolume()
+    {
+        float volumeValue = PlayerPrefs.GetFloat("VolumeValue");
+        slider.value = volumeValue;
+        AudioListener.volume = volumeValue;
+    }
+
+    public void SaveButtonClick(object sender, PointerEventArgs e)
+    {
+        if (e.target.name == "Cube")
+        {
+            SaveVolumeButton();
+        }
+        else if (e.target.name == "Save")
+        {
+            SaveVolumeButton();
+        }
+    }
+
+    /// <summary>
+    /// START GAME
+    /// </summary>
 
     public void PointerClick(object sender, PointerEventArgs e)
     {
