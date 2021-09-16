@@ -356,6 +356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spoilTime: 10
   selfDestructTime: 20
+  foodType: 0
   timer: 0
   isSpoiled: 0
 --- !u!114 &-1333095823606503833

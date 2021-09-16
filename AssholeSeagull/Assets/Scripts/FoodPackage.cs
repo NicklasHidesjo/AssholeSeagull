@@ -39,8 +39,6 @@ public class FoodPackage : MonoBehaviour
 
     private void SpawnFoodItem()
     {
-        Debug.Log("Item spawned");
-
         FoodItem newFoodItem = Instantiate(foodItem, spawnPosition.position, foodItem.transform.rotation);
 
         newFoodItem.name = foodName;
