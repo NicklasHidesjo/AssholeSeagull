@@ -14,7 +14,7 @@ public class Butter : MonoBehaviour
 	MeshCollider meshtrigger;
 	[SerializeField] MeshCollider meshCollider;
 
-    [SerializeField] Rigidbody knife;
+    [SerializeField] ButterVelocity knife;
 
 
     void Start()
@@ -27,9 +27,7 @@ public class Butter : MonoBehaviour
 	{
 		if(knife == null) { return; }
 
-		butteringDone += Mathf.Abs(knife.velocity.x * Time.deltaTime * butterSpeed);
-		butteringDone += Mathf.Abs(knife.velocity.y * Time.deltaTime * butterSpeed);
-		butteringDone += Mathf.Abs(knife.velocity.z * Time.deltaTime * butterSpeed);
+		butteringDone += knife.Velocity;
 
 		if (butteringDone > butterStageInitiation[1])
 		{
@@ -50,7 +48,7 @@ public class Butter : MonoBehaviour
 	{
 		if(other.gameObject.GetComponent<ButterBlade>())
 		{
-			knife = other.gameObject.GetComponentInParent<Rigidbody>();
+			knife = other.GetComponentInChildren<ButterVelocity>();
 		}
 	}
 
