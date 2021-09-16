@@ -51,7 +51,7 @@ public class SeagullManager : MonoBehaviour
     {
         while(true)
         {
-            if(currentNumberOfSeagulls < maxNumberOfSeagulls)
+            if (currentNumberOfSeagulls < maxNumberOfSeagulls)
             {
                 randomSpawnPoint = Random.Range(0, 3);
 

@@ -24,7 +24,7 @@ public class SeagullMovement : MonoBehaviour
     [SerializeField] AudioClip seagullSound;
     SoundSingleton soundSingleton;
 
-    [SerializeField] Vector3 targetPosition;
+    public Vector3 targetPosition;
     
     [SerializeField] float speed = 44f;
 
@@ -80,6 +80,7 @@ public class SeagullMovement : MonoBehaviour
     {
         soundSingleton = FindObjectOfType<SoundSingleton>();
         soundSingleton.SeagullFx(seagullSound);
+
         int randomState = Random.Range(0, 2);
 
         if (randomState == 0)
@@ -93,9 +94,8 @@ public class SeagullMovement : MonoBehaviour
 
         Debug.Log("current state: " + currentState);
 
-        if(currentState == State.PoopingFood)
+        if(currentState == State.PoopingPackage)
         {
-            randomPackage = Random.Range(0, 3);
             FoodTarget();
         }
 
@@ -129,6 +129,7 @@ public class SeagullMovement : MonoBehaviour
             if (poopingTimer > 1f && !hasPooped)
             {
                 SoundSingleton.Instance.SeagullFx(poopingSound);
+
                 pooping.Poop();
                 hasPooped = true;
                 seagullAnimator.SetTrigger("FlyAway");
@@ -157,12 +158,20 @@ public class SeagullMovement : MonoBehaviour
     {
         foodTracker = FindObjectOfType<FoodTracker>();
         targetPosition = foodTracker.GetRandomTarget().position;
+
+        if (targetPosition == Vector3.zero)
+        {
+            FoodItemTarget();
+        }
+
         targetPosition.y = transform.position.y;
     }
 
     //FoodPackage är target point
     private void FoodTarget()
     {
+        randomPackage = Random.Range(0, 3);
+
         if (randomPackage == 0)
         {
             targetPosition = new Vector3(breadPackage.position.x, transform.position.y, breadPackage.position.z);
