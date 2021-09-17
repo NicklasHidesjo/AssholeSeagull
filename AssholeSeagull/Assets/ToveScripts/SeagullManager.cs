@@ -50,9 +50,11 @@ public class SeagullManager : MonoBehaviour
     IEnumerator SpawnSeagull()
     {
         while(true)
-        {
+        {       
             if (currentNumberOfSeagulls < maxNumberOfSeagulls)
             {
+                yield return new WaitForSeconds(spawnIntervalls);
+
                 randomSpawnPoint = Random.Range(0, 3);
 
                 if (randomSpawnPoint == 0)
@@ -83,8 +85,6 @@ public class SeagullManager : MonoBehaviour
                 currentNumberOfSeagulls++;
 
                 seagullMovement.Init();
-
-                yield return new WaitForSeconds(spawnIntervalls);
             }
 
             yield return new WaitForSeconds(0.1f);

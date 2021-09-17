@@ -59,7 +59,15 @@ public class FoodItem : MonoBehaviour
     public bool PoopOnFood
     {
         get { return poopOnFood; }
-        set { poopOnFood = value; }
+        set 
+        { 
+            poopOnFood = value; 
+
+            if(value)
+            {
+                ChangeMaterial(spoiledMaterial);
+            }
+        }
     }
     public bool InPackage
     {
@@ -95,11 +103,9 @@ public class FoodItem : MonoBehaviour
         timer += Time.deltaTime;
         isSpoiled = timer > spoilTime;
 
-        if (isSpoiled && alreadySpoiled == false && !onPlate)
+        if (isSpoiled && !alreadySpoiled && !onPlate)
         {
-            alreadySpoiled = true;
-            gameObject.GetComponent<Renderer>().material = spoiledMaterial;
-            spoiledParticles.SetActive(true);
+            ChangeMaterial(spoiledMaterial);
         }
 
         if (timer > selfDestructTime && !onPlate)
@@ -108,8 +114,25 @@ public class FoodItem : MonoBehaviour
         }
     }
 
+    void ChangeMaterial(Material material)
+    {
+        alreadySpoiled = true;
+        gameObject.GetComponent<Renderer>().material = material;
+        spoiledParticles.SetActive(true);
+    }
+
     private void OnTriggerEnter(Collider collider)
     {
+        if(collider.gameObject.tag == "Poop")
+        {
+            GameObject poop = collider.gameObject;
+            Debug.Log("träffade food");
+
+            PoopOnFood = true;
+
+            Destroy(poop);
+        }
+
         if (collider.tag == "Plate")
         {
             timer = 0f;
@@ -128,6 +151,15 @@ public class FoodItem : MonoBehaviour
             onPlate = false;
             Debug.Log("Score: " + gameManager.score);
         }
+    }
+
+    void FoodHittedByPoop()
+    {
+        Debug.Log("träffade food");
+
+        PoopOnFood = true;
+
+        Destroy(gameObject);
     }
 
     void RaycastFoodLayer()
