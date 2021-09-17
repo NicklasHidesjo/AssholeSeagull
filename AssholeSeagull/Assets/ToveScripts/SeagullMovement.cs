@@ -85,11 +85,11 @@ public class SeagullMovement : MonoBehaviour
 
         if (randomState == 0)
         {
-            currentState = State.PoopingPackage;
+            currentState = State.PoopingFood;
         }
         else if (randomState == 1)
         {
-            currentState = State.PoopingFood;
+            currentState = State.PoopingPackage;
         }
 
         Debug.Log("current state: " + currentState);

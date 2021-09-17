@@ -16,16 +16,32 @@ public class Poop : MonoBehaviour
         if (other.gameObject.CompareTag("UpTrigger"))
         {
 
-/*            Vector3 position = other.transform.position;
-            Vector3 myPosition = new Vector3(position.x, other.transform.position.y, position.z);
+            /*            Vector3 position = other.transform.position;
+                        Vector3 myPosition = new Vector3(position.x, other.transform.position.y, position.z);
 
-            transform.position = myPosition;
-            transform.SetParent(other.transform);
+                        transform.position = myPosition;
+                        transform.SetParent(other.transform);
 
-            Destroy(GetComponent<Rigidbody>());
+                        Destroy(GetComponent<Rigidbody>());
 
-            Vector3 rotation = new Vector3(0, 0, transform.rotation.z);
-            transform.localRotation = Quaternion.Euler(rotation);*/
+                        Vector3 rotation = new Vector3(0, 0, transform.rotation.z);
+                        transform.localRotation = Quaternion.Euler(rotation);*/
+/*
+            Debug.Log(other.name);
+            FoodItem foodItem = other.GetComponent<FoodItem>();
+
+            if (foodItem == null)
+            {
+                Debug.Log("missade food");
+                Destroy(gameObject);
+                return;
+            }
+
+            Debug.Log("träffade food");
+
+            foodItem.PoopOnFood = true;
+
+            Destroy(gameObject);*/
         }
     }
 }
