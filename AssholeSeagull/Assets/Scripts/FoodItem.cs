@@ -156,6 +156,7 @@ public class FoodItem : MonoBehaviour
         }
     }
 
+
     void RaycastFoodLayer()
     {
         RaycastHit hit;
@@ -166,14 +167,12 @@ public class FoodItem : MonoBehaviour
         Debug.DrawRay(transform.position, northSide, Color.blue);
         Debug.DrawRay(transform.position, southSide, Color.red);
 
-        if(Physics.Linecast(transform.position, northSide, out hit, foodLayer))
+        if(Physics.Linecast(transform.position, transform.position + northSide, out hit, foodLayer))
         {
-            Debug.Log(transform.name + " collides with " + hit.collider.name);
             FoodItem food = hit.collider.gameObject.GetComponent<FoodItem>();
 
             if (food == null)
             {
-                Debug.Log(transform.name + " food is null");
                 foodAbove = FoodTypes.None;
                 return;
             }
@@ -185,8 +184,7 @@ public class FoodItem : MonoBehaviour
             foodAbove = FoodTypes.None;
         }
 
-        //FUNKAR
-        if (Physics.Linecast(transform.position, southSide, out hit, foodLayer))
+        if (Physics.Linecast(transform.position, transform.position + southSide, out hit, foodLayer))
         {
             FoodItem food = hit.collider.gameObject.GetComponent<FoodItem>();
 
