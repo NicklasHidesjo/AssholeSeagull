@@ -12,6 +12,8 @@ public class FoodItem : MonoBehaviour
 
     private GameManager gameManager;
 
+    [SerializeField] GameObject spoiledParticles;
+
     [SerializeField] private float timer;
     [SerializeField] private bool isSpoiled;
     [SerializeField] Material spoiledMaterial;
@@ -93,14 +95,11 @@ public class FoodItem : MonoBehaviour
         timer += Time.deltaTime;
         isSpoiled = timer > spoilTime;
 
-        //Varför gör den inget
-        if (isSpoiled && alreadySpoiled == false)
+        if (isSpoiled && alreadySpoiled == false && !onPlate)
         {
             alreadySpoiled = true;
-            Material myMaterial = GetComponent<MeshRenderer>().sharedMaterial;
-            myMaterial = spoiledMaterial;
-
-            Debug.Log("SPPPPOIIILED");
+            gameObject.GetComponent<Renderer>().material = spoiledMaterial;
+            spoiledParticles.SetActive(true);
         }
 
         if (timer > selfDestructTime && !onPlate)
@@ -113,6 +112,7 @@ public class FoodItem : MonoBehaviour
     {
         if (collider.tag == "Plate")
         {
+            timer = 0f;
             gameManager.score++;
             onPlate = true;
             Debug.Log("Score: " + gameManager.score);
@@ -123,6 +123,7 @@ public class FoodItem : MonoBehaviour
     {
         if (collider.tag == "Plate")
         {
+            timer = 0f;
             gameManager.score--;
             onPlate = false;
             Debug.Log("Score: " + gameManager.score);
