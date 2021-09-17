@@ -23,6 +23,7 @@ public class FoodItem : MonoBehaviour
     private bool inPackage;
     private bool buttered;
     private bool onPlate;
+    bool alreadySpoiled = false;
 
     public enum FoodTypes
     {
@@ -92,15 +93,14 @@ public class FoodItem : MonoBehaviour
         timer += Time.deltaTime;
         isSpoiled = timer > spoilTime;
 
-        bool alreadySpoiled = false;
-
         //Varför gör den inget
         if (isSpoiled && alreadySpoiled == false)
         {
             alreadySpoiled = true;
-            Debug.Log("SPPPPOIIILED");
-            Material myMaterial = GetComponent<MeshRenderer>().material;
+            Material myMaterial = GetComponent<MeshRenderer>().sharedMaterial;
             myMaterial = spoiledMaterial;
+
+            Debug.Log("SPPPPOIIILED");
         }
 
         if (timer > selfDestructTime && !onPlate)
@@ -141,15 +141,16 @@ public class FoodItem : MonoBehaviour
 
         if(Physics.Linecast(transform.position, northSide, out hit, foodLayer))
         {
+            Debug.Log(transform.name + " collides with " + hit.collider.name);
             FoodItem food = hit.collider.gameObject.GetComponent<FoodItem>();
 
             if (food == null)
             {
+                Debug.Log(transform.name + " food is null");
                 foodAbove = FoodTypes.None;
                 return;
             }
 
-            Debug.Log("Above raycast hit: " + food);
             foodAbove = food.foodType;
         }
         else
@@ -157,6 +158,7 @@ public class FoodItem : MonoBehaviour
             foodAbove = FoodTypes.None;
         }
 
+        //FUNKAR
         if (Physics.Linecast(transform.position, southSide, out hit, foodLayer))
         {
             FoodItem food = hit.collider.gameObject.GetComponent<FoodItem>();
@@ -167,12 +169,11 @@ public class FoodItem : MonoBehaviour
                 return;
             }
 
-            Debug.Log("Below raycast hit: " + food);
             foodBelow = food.foodType;
         }
         else
         {
-            foodAbove = FoodTypes.None;
+            foodBelow = FoodTypes.None;
         }
     }
 }
