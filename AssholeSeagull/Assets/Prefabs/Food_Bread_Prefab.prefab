@@ -234,12 +234,12 @@ GameObject:
   - component: {fileID: 2086274304604157680}
   - component: {fileID: 2634855309990929047}
   - component: {fileID: 248847760111916637}
-  - component: {fileID: 2885326799596019538}
   - component: {fileID: 1125017510769407647}
   - component: {fileID: -7339756543294674793}
   - component: {fileID: -1333095823606503833}
   - component: {fileID: 4571690246474911402}
-  m_Layer: 0
+  - component: {fileID: 7068733109611208198}
+  m_Layer: 6
   m_Name: Food_Bread_Prefab
   m_TagString: Food
   m_Icon: {fileID: 0}
@@ -311,20 +311,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2885326799596019538
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709186159823088714}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6510839796755108485, guid: 594020060ee1def429c803a32825325b, type: 3}
 --- !u!54 &1125017510769407647
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -340,7 +326,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &-7339756543294674793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +343,14 @@ MonoBehaviour:
   selfDestructTime: 20
   timer: 0
   isSpoiled: 0
+  spoiledMaterial: {fileID: 2100000, guid: a0366538d2d73fd40ac03a80c2ba0eed, type: 2}
+  foodLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  foodType: 1
+  foodAbove: 0
+  foodBelow: 0
+  rayDistance: 0.04
 --- !u!114 &-1333095823606503833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,3 +419,16 @@ MonoBehaviour:
   attachForceDamper: 25
   attachMode: 0
   attachmentFlags: 16
+--- !u!65 &7068733109611208198
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709186159823088714}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.21251126, y: 0.23483147, z: 0.030129477}
+  m_Center: {x: 0, y: 0, z: 4.656614e-10}
