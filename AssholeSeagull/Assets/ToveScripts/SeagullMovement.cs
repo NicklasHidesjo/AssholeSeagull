@@ -22,6 +22,7 @@ public class SeagullMovement : MonoBehaviour
 
     [SerializeField] AudioClip poopingSound;
     [SerializeField] AudioClip seagullSound;
+    [SerializeField] AudioClip scaredSound;
     SoundSingleton soundSingleton;
 
     public Vector3 targetPosition;
@@ -193,11 +194,15 @@ public class SeagullMovement : MonoBehaviour
     //Spelare skrämmer fågel
     public void Scared()
     {
-        isScared = true;
-        targetPosition = flightEnd.position;
-        transform.LookAt(targetPosition);
+        if(isScared == false)
+        {
+            SoundSingleton.Instance.SeagullFx(scaredSound);
+            isScared = true;
+            targetPosition = flightEnd.position;
+            transform.LookAt(targetPosition);
 
-        flyingAway = true;
+            flyingAway = true;
+        }
     }
 
     private void OnTriggerEnter(Collider collider)

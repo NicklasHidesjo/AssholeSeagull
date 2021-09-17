@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2898b5770067edf4db0e305275fa4511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poopOnFoodSound: {fileID: 8300000, guid: 22c735ff877fadc4bbae400bfdbc48bd, type: 3}
 --- !u!1001 &859716439827031192
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -115,6 +115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98b5bf510f9bc04f810d896a94b95c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poopOnFoodSound: {fileID: 8300000, guid: 22c735ff877fadc4bbae400bfdbc48bd, type: 3}
+  foodSpoiledSound: {fileID: 8300000, guid: 6f7f0e32029f0414684d5a4fcb56faee, type: 3}
   spoilTime: 10
   selfDestructTime: 20
   spoiledParticles: {fileID: 6782043186125764545}

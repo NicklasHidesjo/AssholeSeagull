@@ -5,8 +5,10 @@ using UnityEngine;
 public class PoopOnFood : MonoBehaviour
 {
     FoodPackage foodPackage;
+    [SerializeField] AudioClip poopOnFoodSound;
 
-	private void Start()
+
+    private void Start()
 	{
         foodPackage = GetComponentInParent<FoodPackage>();
 	}
@@ -16,6 +18,8 @@ public class PoopOnFood : MonoBehaviour
         GameObject hittedPoop = other.gameObject;
         if (other.gameObject.tag == "Poop")
         {
+            SoundSingleton.Instance.SeagullFx(poopOnFoodSound);
+
             Destroy(hittedPoop);
             Debug.Log("Poop hit");
 

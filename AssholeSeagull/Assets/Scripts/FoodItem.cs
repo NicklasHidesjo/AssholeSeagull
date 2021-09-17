@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class FoodItem : MonoBehaviour
 {
+    [SerializeField] AudioClip poopOnFoodSound;
+    [SerializeField] AudioClip foodSpoiledSound;
     private Rigidbody body;
 
     [SerializeField] private float spoilTime;
@@ -105,6 +107,7 @@ public class FoodItem : MonoBehaviour
 
         if (isSpoiled && !alreadySpoiled && !onPlate)
         {
+            SoundSingleton.Instance.FoodSound(foodSpoiledSound);
             ChangeMaterial(spoiledMaterial);
         }
 
@@ -125,8 +128,8 @@ public class FoodItem : MonoBehaviour
     {
         if(collider.gameObject.tag == "Poop")
         {
+            SoundSingleton.Instance.SeagullFx(poopOnFoodSound);
             GameObject poop = collider.gameObject;
-            Debug.Log("träffade food");
 
             PoopOnFood = true;
 
@@ -151,15 +154,6 @@ public class FoodItem : MonoBehaviour
             onPlate = false;
             Debug.Log("Score: " + gameManager.score);
         }
-    }
-
-    void FoodHittedByPoop()
-    {
-        Debug.Log("träffade food");
-
-        PoopOnFood = true;
-
-        Destroy(gameObject);
     }
 
     void RaycastFoodLayer()

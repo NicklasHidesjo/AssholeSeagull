@@ -5,6 +5,7 @@ using UnityEngine;
 public class SoundSingleton : MonoBehaviour
 {
     public AudioSource seagullAudio;
+    public AudioSource foodAudio;
 
     public float LowPitchRange = .95f;
     public float HighPitchRange = 1.05f;
@@ -32,6 +33,12 @@ public class SoundSingleton : MonoBehaviour
     }
 
     public void Seagull(AudioClip clip)
+    {
+        seagullAudio.clip = clip;
+        seagullAudio.Play();
+    }
+
+    public void FoodSound(AudioClip clip)
     {
         seagullAudio.clip = clip;
         seagullAudio.Play();
