@@ -154,11 +154,21 @@ public class SeagullMovement : MonoBehaviour
     void FoodItemTarget()
     {
         foodTracker = FindObjectOfType<FoodTracker>();
-        targetPosition = foodTracker.GetRandomTarget().position;
+        Transform target = foodTracker.GetRandomTarget();
 
-        if (targetPosition == Vector3.zero || targetPosition == null)
+        if(target == null)
+        {
+            Debug.Log("Target position is null");
+            FoodTarget();
+            return;
+        }
+
+        targetPosition = target.position;
+
+        if (targetPosition == Vector3.zero)
         {
             FoodTarget();
+            return;
         }
 
         targetPosition.y = transform.position.y;

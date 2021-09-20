@@ -26,24 +26,38 @@ public class FoodTracker : MonoBehaviour
             randomFoodTarget = Random.Range(0, foodTransformList.Count);
             currentIteration++;
 
-            if(currentIteration >= maxIterations)
+            if (currentIteration >= maxIterations)
             {
                 noTargetFound = true;
             }
         }
-        while (GetValidTarget(randomFoodTarget) && !noTargetFound);
-        
-        if(noTargetFound)
+        while (GetInvalidTarget(foodTransformList[randomFoodTarget].GetComponent<FoodItem>()) && !noTargetFound);
+
+        if (noTargetFound)
         {
+            Debug.Log("Returning null");
             return null;
         }
 
         return foodTransformList[randomFoodTarget];
     }
 
-    private bool GetValidTarget(int randomFoodTarget)
+    private bool GetInvalidTarget(FoodItem randomFoodTarget)
     {
-        return foodTransformList[randomFoodTarget].GetComponent<FoodItem>().OnPlate;
+        if (randomFoodTarget.OnPlate)
+        {
+            return true;
+        }
+        if (randomFoodTarget.IsSpoiled)
+        {
+            return true;
+        }
+        if (randomFoodTarget.PoopOnFood)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     public void AddFoodTransform(Transform foodTransform)
