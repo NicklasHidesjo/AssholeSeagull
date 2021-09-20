@@ -501,6 +501,9 @@ MonoBehaviour:
   scaredSound: {fileID: 8300000, guid: 8b04cd2ff6ee8f74b853bfbc767818a9, type: 3}
   targetPosition: {x: 0, y: 0, z: 0}
   speed: 10
+  endSpeed: 0
+  acceleration: 6
+  deacceleration: 2.17
   isPoopingTime: 0
   inDistance: 0
   breadPackage: {fileID: 0}

@@ -28,7 +28,11 @@ public class SeagullMovement : MonoBehaviour
 
     public Vector3 targetPosition;
     
-    [SerializeField] float speed = 44f;
+    [SerializeField] float speed = 10f;
+    [SerializeField] float endSpeed = 5f;
+    [SerializeField] float acceleration = 0.5f;
+    [SerializeField] float deacceleration = 0.5f;
+    [SerializeField] float minSpeed = 1f;
 
     public bool isPoopingTime = false;
     bool hasPooped = false;
@@ -66,6 +70,7 @@ public class SeagullMovement : MonoBehaviour
     }
 
     [SerializeField] Transform hamPackage;
+
     public Transform HamPackage
     {
         get
@@ -108,12 +113,13 @@ public class SeagullMovement : MonoBehaviour
     }
 
     void Update()
-    {
+    {       
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
         //framme vid food
         if (transform.position == targetPosition && !isPoopingTime && !isScared)
         {
+            speed = endSpeed; 
             seagullAnimator.SetBool("Pooping", true);
             isPoopingTime = true;
         }
@@ -140,7 +146,20 @@ public class SeagullMovement : MonoBehaviour
                 transform.LookAt(targetPosition);
 
                 flyingAway = true;
-            }
+            }  
+        }
+
+        if (flyingAway)
+        {
+            speed += acceleration * Time.deltaTime;
+        }
+        else if (speed > minSpeed)
+        {
+            speed -= deacceleration * Time.deltaTime;
+        }
+        else if(speed < minSpeed)
+        {
+            speed = minSpeed;
         }
 
         //Despawna fågel
