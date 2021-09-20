@@ -166,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachForce: 800
   attachForceDamper: 25
-  attachMode: 0
+  attachMode: 1
   attachmentFlags: 16
 --- !u!54 &8916402399794109886
 Rigidbody:
@@ -338,4 +338,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 0
-  velocityMultiplier: 1
+  velocityMultiplier: 100

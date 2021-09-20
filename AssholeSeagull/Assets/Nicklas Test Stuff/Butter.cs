@@ -29,8 +29,6 @@ public class Butter : MonoBehaviour
 		
 		butteringDone += knife.Velocity;
 
-		Debug.Log(knife.Velocity);
-
 		if (butteringDone > butterStageInitiation[1])
 		{
 			meshCollider.sharedMesh = butterStages[1];
