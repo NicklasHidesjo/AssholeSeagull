@@ -93,13 +93,10 @@ public class SeagullMovement : MonoBehaviour
             currentState = State.PoopingPackage;
         }
 
-        Debug.Log("current state: " + currentState);
-
         if(currentState == State.PoopingPackage)
         {
             FoodTarget();
         }
-
         else if(currentState == State.PoopingFood)
         {
             FoodItemTarget();
@@ -116,9 +113,7 @@ public class SeagullMovement : MonoBehaviour
         //framme vid food
         if (transform.position == targetPosition && !isPoopingTime && !isScared)
         {
-            Debug.Log("Pooping");
             seagullAnimator.SetBool("Pooping", true);
-
             isPoopingTime = true;
         }
 
@@ -209,7 +204,6 @@ public class SeagullMovement : MonoBehaviour
     {
         if(collider.gameObject.name == "ScareDistance" && !flyingAway)
         {
-            Debug.Log("In distance to be scared");
             inDistance = true;
         }
     }

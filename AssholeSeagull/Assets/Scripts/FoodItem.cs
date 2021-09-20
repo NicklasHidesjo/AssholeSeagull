@@ -136,13 +136,13 @@ public class FoodItem : MonoBehaviour
             Destroy(poop);
         }
 
-        if (collider.tag == "Plate")
+/*        if (collider.tag == "Plate")
         {
             timer = 0f;
             gameManager.score++;
             onPlate = true;
             Debug.Log("Score: " + gameManager.score);
-        }
+        }*/
     }
 
     private void OnTriggerExit(Collider collider)

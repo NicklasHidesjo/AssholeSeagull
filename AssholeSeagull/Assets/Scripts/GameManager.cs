@@ -18,4 +18,14 @@ public class GameManager : MonoBehaviour
             isGameOver = true;
         }
     }
+
+    public void CollectScore(FoodItem[] sandwich)
+    {
+        foreach (var food in sandwich)
+        {
+            score++;
+        }
+
+        Debug.Log("Collecting score....");
+    }
 }

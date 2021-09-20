@@ -42,7 +42,6 @@ public class SeagullManager : MonoBehaviour
 
     public void Despawn(GameObject seagull)
     {
-        //Skicka till despawnlistan
         Destroy(seagull);
         currentNumberOfSeagulls--;
     }
