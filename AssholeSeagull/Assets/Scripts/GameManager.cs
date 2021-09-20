@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public float gameTimer = 0f;
+    float gameTimer = 0f;
+    [SerializeField] float gameDuration = 60f;
     public int score = 0;
-    public bool isGameOver = false;
+    bool isGameOver = false;
 
     private void Update()
     {
+        if(isGameOver)
+        {
+            return;
+        }
+
         gameTimer += Time.deltaTime;
 
-        if(gameTimer > 10f && isGameOver == false)
+        if(gameTimer > gameDuration)
         {
-            Debug.Log("FINISH");
+            Debug.Log("Time Over!");
             isGameOver = true;
         }
     }
@@ -26,6 +32,6 @@ public class GameManager : MonoBehaviour
             score++;
         }
 
-        Debug.Log("Collecting score....");
+        Debug.Log("Score: " + score);
     }
 }

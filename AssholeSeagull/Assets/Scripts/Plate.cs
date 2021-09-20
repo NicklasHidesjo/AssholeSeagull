@@ -26,21 +26,7 @@ public class Plate : MonoBehaviour
 
         AddFoodToList();
         FinishSandwich();
-
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            for (int i = 0; i < foodObject.Length; i++)
-            {
-                Debug.Log("Plate List: " + foodObject[i]);
-            }
-        }
     }
-
-    //bool isButteredBread
-    //Linecast
-    // if is butter false -> return
-    //if is buttered true -> Raycast
-    //raycast collide no butter bread -> Game done, Sandwich Done
 
     bool FirstFoodOnPlate()
     {
