@@ -421,7 +421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachForce: 800
   attachForceDamper: 25
-  attachMode: 0
+  attachMode: 1
   attachmentFlags: 16
 --- !u!65 &7068733109611208198
 BoxCollider:
