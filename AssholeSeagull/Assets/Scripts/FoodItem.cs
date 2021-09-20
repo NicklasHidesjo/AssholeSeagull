@@ -18,6 +18,7 @@ public class FoodItem : MonoBehaviour
 
     [SerializeField] private float timer;
     [SerializeField] private bool isSpoiled;
+    [SerializeField] private bool onPlate;
     [SerializeField] Material spoiledMaterial;
 
     private bool inHand;
@@ -26,7 +27,6 @@ public class FoodItem : MonoBehaviour
     private bool poopOnFood;
     private bool inPackage;
     private bool buttered;
-    private bool onPlate;
     bool alreadySpoiled = false;
 
     public enum FoodTypes
@@ -58,6 +58,13 @@ public class FoodItem : MonoBehaviour
     {
         get { return isSpoiled; }
     }
+
+    public bool OnPlate
+    {
+        get { return onPlate; }
+        set { onPlate = value; }
+    }
+
     public bool PoopOnFood
     {
         get { return poopOnFood; }
@@ -135,14 +142,6 @@ public class FoodItem : MonoBehaviour
 
             Destroy(poop);
         }
-
-/*        if (collider.tag == "Plate")
-        {
-            timer = 0f;
-            gameManager.score++;
-            onPlate = true;
-            Debug.Log("Score: " + gameManager.score);
-        }*/
     }
 
     private void OnTriggerExit(Collider collider)

@@ -19,6 +19,7 @@ public class SeagullMovement : MonoBehaviour
     FoodTracker foodTracker;
 
     Pooping pooping;
+    FoodItem foodItem;
 
     [SerializeField] AudioClip poopingSound;
     [SerializeField] AudioClip seagullSound;
@@ -155,9 +156,9 @@ public class SeagullMovement : MonoBehaviour
         foodTracker = FindObjectOfType<FoodTracker>();
         targetPosition = foodTracker.GetRandomTarget().position;
 
-        if (targetPosition == Vector3.zero)
+        if (targetPosition == Vector3.zero || targetPosition == null)
         {
-            FoodItemTarget();
+            FoodTarget();
         }
 
         targetPosition.y = transform.position.y;
