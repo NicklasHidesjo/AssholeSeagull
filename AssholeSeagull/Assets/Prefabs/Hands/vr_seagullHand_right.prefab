@@ -864,7 +864,7 @@ MonoBehaviour:
   onTrackingChanged:
     m_PersistentCalls:
       m_Calls: []
-  mirroring: 0
+  mirroring: 2
   fallbackPoser: {fileID: 6207355428889937034}
   fallbackCurlAction:
     actionPath: /actions/default/in/Squeeze
