@@ -10,11 +10,13 @@ public class FoodPackage : MonoBehaviour
     [SerializeField] private string foodName;
     [SerializeField] private GameObject poop;
 
+    [SerializeField] Transform parent;
+
     [SerializeField] Transform spawnPosition;
     [SerializeField] List<FoodItem> foodInContainer = new List<FoodItem>();
 
     private bool shitOnPackage;
-    private int spoiledFoods = 0;
+    [SerializeField] private int spoiledFoods = 0;
 
 
 	private void Start()
@@ -32,14 +34,23 @@ public class FoodPackage : MonoBehaviour
             
             if (value)
             {
-                spoiledFoods = 1;
+                spoiledFoods ++;
+                PoopOnFoodInContainer();
             }
         }
     }
 
+    public void PoopOnFoodInContainer()
+	{
+		foreach (var food in foodInContainer)
+		{
+            food.PoopOnFood = true;
+		}
+	}
+
     private void SpawnFoodItem()
     {
-        FoodItem newFoodItem = Instantiate(foodItem, spawnPosition.position, foodItem.transform.rotation);
+        FoodItem newFoodItem = Instantiate(foodItem, spawnPosition.position, foodItem.transform.rotation, parent);
 
         newFoodItem.name = foodName;
         newFoodItem.PoopOnFood = shitOnPackage;

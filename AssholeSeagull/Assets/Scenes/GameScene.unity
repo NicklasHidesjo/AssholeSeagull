@@ -557,6 +557,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11401046, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: renderModelPrefab
+      value: 
+      objectReference: {fileID: 1050663722494862310, guid: 629e77a15b93b214cb11467d3e7263d3, type: 3}
+    - target: {fileID: 11450312, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: renderModelPrefab
+      value: 
+      objectReference: {fileID: 6890859502044044862, guid: 99963d90c52b9df4bb8eba7af0dcc1b2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
 --- !u!1 &238550173 stripped
@@ -1189,6 +1197,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highscore: 0
+--- !u!1 &552344683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 552344684}
+  m_Layer: 0
+  m_Name: SpawnedFoods
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &552344684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552344683}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.57141274, y: 2.6716785, z: 0.07627646}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &601704019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2294,6 +2332,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1518335571043901339, guid: 96a155e26252f754689853dcd00e210e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1518335571043901340, guid: 96a155e26252f754689853dcd00e210e, type: 3}
       propertyPath: hamPackage
       value: 
@@ -2689,10 +2731,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cheese_Package_Prefab
       objectReference: {fileID: 0}
-    - target: {fileID: 4481670777916746203, guid: 24ad4b0460c7bc64e9176b3f39567548, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 4532691177100937945, guid: 24ad4b0460c7bc64e9176b3f39567548, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 552344684}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24ad4b0460c7bc64e9176b3f39567548, type: 3}
 --- !u!1001 &1449885551
@@ -3374,30 +3416,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2130449152}
     m_Modifications:
-    - target: {fileID: 997042677067829873, guid: 5396055d14d567f42b3e0cb7d4d060af, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2896912241814832267, guid: 5396055d14d567f42b3e0cb7d4d060af, type: 3}
-      propertyPath: m_Name
-      value: Bread_MeshCollider
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702336324981991718, guid: 5396055d14d567f42b3e0cb7d4d060af, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702336324981991718, guid: 5396055d14d567f42b3e0cb7d4d060af, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.232
-      objectReference: {fileID: 0}
-    - target: {fileID: 4843545053135868065, guid: 5396055d14d567f42b3e0cb7d4d060af, type: 3}
-      propertyPath: m_Convex
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6860035677761631412, guid: 5396055d14d567f42b3e0cb7d4d060af, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+    - target: {fileID: 937725396493250931, guid: 5396055d14d567f42b3e0cb7d4d060af, type: 3}
+      propertyPath: parent
       value: 
-      objectReference: {fileID: 2100000, guid: a8f4ba6198dd4364b9d01f7f7222c8c8, type: 2}
+      objectReference: {fileID: 552344684}
     - target: {fileID: 7685560494329656661, guid: 5396055d14d567f42b3e0cb7d4d060af, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3446,8 +3468,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bread_Package_Prefab
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4951220060003087413, guid: 5396055d14d567f42b3e0cb7d4d060af, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5396055d14d567f42b3e0cb7d4d060af, type: 3}
 --- !u!4 &3106893514293390425 stripped
 Transform:
@@ -3556,18 +3577,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2130449152}
     m_Modifications:
-    - target: {fileID: 5772484934555577484, guid: 5f2cb840a7365ba48b73b4fd588d563a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5772484934555577484, guid: 5f2cb840a7365ba48b73b4fd588d563a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 6925330863442785536, guid: 5f2cb840a7365ba48b73b4fd588d563a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 7458946257328173859, guid: 5f2cb840a7365ba48b73b4fd588d563a, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 552344684}
     - target: {fileID: 7458946258255764021, guid: 5f2cb840a7365ba48b73b4fd588d563a, type: 3}
       propertyPath: m_Name
       value: Ham_Package_Prefab

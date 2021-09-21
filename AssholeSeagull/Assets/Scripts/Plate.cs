@@ -6,7 +6,7 @@ public class Plate : MonoBehaviour
 {
     [SerializeField] float rayDistance = 100f;
     [SerializeField] LayerMask foodLayer;
-    private FoodItem[] foodObject;
+    private List<FoodItem> sandwichPieces = new List<FoodItem>();
 
     bool sandwichIsFinished;
 
@@ -40,7 +40,7 @@ public class Plate : MonoBehaviour
             {
                 return false;
             }
-            if(food.FoodType != FoodItem.FoodTypes.Bread)
+            if(food.FoodType != FoodTypes.Bread)
             {
                 return false;
             }          
@@ -55,36 +55,49 @@ public class Plate : MonoBehaviour
 
     void AddFoodToList()
     {
-        RaycastHit[] hits;
-        Debug.DrawRay(transform.position, transform.up, Color.blue);
+		foreach (var food in sandwichPieces)
+		{
+            food.OnPlate = false;
+		}
 
+        sandwichPieces = new List<FoodItem>();
+
+        RaycastHit[] hits;
         hits = Physics.RaycastAll(transform.position, transform.up, rayDistance, foodLayer);
 
         if(hits.Length > 0)
         {
-            foodObject = new FoodItem[hits.Length];
-
             for (int i = 0; i < hits.Length; i++)
             {
-                foodObject[i] = hits[i].collider.GetComponent<FoodItem>();
+                FoodItem food = hits[i].collider.GetComponent<FoodItem>();
+                if(food.IsMoving())
+				{
+                    continue;
+				}
+                sandwichPieces.Add(food);
+                food.OnPlate = true;
             }
         }
+
+
+        Debug.DrawRay(transform.position, transform.up, Color.blue);
     }
 
     void FinishSandwich()
     {
-        for (int i = 0; i < foodObject.Length; i++)
-        {
-            if(foodObject[i].FoodType != FoodItem.FoodTypes.Bread)
-            {
+		foreach (var food in sandwichPieces)
+		{
+            if(food.FoodType != FoodTypes.Bread)
+			{
                 continue;
-            }
+			}
+            if(food.Buttered)
+			{
+                continue;
+			}
 
-            if(!foodObject[i].Buttered)
-            {
-                sandwichIsFinished = true;
-                FindObjectOfType<GameManager>().CollectScore(foodObject);
-            }
-        }
+            sandwichIsFinished = true;
+            FindObjectOfType<GameManager>().CollectScore(sandwichPieces);
+		}
     }
 }

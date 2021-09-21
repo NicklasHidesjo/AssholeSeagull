@@ -7,7 +7,7 @@ public class FoodItem : MonoBehaviour
 {
     [SerializeField] AudioClip poopOnFoodSound;
     [SerializeField] AudioClip foodSpoiledSound;
-    private Rigidbody body;
+	[SerializeField] float velocityThreshold = 0.01f;
 
     [SerializeField] private float spoilTime;
     [SerializeField] private float selfDestructTime;
@@ -24,18 +24,10 @@ public class FoodItem : MonoBehaviour
     private bool inHand;
 
     private bool onSandwich;
-    private bool poopOnFood;
+    [SerializeField] private bool poopOnFood;
     private bool inPackage;
     private bool buttered;
     bool alreadySpoiled = false;
-
-    public enum FoodTypes
-    {
-        None,
-        Bread,
-        Ham,
-        Cheese,
-    }
 
     [SerializeField] LayerMask foodLayer;
     [SerializeField] FoodTypes foodType;
@@ -44,6 +36,8 @@ public class FoodItem : MonoBehaviour
 
     [SerializeField] float rayDistance;
 
+    private Rigidbody body;
+	
     public FoodTypes FoodType
     {
         get { return foodType; }
@@ -96,35 +90,40 @@ public class FoodItem : MonoBehaviour
     }
 
     private void Update()
-    {
-        RaycastFoodLayer();
+	{
+		RaycastFoodLayer();
 
-        if (onSandwich || inHand || inPackage || buttered)
-        {
-            return;
-        }
+		if (onSandwich || inHand || inPackage || buttered || onPlate)
+		{
+			return;
+		}
 
-        if (body.velocity.sqrMagnitude > 0.01)
-        {
-            return;
-        }
+		if (IsMoving())
+		{
+			return;
+		}
 
-        timer += Time.deltaTime;
-        isSpoiled = timer > spoilTime;
+		timer += Time.deltaTime;
+		isSpoiled = timer > spoilTime;
 
-        if (isSpoiled && !alreadySpoiled && !onPlate)
-        {
-            SoundSingleton.Instance.FoodSound(foodSpoiledSound);
-            ChangeMaterial(spoiledMaterial);
-        }
+		if (isSpoiled && !alreadySpoiled && !onPlate)
+		{
+			SoundSingleton.Instance.FoodSound(foodSpoiledSound);
+			ChangeMaterial(spoiledMaterial);
+		}
 
-        if (timer > selfDestructTime && !onPlate)
-        {
-            Destroy(gameObject);
-        }
-    }
+		if (timer > selfDestructTime && !onPlate)
+		{
+			Destroy(gameObject);
+		}
+	}
 
-    void ChangeMaterial(Material material)
+	public bool IsMoving()
+	{
+		return body.velocity.sqrMagnitude > velocityThreshold;
+	}
+
+	void ChangeMaterial(Material material)
     {
         alreadySpoiled = true;
         gameObject.GetComponent<Renderer>().material = material;

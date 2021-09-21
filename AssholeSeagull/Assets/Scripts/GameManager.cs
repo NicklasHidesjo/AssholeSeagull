@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void CollectScore(FoodItem[] sandwich)
+    public void CollectScore(List<FoodItem> sandwich)
     {
         foreach (var food in sandwich)
         {

@@ -20,13 +20,9 @@ public class PoopOnFood : MonoBehaviour
         {
             SoundSingleton.Instance.SeagullFx(poopOnFoodSound);
 
-            Destroy(hittedPoop);
-
-            if(foodPackage.ShitOnPackage)
-			{
-                return;
-			}
             foodPackage.ShitOnPackage = true;
+
+            Destroy(hittedPoop);
         }
     }
 }
