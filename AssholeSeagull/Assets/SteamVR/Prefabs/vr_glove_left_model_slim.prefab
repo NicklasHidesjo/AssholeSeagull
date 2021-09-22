@@ -216,7 +216,6 @@ Transform:
   - {fileID: 4000012945111732}
   - {fileID: 4000010128348256}
   - {fileID: 4000012861685622}
-  - {fileID: 2981108797263168814}
   m_Father: {fileID: 4000011344192480}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -434,6 +433,7 @@ Transform:
   m_Children:
   - {fileID: 4000010709239554}
   - {fileID: 4000011090939834}
+  - {fileID: 3905866668220685431}
   m_Father: {fileID: 4000013303659494}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1154,7 +1154,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 883bedc38ae9cfe4a825a50d2be814f2, type: 2}
+  - {fileID: 2100000, guid: 8f32b3d74401443479c643e48c21915a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1310,16 +1310,16 @@ Transform:
   m_Father: {fileID: 4000013850275144}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &3374814419196617413
+--- !u!1001 &3584535961501465500
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 4000010709239554}
+    m_TransformParent: {fileID: 4000011344192480}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 836b57a23c9315b4f8b0968e9f1a0ff1, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 836b57a23c9315b4f8b0968e9f1a0ff1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1361,18 +1361,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 836b57a23c9315b4f8b0968e9f1a0ff1, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: ef28bda7c515ffc4cae61eaad507d615, type: 2}
     - target: {fileID: 919132149155446097, guid: 836b57a23c9315b4f8b0968e9f1a0ff1, type: 3}
       propertyPath: m_Name
       value: HawaiiShirt
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 836b57a23c9315b4f8b0968e9f1a0ff1, type: 3}
---- !u!4 &2981108797263168814 stripped
+--- !u!4 &3905866668220685431 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 836b57a23c9315b4f8b0968e9f1a0ff1, type: 3}
-  m_PrefabInstance: {fileID: 3374814419196617413}
+  m_PrefabInstance: {fileID: 3584535961501465500}
   m_PrefabAsset: {fileID: 0}
