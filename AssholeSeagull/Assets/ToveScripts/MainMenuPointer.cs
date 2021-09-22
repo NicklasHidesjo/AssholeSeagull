@@ -40,7 +40,7 @@ public class MainMenuPointer : MonoBehaviour
         AudioListener.volume = volumeValue;
     }*/
 
-    public void MinusVolumeClick(object sender, PointerEventArgs e)
+/*    public void MinusVolumeClick(object sender, PointerEventArgs e)
     {
         if (e.target.name == "Cube")
         {
@@ -66,7 +66,7 @@ public class MainMenuPointer : MonoBehaviour
             Debug.Log("sound +");
             AudioListener.volume += 0.1f;
         }
-    }
+    }*/
 
     public void SaveButtonClick(object sender, PointerEventArgs e)
     {

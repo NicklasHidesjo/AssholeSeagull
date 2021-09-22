@@ -10,6 +10,7 @@ public class SeagullManager : MonoBehaviour
     [SerializeField] Transform hamPackage;
 
     SeagullMovement seagullMovement;
+    [SerializeField] ScareBird scareBird;
 
     [SerializeField] Transform endFlightOne;
     [SerializeField] Transform endFlightTwo;
@@ -72,7 +73,6 @@ public class SeagullManager : MonoBehaviour
                     RandomEndPoint();
                 }
 
-                ScareBird scareBird = GameObject.Find("GameManager").GetComponent<ScareBird>();
                 scareBird.seagullMovement = seagullMovement;
 
                 seagullMovement.BreadPackage = breadPackage;

@@ -32,6 +32,16 @@ public class GameManager : MonoBehaviour
             score++;
         }
 
+        PlayerPrefs.SetInt("newHighscore", 0);
+        PlayerPrefs.SetInt("currentScore", score);
+        int highscore = PlayerPrefs.GetInt("highscore", 0);
+
+        if(score > highscore)
+        {
+            PlayerPrefs.SetInt("newHighscore", 1);
+            PlayerPrefs.SetInt("highscore", score);
+        }
+
         Debug.Log("Score: " + score);
     }
 }
