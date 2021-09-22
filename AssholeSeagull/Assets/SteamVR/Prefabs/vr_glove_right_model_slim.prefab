@@ -28,8 +28,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4000011974246244}
-  m_RootOrder: 1
+  m_Father: {fileID: 4000011264745556}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &137000012777032580
 SkinnedMeshRenderer:
@@ -173,7 +173,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000011264745556}
-  - {fileID: 4000012792634790}
   m_Father: {fileID: 4000012125075130}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -367,6 +366,7 @@ Transform:
   - {fileID: 4000012955570592}
   - {fileID: 4000013672697030}
   - {fileID: 1694213727164758141}
+  - {fileID: 4000012792634790}
   m_Father: {fileID: 4000011974246244}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
