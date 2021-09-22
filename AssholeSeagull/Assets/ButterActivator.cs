@@ -24,6 +24,7 @@ public class ButterActivator : MonoBehaviour
 			if(blade == null) { return; }
 			if(blade.ButterOnBlade)
 			{
+				blade.ButterOnBlade = false;
 				ActivateButter();
 			}
 		}
