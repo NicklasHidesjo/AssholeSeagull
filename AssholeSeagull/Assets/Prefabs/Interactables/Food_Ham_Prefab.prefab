@@ -117,12 +117,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poopOnFoodSound: {fileID: 8300000, guid: 22c735ff877fadc4bbae400bfdbc48bd, type: 3}
   foodSpoiledSound: {fileID: 8300000, guid: 6f7f0e32029f0414684d5a4fcb56faee, type: 3}
+  velocityThreshold: 0.01
   spoilTime: 10
   selfDestructTime: 20
   spoiledParticles: {fileID: 6782043186125764545}
   timer: 0
   isSpoiled: 0
+  onPlate: 0
   spoiledMaterial: {fileID: 2100000, guid: a0366538d2d73fd40ac03a80c2ba0eed, type: 2}
+  poopOnFood: 0
   foodLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -178,8 +181,8 @@ MonoBehaviour:
   snapAttachEaseInTime: 0.15
   snapAttachEaseInCompleted: 0
   skeletonPoser: {fileID: 0}
-  handFollowTransform: 1
-  highlightOnHover: 1
+  handFollowTransform: 0
+  highlightOnHover: 0
   hideHighlight: []
   hoverPriority: 0
 --- !u!114 &-7518353864452144401
