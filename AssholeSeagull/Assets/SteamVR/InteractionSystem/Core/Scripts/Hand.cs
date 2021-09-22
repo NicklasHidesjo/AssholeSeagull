@@ -1678,12 +1678,7 @@ namespace Valve.VR.InteractionSystem
         {
             return trackedObject.GetDeviceIndex();
         }
-
-		public void AttachObject(GameObject gameObject, object startingGrabType, object attachmentFlags)
-		{
-			throw new NotImplementedException();
-		}
-	}
+    }
 
 
     [System.Serializable]
