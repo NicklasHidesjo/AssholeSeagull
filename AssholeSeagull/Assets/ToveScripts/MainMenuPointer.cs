@@ -42,46 +42,6 @@ public class MainMenuPointer : MonoBehaviour
         PlayerPrefs.SetFloat("VolumeValue", volume);
     }
 
-/*    public void MinusVolumeClick(object sender, PointerEventArgs e)
-    {
-        if (e.target.name == "Cube")
-        {
-            Debug.Log("sound -");
-            AudioListener.volume -= 0.1f;
-        }
-        else if (e.target.name == "-")
-        {
-            Debug.Log("sound -");
-            AudioListener.volume -= 0.1f;
-        }
-    }
-
-    public void PlusVolumeClick(object sender, PointerEventArgs e)
-    {
-        if (e.target.name == "Cube")
-        {
-            Debug.Log("sound +");
-            AudioListener.volume += 0.1f;
-        }
-        else if (e.target.name == "+")
-        {
-            Debug.Log("sound +");
-            AudioListener.volume += 0.1f;
-        }
-    }*/
-
-    public void SaveButtonClick(object sender, PointerEventArgs e)
-    {
-        if (e.target.name == "Cube")
-        {
-        //    SaveVolumeButton();
-        }
-        else if (e.target.name == "Save")
-        {
-          // SaveVolumeButton();
-        }
-    }
-
     /// <summary>
     /// START GAME
     /// </summary>
