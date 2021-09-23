@@ -7,7 +7,7 @@ public class FoodItem : MonoBehaviour
 {
     [SerializeField] AudioClip poopOnFoodSound;
     [SerializeField] AudioClip foodSpoiledSound;
-	[SerializeField] float velocityThreshold = 0.01f;
+    [SerializeField] float velocityThreshold = 0.01f;
 
     [SerializeField] private float spoilTime;
     [SerializeField] private float selfDestructTime;
@@ -29,15 +29,30 @@ public class FoodItem : MonoBehaviour
     private bool buttered;
     bool alreadySpoiled = false;
 
-    [SerializeField] LayerMask foodLayer;
-    [SerializeField] FoodTypes foodType;
-    [SerializeField] FoodTypes foodAbove;
-    [SerializeField] FoodTypes foodBelow;
-
     [SerializeField] float rayDistance;
 
+
+    [Header("Score Settings")]
+    [SerializeField] int baseScore;
+    [SerializeField] int addition;
+    [SerializeField] int reduction;
+    [SerializeField] int spoilReduction;
+    [SerializeField] int poopReduction;
+
+    [Header("FoodType Settings")]
+    [SerializeField] LayerMask foodLayer;
+    [SerializeField] FoodTypes foodType;
+
+    [SerializeField] FoodTypes foodAbove;
+    [SerializeField] FoodTypes perfectAbove;
+    [SerializeField] FoodTypes worstAbove;
+
+    [SerializeField] FoodTypes foodBelow;
+    [SerializeField] FoodTypes perfectBelow;
+    [SerializeField] FoodTypes worstBelow;
+
     private Rigidbody body;
-	
+
     public FoodTypes FoodType
     {
         get { return foodType; }
@@ -154,6 +169,40 @@ public class FoodItem : MonoBehaviour
         }
     }
 
+
+    public int GetScore()
+    {
+        int score = baseScore;
+
+        if(foodAbove == perfectAbove)
+        {
+            score += addition;
+        }
+        else if(foodAbove == worstAbove)
+        {
+            score -= reduction;
+        }
+
+        if(foodBelow == perfectBelow)
+        {
+            score += addition;
+        }
+        else if(foodBelow == worstBelow)
+        {
+            score -= reduction;
+        }
+
+        if(isSpoiled)
+        {
+            score -= spoilReduction;
+        }
+        if(PoopOnFood)
+        {
+            score -= poopReduction;
+        }
+
+        return score;
+    }
 
     void RaycastFoodLayer()
     {

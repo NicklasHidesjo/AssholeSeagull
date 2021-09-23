@@ -8,6 +8,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] float gameDuration = 60f;
     public int score = 0;
     bool isGameOver = false;
+    SceneLoader sceneLoader;
+    Plate plate;
+
+    private void Start()
+    {
+        sceneLoader = FindObjectOfType<SceneLoader>();
+        plate = FindObjectOfType<Plate>();
+    }
 
     private void Update()
     {
@@ -22,19 +30,26 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Time Over!");
             isGameOver = true;
+            FinishSandwich(false);
         }
     }
 
-    public void CollectScore(List<FoodItem> sandwich)
+    public void FinishSandwich(bool Finished)
     {
-        foreach (var food in sandwich)
+        foreach (var food in plate.SandwichPieces)
         {
-            score++;
+            score += food.GetScore();
         }
 
         PlayerPrefs.SetInt("newHighscore", 0);
         PlayerPrefs.SetInt("currentScore", score);
         int highscore = PlayerPrefs.GetInt("highscore", 0);
+
+        if(!Finished)
+        {
+            score -= 1;
+            score = (int)Mathf.Clamp(score, 0, Mathf.Infinity);
+        }
 
         if(score > highscore)
         {
@@ -43,5 +58,7 @@ public class GameManager : MonoBehaviour
         }
 
         Debug.Log("Score: " + score);
+
+        sceneLoader.LoadScene(2);
     }
 }

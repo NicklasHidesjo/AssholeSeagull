@@ -8,6 +8,8 @@ public class Plate : MonoBehaviour
     [SerializeField] LayerMask foodLayer;
     private List<FoodItem> sandwichPieces = new List<FoodItem>();
 
+    public List<FoodItem> SandwichPieces { get { return sandwichPieces; } }
+
     bool sandwichIsFinished;
 
 
@@ -97,7 +99,7 @@ public class Plate : MonoBehaviour
 			}
 
             sandwichIsFinished = true;
-            FindObjectOfType<GameManager>().CollectScore(sandwichPieces);
+            FindObjectOfType<GameManager>().FinishSandwich(true);
 		}
     }
 }

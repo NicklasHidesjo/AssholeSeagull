@@ -24,6 +24,9 @@ public class SoundSingleton : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+
+        seagullAudio.volume = PlayerPrefs.GetFloat("VolumeValue");
+        foodAudio.volume = PlayerPrefs.GetFloat("VolumeValue");
     }
 
     public void SeagullFx(AudioClip clip)

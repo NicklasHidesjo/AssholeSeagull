@@ -126,13 +126,19 @@ MonoBehaviour:
   onPlate: 0
   spoiledMaterial: {fileID: 2100000, guid: a0366538d2d73fd40ac03a80c2ba0eed, type: 2}
   poopOnFood: 0
+  rayDistance: 0.02
+  baseScore: 1
+  addition: 0
+  spoilReduction: 0
+  poopReduction: 0
   foodLayer:
     serializedVersion: 2
     m_Bits: 64
   foodType: 2
   foodAbove: 0
   foodBelow: 0
-  rayDistance: 0.02
+  perfectAbove: 0
+  worstAbove: 0
 --- !u!114 &1078648721496904104
 MonoBehaviour:
   m_ObjectHideFlags: 0

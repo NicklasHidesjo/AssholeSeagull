@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Valve.VR.Extras;
-using UnityEngine.SceneManagement;
 
 public class MainMenuPointer : MonoBehaviour
 {
-    public SteamVR_LaserPointer laserPointer;
+    [SerializeField] SteamVR_LaserPointer laserPointer;
+    SceneLoader sceneLoader;
 
+    float volume;
     void Awake()
     {
         laserPointer.PointerIn += PointerInside;
@@ -23,22 +24,19 @@ public class MainMenuPointer : MonoBehaviour
 
     private void Start()
     {
-      //  LoadVolume();
-    }
-
-/*    public void SaveVolumeButton()
-    {
-        float volumeValue = slider.value;
-        PlayerPrefs.SetFloat("VolumeValue", volumeValue);
+        sceneLoader = FindObjectOfType<SceneLoader>();
         LoadVolume();
     }
-
     void LoadVolume()
     {
-        float volumeValue = PlayerPrefs.GetFloat("VolumeValue");
-        slider.value = volumeValue;
-        AudioListener.volume = volumeValue;
-    }*/
+        volume = PlayerPrefs.GetFloat("VolumeValue");
+        slider.value = volume;
+    }
+    void SaveVolume()
+    {
+        slider.value = volume;
+        PlayerPrefs.SetFloat("VolumeValue", volume);
+    }
 
 /*    public void MinusVolumeClick(object sender, PointerEventArgs e)
     {
@@ -88,14 +86,36 @@ public class MainMenuPointer : MonoBehaviour
     {
         if (e.target.name == "Cube")
         {
-            SceneManager.LoadScene("GameScene");
+            sceneLoader.LoadScene("GameScene");
             Debug.Log("Cube was clicked");
         }
-        else if (e.target.name == "Button")
+
+        else if (e.target.name == "Play")
         {
-            SceneManager.LoadScene("GameScene");
+            sceneLoader.LoadScene("GameScene");
             Debug.Log("Button was clicked");
         }
+
+        else if (e.target.name == "-")
+        {
+            Debug.Log("sound -");
+            volume -= 0.1f;
+            volume = Mathf.Clamp(volume,0, 1f);
+            SaveVolume();
+        }
+
+        else if (e.target.name == "+")
+        {
+            Debug.Log("sound +");
+            volume += 0.1f;
+            volume = Mathf.Clamp(volume, 0, 1f);
+            SaveVolume();
+        }
+
+        else if(e.target.name == "Replay")
+        {
+            sceneLoader.LoadScene("GameScene");
+        }    
     }
 
     public void PointerInside(object sender, PointerEventArgs e)
