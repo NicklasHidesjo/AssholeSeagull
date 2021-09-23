@@ -7,7 +7,7 @@ using Valve.VR.Extras;
 
 public class MainMenuPointer : MonoBehaviour
 {
-    public SteamVR_LaserPointer laserPointer;
+    [SerializeField] SteamVR_LaserPointer laserPointer;
     SceneLoader sceneLoader;
 
     float volume;
@@ -30,6 +30,10 @@ public class MainMenuPointer : MonoBehaviour
     void LoadVolume()
     {
         volume = PlayerPrefs.GetFloat("VolumeValue");
+        if(slider == null)
+        {
+            return;
+        }
         slider.value = volume;
     }
     void SaveVolume()
