@@ -25,7 +25,7 @@ public class MainMenuPointer : MonoBehaviour
 
         sceneLoader = FindObjectOfType<SceneLoader>();
 
-        Debug.Log(laserPointer.name);
+        Debug.Log("pointer name: " + laserPointer.name);
         LoadVolume();
     }
     void LoadVolume()
