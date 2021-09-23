@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
+  m_IndirectSpecularColor: {r: 0.43480223, g: 0.47420916, b: 0.4689457, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2071,9 +2071,53 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmsBushes
       objectReference: {fileID: 0}
+    - target: {fileID: 982054234523519558, guid: 889cef21f58ee134095425d6bc4155ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.564
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519783123099032940, guid: 889cef21f58ee134095425d6bc4155ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.193
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519783123207242186, guid: 889cef21f58ee134095425d6bc4155ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519783123359545116, guid: 889cef21f58ee134095425d6bc4155ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.373
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519783123392005387, guid: 889cef21f58ee134095425d6bc4155ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.302
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519783123461539035, guid: 889cef21f58ee134095425d6bc4155ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519783123521875574, guid: 889cef21f58ee134095425d6bc4155ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.624
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519783124013144295, guid: 889cef21f58ee134095425d6bc4155ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519783124115210218, guid: 889cef21f58ee134095425d6bc4155ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519783124236070952, guid: 889cef21f58ee134095425d6bc4155ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519783124849383904, guid: 889cef21f58ee134095425d6bc4155ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.632
+      objectReference: {fileID: 0}
     - target: {fileID: 6434656491834171286, guid: 889cef21f58ee134095425d6bc4155ce, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6434656491834171286, guid: 889cef21f58ee134095425d6bc4155ce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2081,7 +2125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6434656491834171286, guid: 889cef21f58ee134095425d6bc4155ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.39
+      value: -0.46
       objectReference: {fileID: 0}
     - target: {fileID: 6434656491834171286, guid: 889cef21f58ee134095425d6bc4155ce, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3403,7 +3447,7 @@ Transform:
   - {fileID: 1411743424}
   - {fileID: 743087405}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2092856115
 PrefabInstance:
