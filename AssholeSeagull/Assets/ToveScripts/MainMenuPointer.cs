@@ -11,12 +11,7 @@ public class MainMenuPointer : MonoBehaviour
     SceneLoader sceneLoader;
 
     float volume;
-    void Awake()
-    {
-        laserPointer.PointerIn += PointerInside;
-        laserPointer.PointerOut += PointerOutside;
-        laserPointer.PointerClick += PointerClick;
-    }
+
     /// <summary>
     /// /SOUNDMANAGER
     /// </summary>
@@ -24,6 +19,10 @@ public class MainMenuPointer : MonoBehaviour
 
     private void Start()
     {
+        laserPointer.PointerIn += PointerInside;
+        laserPointer.PointerOut += PointerOutside;
+        laserPointer.PointerClick += PointerClick;
+
         sceneLoader = FindObjectOfType<SceneLoader>();
         LoadVolume();
     }
@@ -40,46 +39,6 @@ public class MainMenuPointer : MonoBehaviour
     {
         slider.value = volume;
         PlayerPrefs.SetFloat("VolumeValue", volume);
-    }
-
-/*    public void MinusVolumeClick(object sender, PointerEventArgs e)
-    {
-        if (e.target.name == "Cube")
-        {
-            Debug.Log("sound -");
-            AudioListener.volume -= 0.1f;
-        }
-        else if (e.target.name == "-")
-        {
-            Debug.Log("sound -");
-            AudioListener.volume -= 0.1f;
-        }
-    }
-
-    public void PlusVolumeClick(object sender, PointerEventArgs e)
-    {
-        if (e.target.name == "Cube")
-        {
-            Debug.Log("sound +");
-            AudioListener.volume += 0.1f;
-        }
-        else if (e.target.name == "+")
-        {
-            Debug.Log("sound +");
-            AudioListener.volume += 0.1f;
-        }
-    }*/
-
-    public void SaveButtonClick(object sender, PointerEventArgs e)
-    {
-        if (e.target.name == "Cube")
-        {
-        //    SaveVolumeButton();
-        }
-        else if (e.target.name == "Save")
-        {
-          // SaveVolumeButton();
-        }
     }
 
     /// <summary>
