@@ -7,7 +7,7 @@ public class DuplicateChecker : MonoBehaviour
     private void Awake()
     {
         DuplicateChecker[] Duplicates = FindObjectsOfType<DuplicateChecker>();
-        if(Duplicates.Length > 0)
+        if(Duplicates.Length > 1)
         {
             Debug.Log("Found duplicate");
             Destroy(gameObject);
