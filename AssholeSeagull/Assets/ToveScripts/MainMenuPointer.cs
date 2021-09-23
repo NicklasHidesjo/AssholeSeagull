@@ -120,6 +120,11 @@ public class MainMenuPointer : MonoBehaviour
         {
             sceneLoader.LoadScene("GameScene");
         }    
+
+        else if (e.target.name == "Quit")
+        {
+            sceneLoader.Quit();
+        }
     }
 
     public void PointerInside(object sender, PointerEventArgs e)
@@ -144,5 +149,12 @@ public class MainMenuPointer : MonoBehaviour
         {
             Debug.Log("Button was exited");
         }
+    }
+
+    private void OnDestroy()
+    {
+        laserPointer.PointerIn -= PointerInside;
+        laserPointer.PointerOut -= PointerOutside;
+        laserPointer.PointerClick -= PointerClick;
     }
 }
