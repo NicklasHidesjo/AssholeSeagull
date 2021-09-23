@@ -18,4 +18,9 @@ public class SceneLoader : MonoBehaviour
 	{
 		Application.Quit();
 	}
+
+	public string GetCurrentScene()
+    {
+		return SceneManager.GetActiveScene().name;
+    }
 }

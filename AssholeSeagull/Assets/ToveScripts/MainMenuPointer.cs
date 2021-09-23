@@ -19,11 +19,17 @@ public class MainMenuPointer : MonoBehaviour
 
     private void Start()
     {
+        laserPointer.active = true;
+        sceneLoader = FindObjectOfType<SceneLoader>();    
+        if(sceneLoader.GetCurrentScene() == "GameScene")
+        {
+            laserPointer.active = false;
+        }
+
         laserPointer.PointerIn += PointerInside;
         laserPointer.PointerOut += PointerOutside;
         laserPointer.PointerClick += PointerClick;
 
-        sceneLoader = FindObjectOfType<SceneLoader>();
 
         Debug.Log("pointer name: " + laserPointer.name);
         LoadVolume();
