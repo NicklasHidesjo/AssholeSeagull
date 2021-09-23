@@ -7,7 +7,7 @@ using Valve.VR.Extras;
 
 public class MainMenuPointer : MonoBehaviour
 {
-    [SerializeField] SteamVR_LaserPointer laserPointer;
+    public SteamVR_LaserPointer laserPointer;
     SceneLoader sceneLoader;
 
     float volume;
