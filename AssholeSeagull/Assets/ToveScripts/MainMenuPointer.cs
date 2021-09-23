@@ -33,7 +33,6 @@ public class MainMenuPointer : MonoBehaviour
         laserPointer.PointerOut += PointerOutside;
         laserPointer.PointerClick += PointerClick;
 
-
         Debug.Log("pointer name: " + laserPointer.name);
         LoadVolume();
     }

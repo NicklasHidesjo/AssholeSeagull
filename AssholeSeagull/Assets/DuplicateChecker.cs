@@ -9,11 +9,12 @@ public class DuplicateChecker : MonoBehaviour
         DuplicateChecker[] Duplicates = FindObjectsOfType<DuplicateChecker>();
         if(Duplicates.Length > 0)
         {
-            foreach (var duplicate in Duplicates)
-            {
-                Destroy(duplicate.gameObject);
-            }
+            Destroy(this);
+            return;
         }
-        DontDestroyOnLoad(gameObject);
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }
