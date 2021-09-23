@@ -11,12 +11,7 @@ public class MainMenuPointer : MonoBehaviour
     SceneLoader sceneLoader;
 
     float volume;
-    void Awake()
-    {
-        laserPointer.PointerIn += PointerInside;
-        laserPointer.PointerOut += PointerOutside;
-        laserPointer.PointerClick += PointerClick;
-    }
+
     /// <summary>
     /// /SOUNDMANAGER
     /// </summary>
@@ -24,6 +19,10 @@ public class MainMenuPointer : MonoBehaviour
 
     private void Start()
     {
+        laserPointer.PointerIn += PointerInside;
+        laserPointer.PointerOut += PointerOutside;
+        laserPointer.PointerClick += PointerClick;
+
         sceneLoader = FindObjectOfType<SceneLoader>();
         LoadVolume();
     }
