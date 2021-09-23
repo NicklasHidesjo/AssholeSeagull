@@ -100,7 +100,7 @@ public class MainMenuPointer : MonoBehaviour
             Debug.Log("Button was clicked");
         }
 
-        else if (e.target.name == "-")
+        else if (e.target.name == "Decrease")
         {
             Debug.Log("sound -");
             volume -= 0.1f;
@@ -108,7 +108,7 @@ public class MainMenuPointer : MonoBehaviour
             SaveVolume();
         }
 
-        else if (e.target.name == "+")
+        else if (e.target.name == "Increase")
         {
             Debug.Log("sound +");
             volume += 0.1f;
