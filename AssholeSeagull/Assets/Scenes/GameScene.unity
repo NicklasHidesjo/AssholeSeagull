@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43480223, g: 0.47420916, b: 0.4689457, a: 1}
+  m_IndirectSpecularColor: {r: 0.11503821, g: 0.33155766, b: 0.7163304, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 546014806d2139548b1c7b71226c3fea, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -1097,6 +1097,7 @@ GameObject:
   - component: {fileID: 455969987}
   - component: {fileID: 455969988}
   - component: {fileID: 455969990}
+  - component: {fileID: 455969989}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1144,6 +1145,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodTransformList: []
+--- !u!114 &455969989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455969985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc780d07ce32f034992f5f9093cd354d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &455969990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1893,6 +1906,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1018531777}
+  - component: {fileID: 1018531778}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -1916,6 +1930,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1018531778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018531776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc780d07ce32f034992f5f9093cd354d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1021698599
 PrefabInstance:
   m_ObjectHideFlags: 0
