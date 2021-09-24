@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6039123885260523408}
   - component: {fileID: -1075695178708664064}
   - component: {fileID: -1727986935941911145}
-  - component: {fileID: 1836757913166964737}
+  - component: {fileID: 6321325917945233356}
   m_Layer: 6
   m_Name: Food_Cheese_Prefab
   m_TagString: Food
@@ -209,7 +209,7 @@ MonoBehaviour:
   attachForceDamper: 25
   attachMode: 1
   attachmentFlags: 16
---- !u!65 &1836757913166964737
+--- !u!65 &6321325917945233356
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,8 +220,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.058263298, y: 0.056289114, z: 0.0015867021}
-  m_Center: {x: 0, y: 0, z: -5.8207675e-11}
+  m_Size: {x: 0.17655544, y: 0.17057307, z: 0.0048081875}
+  m_Center: {x: 0, y: 0, z: -1.1641535e-10}
 --- !u!1001 &6651275104144201579
 PrefabInstance:
   m_ObjectHideFlags: 0

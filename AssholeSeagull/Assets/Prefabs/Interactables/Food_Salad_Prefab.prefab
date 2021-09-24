@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3848759701071244816}
-  m_Mesh: {fileID: -3996760141626369306, guid: d1c1b758704418348831a6f89f660195, type: 3}
+  m_Mesh: {fileID: -2597519522473998463, guid: d1c1b758704418348831a6f89f660195, type: 3}
 --- !u!23 &3344335032912121797
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -125,13 +125,21 @@ MonoBehaviour:
   onPlate: 0
   spoiledMaterial: {fileID: 2100000, guid: a0366538d2d73fd40ac03a80c2ba0eed, type: 2}
   poopOnFood: 0
+  rayDistance: 0.02
+  baseScore: 0
+  sameReduction: 0
+  baseIncrease: 0
+  baseReduction: 0
+  spoiledPunishment: 0
+  poopPunishment: 0
   foodLayer:
     serializedVersion: 2
     m_Bits: 64
   foodType: 2
-  foodAbove: 0
-  foodBelow: 0
-  rayDistance: 0.02
+  perfectAbove: 0
+  worstAbove: 0
+  perfectBelow: 0
+  worstBelow: 0
 --- !u!114 &4154342536646035882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,4 +221,4 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -3996760141626369306, guid: d1c1b758704418348831a6f89f660195, type: 3}
+  m_Mesh: {fileID: -2597519522473998463, guid: d1c1b758704418348831a6f89f660195, type: 3}
