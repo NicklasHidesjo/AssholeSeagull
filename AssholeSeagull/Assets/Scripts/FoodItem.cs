@@ -45,11 +45,12 @@ public class FoodItem : MonoBehaviour
     [SerializeField] LayerMask foodLayer;
     [SerializeField] FoodTypes foodType;
 
-    [SerializeField] FoodTypes foodAbove;
+    FoodTypes foodAbove;
+    [Header("")]
     [SerializeField] FoodTypes perfectAbove;
     [SerializeField] FoodTypes worstAbove;
-
-    [SerializeField] FoodTypes foodBelow;
+    FoodTypes foodBelow;
+    [Header("")]
     [SerializeField] FoodTypes perfectBelow;
     [SerializeField] FoodTypes worstBelow;
 
