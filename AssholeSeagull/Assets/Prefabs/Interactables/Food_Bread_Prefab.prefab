@@ -78,7 +78,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &688129369
 Transform:
   m_ObjectHideFlags: 0
@@ -176,7 +176,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.19, y: 0.19, z: 0.05}
+  m_Size: {x: 0.2, y: 0.2, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0.000000008381903}
 --- !u!1 &1025815080
 GameObject:
@@ -353,17 +353,19 @@ MonoBehaviour:
   poopOnFood: 0
   rayDistance: 0.04
   baseScore: 1
-  addition: 0
-  spoilReduction: 0
-  poopReduction: 0
+  sameReduction: 0
+  baseIncrease: 0
+  baseReduction: 0
+  spoiledPunishment: 0
+  poopPunishment: 0
   foodLayer:
     serializedVersion: 2
     m_Bits: 64
   foodType: 1
-  foodAbove: 0
-  foodBelow: 0
   perfectAbove: 0
   worstAbove: 0
+  perfectBelow: 0
+  worstBelow: 0
 --- !u!114 &-1333095823606503833
 MonoBehaviour:
   m_ObjectHideFlags: 0
