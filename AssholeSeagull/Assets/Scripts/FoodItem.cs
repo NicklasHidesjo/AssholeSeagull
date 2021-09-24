@@ -36,8 +36,10 @@ public class FoodItem : MonoBehaviour
     [SerializeField] int baseScore;
     [SerializeField] int addition;
     [SerializeField] int reduction;
-    [SerializeField] int spoilReduction;
-    [SerializeField] int poopReduction;
+    [Tooltip("Will set the score to the negative value of this (50 on here = -50 in score)")]
+    [SerializeField] int spoiledPunishment;
+    [Tooltip("Will set the score to the negative value of this (50 on here = -50 in score)")]
+    [SerializeField] int poopPunishment;
 
     [Header("FoodType Settings")]
     [SerializeField] LayerMask foodLayer;
@@ -194,11 +196,11 @@ public class FoodItem : MonoBehaviour
 
         if(isSpoiled)
         {
-            score -= spoilReduction;
+            score = -spoiledPunishment;
         }
         if(PoopOnFood)
         {
-            score -= poopReduction;
+            score = -poopPunishment;
         }
 
         return score;
