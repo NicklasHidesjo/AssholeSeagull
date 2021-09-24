@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6039123885260523408}
   - component: {fileID: -1075695178708664064}
   - component: {fileID: -1727986935941911145}
-  - component: {fileID: 8759662854599432394}
+  - component: {fileID: 1836757913166964737}
   m_Layer: 6
   m_Name: Food_Cheese_Prefab
   m_TagString: Food
@@ -128,17 +128,19 @@ MonoBehaviour:
   poopOnFood: 0
   rayDistance: 0.02
   baseScore: 1
-  addition: 0
-  spoilReduction: 0
-  poopReduction: 0
+  sameReduction: 0
+  baseIncrease: 0
+  baseReduction: 0
+  spoiledPunishment: 0
+  poopPunishment: 0
   foodLayer:
     serializedVersion: 2
     m_Bits: 64
   foodType: 3
-  foodAbove: 0
-  foodBelow: 0
   perfectAbove: 0
   worstAbove: 0
+  perfectBelow: 0
+  worstBelow: 0
 --- !u!114 &-1075695178708664064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,7 +209,7 @@ MonoBehaviour:
   attachForceDamper: 25
   attachMode: 1
   attachmentFlags: 16
---- !u!65 &8759662854599432394
+--- !u!65 &1836757913166964737
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,8 +220,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.17655544, y: 0.17057307, z: 0.0048081875}
-  m_Center: {x: 0, y: 0, z: -1.1641535e-10}
+  m_Size: {x: 0.058263298, y: 0.056289114, z: 0.0015867021}
+  m_Center: {x: 0, y: 0, z: -5.8207675e-11}
 --- !u!1001 &6651275104144201579
 PrefabInstance:
   m_ObjectHideFlags: 0

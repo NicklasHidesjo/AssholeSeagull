@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4503281328503389362}
   - component: {fileID: 1078648721496904104}
   - component: {fileID: -7518353864452144401}
-  - component: {fileID: 8341249655869923533}
+  - component: {fileID: 5991662258455931789}
   m_Layer: 6
   m_Name: Food_Ham_Prefab
   m_TagString: Food
@@ -128,17 +128,19 @@ MonoBehaviour:
   poopOnFood: 0
   rayDistance: 0.02
   baseScore: 1
-  addition: 0
-  spoilReduction: 0
-  poopReduction: 0
+  sameReduction: 0
+  baseIncrease: 0
+  baseReduction: 0
+  spoiledPunishment: 0
+  poopPunishment: 0
   foodLayer:
     serializedVersion: 2
     m_Bits: 64
   foodType: 2
-  foodAbove: 0
-  foodBelow: 0
   perfectAbove: 0
   worstAbove: 0
+  perfectBelow: 0
+  worstBelow: 0
 --- !u!114 &1078648721496904104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,7 +209,7 @@ MonoBehaviour:
   attachForceDamper: 25
   attachMode: 1
   attachmentFlags: 16
---- !u!64 &8341249655869923533
+--- !u!64 &5991662258455931789
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
