@@ -124,6 +124,7 @@ MonoBehaviour:
   isSpoiled: 0
   onPlate: 0
   spoiledMaterial: {fileID: 2100000, guid: a0366538d2d73fd40ac03a80c2ba0eed, type: 2}
+  poopedMaterial: {fileID: 2100000, guid: 062a4f31df72d0e47b59e3e4c77b291a, type: 2}
   poopOnFood: 0
   rayDistance: 0.02
   baseScore: 0
@@ -135,7 +136,7 @@ MonoBehaviour:
   foodLayer:
     serializedVersion: 2
     m_Bits: 64
-  foodType: 2
+  foodType: 4
   perfectAbove: 0
   worstAbove: 0
   perfectBelow: 0

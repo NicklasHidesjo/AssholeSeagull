@@ -20,6 +20,7 @@ public class FoodItem : MonoBehaviour
     [SerializeField] private bool isSpoiled;
     [SerializeField] private bool onPlate;
     [SerializeField] Material spoiledMaterial;
+    [SerializeField] Material poopedMaterial;
 
     private bool inHand;
 
@@ -90,7 +91,7 @@ public class FoodItem : MonoBehaviour
 
             if(value)
             {
-                ChangeMaterial(spoiledMaterial);
+                ChangeMaterial(poopedMaterial);
             }
         }
     }
