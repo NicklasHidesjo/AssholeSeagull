@@ -34,8 +34,12 @@ public class FoodItem : MonoBehaviour
 
     [Header("Score Settings")]
     [SerializeField] int baseScore;
-    [SerializeField] int addition;
-    [SerializeField] int reduction;
+    [Tooltip("The value that gets reduced from baseScore when the ingredient above or below is the same")]
+    [SerializeField] int sameReduction;
+    [Tooltip("The value that gets added to baseScore when a perfect ingredient is above")]
+    [SerializeField] int baseIncrease;
+    [Tooltip("The value that gets reduced from baseScore when a worst ingredient is above")]
+    [SerializeField] int baseReduction;
     [Tooltip("Will set the score to the negative value of this (50 on here = -50 in score)")]
     [SerializeField] int spoiledPunishment;
     [Tooltip("Will set the score to the negative value of this (50 on here = -50 in score)")]
@@ -179,21 +183,29 @@ public class FoodItem : MonoBehaviour
 
         if(foodAbove == perfectAbove)
         {
-            score += addition;
+            score += baseIncrease;
         }
         else if(foodAbove == worstAbove)
         {
-            score -= reduction;
+            score -= baseReduction;
         }
+        else if(foodAbove == foodType)
+		{
+            baseScore -= sameReduction;
+		}
 
         if(foodBelow == perfectBelow)
         {
-            score += addition;
+            score += baseIncrease;
         }
         else if(foodBelow == worstBelow)
         {
-            score -= reduction;
+            score -= baseReduction;
         }
+        else if(foodBelow == foodType)
+		{
+            baseScore -= sameReduction;
+		}
 
         if(isSpoiled)
         {
