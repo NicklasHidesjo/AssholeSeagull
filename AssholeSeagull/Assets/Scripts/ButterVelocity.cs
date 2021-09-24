@@ -27,11 +27,6 @@ public class ButterVelocity : MonoBehaviour
         distanceTraveled = Mathf.Abs(distanceTraveled);
         velocity = distanceTraveled * velocityMultiplier;
 
-        Debug.Log("Velocity: " + velocity);
-        Debug.Log("Current pos: " + currentPos);
-        Debug.Log("Previous pos: " + previousPos);
-
         previousPos = transform.TransformPoint(transform.position);
-
     }
 }
