@@ -756,11 +756,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475726, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_Constraints
-      value: 122
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5475726, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5475726, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11455280, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: head
@@ -815,7 +819,7 @@ MonoBehaviour:
   m_Version: 2
 --- !u!4 &238550175 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+  m_CorrespondingSourceObject: {fileID: 429506, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
   m_PrefabInstance: {fileID: 238550172}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &250019671
