@@ -59,6 +59,6 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("Score: " + score);
 
-        sceneLoader.LoadScene(0);
+        sceneLoader.LoadScene("EndScene");
     }
 }

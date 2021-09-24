@@ -7,7 +7,8 @@ using Valve.VR.Extras;
 
 public class MainMenuPointer : MonoBehaviour
 {
-    [SerializeField] SteamVR_LaserPointer laserPointer;
+    [SerializeField] SteamVR_LaserPointer rightHand;
+    [SerializeField] SteamVR_LaserPointer leftHand;
     SceneLoader sceneLoader;
 
     float volume;
@@ -19,13 +20,16 @@ public class MainMenuPointer : MonoBehaviour
 
     private void Start()
     {
-        laserPointer.PointerIn += PointerInside;
-        laserPointer.PointerOut += PointerOutside;
-        laserPointer.PointerClick += PointerClick;
+        rightHand.PointerIn += PointerInside;
+        leftHand.PointerIn += PointerInside;
+        rightHand.PointerOut += PointerOutside;
+        leftHand.PointerOut += PointerOutside;
+        rightHand.PointerClick += PointerClick;
+        leftHand.PointerClick += PointerClick;
 
         sceneLoader = FindObjectOfType<SceneLoader>();
 
-        Debug.Log("pointer name: " + laserPointer.name);
+        Debug.Log("pointer name: " + rightHand.name);
         LoadVolume();
     }
     void LoadVolume()
@@ -86,6 +90,11 @@ public class MainMenuPointer : MonoBehaviour
         {
             sceneLoader.Quit();
         }
+
+        else if(e.target.name == "Main Menu")
+		{
+            sceneLoader.LoadScene(0);
+		}
     }
 
     public void PointerInside(object sender, PointerEventArgs e)
@@ -114,8 +123,11 @@ public class MainMenuPointer : MonoBehaviour
 
     private void OnDestroy()
     {
-        laserPointer.PointerIn -= PointerInside;
-        laserPointer.PointerOut -= PointerOutside;
-        laserPointer.PointerClick -= PointerClick;
+        rightHand.PointerIn -= PointerInside;
+        leftHand.PointerIn -= PointerInside;
+        rightHand.PointerOut -= PointerOutside;
+        leftHand.PointerOut -= PointerOutside;
+        rightHand.PointerClick -= PointerClick;
+        leftHand.PointerClick -= PointerClick;
     }
 }
