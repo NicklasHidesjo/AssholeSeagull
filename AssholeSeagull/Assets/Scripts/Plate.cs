@@ -48,6 +48,7 @@ public class Plate : MonoBehaviour
             }          
             if(food.Buttered)
             {
+                Debug.Log("Sandwich started");
                 return true;
             }
         }
@@ -65,24 +66,27 @@ public class Plate : MonoBehaviour
         sandwichPieces = new List<FoodItem>();
 
         RaycastHit[] hits;
-        hits = Physics.RaycastAll(transform.position, transform.up, rayDistance, foodLayer);
-
+        hits = Physics.RaycastAll(transform.position, transform.forward, rayDistance, foodLayer);
+        Debug.Log(hits.Length);
         if(hits.Length > 0)
         {
             for (int i = 0; i < hits.Length; i++)
             {
                 FoodItem food = hits[i].collider.GetComponent<FoodItem>();
+                Debug.Log(food.name);
                 if(food.IsMoving())
 				{
+                    Debug.Log("Food moving");
                     continue;
 				}
                 sandwichPieces.Add(food);
+                Debug.Log("Food Added");
                 food.OnPlate = true;
             }
         }
 
 
-        Debug.DrawRay(transform.position, transform.up, Color.blue);
+        Debug.DrawRay(transform.position, transform.forward, Color.blue);
     }
 
     void FinishSandwich()
