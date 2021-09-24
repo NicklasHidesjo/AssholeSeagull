@@ -17,7 +17,6 @@ public class Plate : MonoBehaviour
     {
         if (sandwichIsFinished)
         {
-            Debug.Log("Sandwich is Finished!");
             return;
         }
 
@@ -48,7 +47,6 @@ public class Plate : MonoBehaviour
             }          
             if(food.Buttered)
             {
-                Debug.Log("Sandwich started");
                 return true;
             }
         }
@@ -76,11 +74,9 @@ public class Plate : MonoBehaviour
                 Debug.Log(food.name);
                 if(food.IsMoving())
 				{
-                    Debug.Log("Food moving");
                     continue;
 				}
                 sandwichPieces.Add(food);
-                Debug.Log("Food Added");
                 food.OnPlate = true;
             }
         }
