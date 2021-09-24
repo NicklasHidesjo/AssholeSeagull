@@ -7,26 +7,10 @@ public class SoundSingleton : MonoBehaviour
     public AudioSource seagullAudio;
     public AudioSource foodAudio;
 
-    public float LowPitchRange = .95f;
-    public float HighPitchRange = 1.05f;
-
-    public static SoundSingleton Instance = null;
-
     private void Awake()
     {
-        if(Instance == null)
-        {
-            Instance = this;
-        }
-        else if(Instance != this)
-        {
-            Destroy(gameObject);
-        }
-
-        DontDestroyOnLoad(gameObject);
-
-        seagullAudio.volume = PlayerPrefs.GetFloat("VolumeValue");
-        foodAudio.volume = PlayerPrefs.GetFloat("VolumeValue");
+        seagullAudio.volume = PlayerPrefs.GetFloat("VolumeValue", 0.5f);
+        foodAudio.volume = PlayerPrefs.GetFloat("VolumeValue", 0.5f);
     }
 
     public void SeagullFx(AudioClip clip)

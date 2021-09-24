@@ -130,7 +130,7 @@ public class FoodItem : MonoBehaviour
 
 		if (isSpoiled && !alreadySpoiled && !onPlate)
 		{
-			SoundSingleton.Instance.FoodSound(foodSpoiledSound);
+            FindObjectOfType<SoundSingleton>().FoodSound(foodSpoiledSound);
 			ChangeMaterial(spoiledMaterial);
 		}
 
@@ -156,7 +156,7 @@ public class FoodItem : MonoBehaviour
     {
         if(collider.gameObject.tag == "Poop")
         {
-            SoundSingleton.Instance.SeagullFx(poopOnFoodSound);
+            FindObjectOfType<SoundSingleton>().SeagullFx(poopOnFoodSound);
             GameObject poop = collider.gameObject;
 
             PoopOnFood = true;
