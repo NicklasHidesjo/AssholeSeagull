@@ -18,7 +18,7 @@ public class PoopOnFood : MonoBehaviour
         GameObject hittedPoop = other.gameObject;
         if (other.gameObject.tag == "Poop")
         {
-            SoundSingleton.Instance.SeagullFx(poopOnFoodSound);
+            FindObjectOfType<SoundSingleton>().SeagullFx(poopOnFoodSound);
 
             foodPackage.ShitOnPackage = true;
 

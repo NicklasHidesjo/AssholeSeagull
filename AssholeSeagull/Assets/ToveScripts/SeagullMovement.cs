@@ -131,7 +131,7 @@ public class SeagullMovement : MonoBehaviour
 
             if (poopingTimer > 1f && !hasPooped)
             {
-                SoundSingleton.Instance.SeagullFx(poopingSound);
+                FindObjectOfType<SoundSingleton>().SeagullFx(poopingSound);
 
                 pooping.Poop();
                 hasPooped = true;
@@ -221,7 +221,7 @@ public class SeagullMovement : MonoBehaviour
     {
         if(isScared == false)
         {
-            SoundSingleton.Instance.SeagullFx(scaredSound);
+            FindObjectOfType<SoundSingleton>().SeagullFx(scaredSound);
             isScared = true;
             targetPosition = flightEnd.position;
             transform.LookAt(targetPosition);
