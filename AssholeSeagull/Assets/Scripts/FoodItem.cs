@@ -176,7 +176,6 @@ public class FoodItem : MonoBehaviour
         }
     }
 
-
     public int GetScore()
     {
         int score = baseScore;

@@ -13,7 +13,7 @@ public class FoodPackage : MonoBehaviour
     [SerializeField] Transform parent;
 
     [SerializeField] Transform spawnPosition;
-    [SerializeField] List<FoodItem> foodInContainer = new List<FoodItem>();
+    List<FoodItem> foodInContainer = new List<FoodItem>();
 
     private bool shitOnPackage;
     [SerializeField] private int spoiledFoods = 0;

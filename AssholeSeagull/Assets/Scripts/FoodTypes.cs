@@ -4,5 +4,7 @@ public enum FoodTypes
     Bread,
     Ham,
     Cheese,
+    Lettuce,
+    Tomato
 }
 
