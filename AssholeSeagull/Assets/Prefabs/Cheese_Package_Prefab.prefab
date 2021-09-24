@@ -109,7 +109,7 @@ MonoBehaviour:
   foodName: Cheese
   poop: {fileID: 4481670777916746203}
   spawnPosition: {fileID: 8261342392310174348}
-  foodInContainer: []
+  spoiledFoods: 0
 --- !u!1 &4481670777916746203
 GameObject:
   m_ObjectHideFlags: 0
