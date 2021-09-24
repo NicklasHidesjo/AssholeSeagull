@@ -271,7 +271,7 @@ MonoBehaviour:
   foodName: Ham
   poop: {fileID: 6925330863442785536}
   spawnPosition: {fileID: 3392547103531048245}
-  foodInContainer: []
+  spoiledFoods: 0
 --- !u!1 &8006574426917612777
 GameObject:
   m_ObjectHideFlags: 0
