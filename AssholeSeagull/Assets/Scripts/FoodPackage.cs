@@ -10,8 +10,6 @@ public class FoodPackage : MonoBehaviour
     [SerializeField] private string foodName;
     [SerializeField] private GameObject poop;
 
-    [SerializeField] Transform parent;
-
     [SerializeField] Transform spawnPosition;
     List<FoodItem> foodInContainer = new List<FoodItem>();
 
@@ -50,7 +48,7 @@ public class FoodPackage : MonoBehaviour
 
     private void SpawnFoodItem()
     {
-        FoodItem newFoodItem = Instantiate(foodItem, spawnPosition.position, foodItem.transform.rotation, parent);
+        FoodItem newFoodItem = Instantiate(foodItem, spawnPosition.position, foodItem.transform.rotation);
 
         newFoodItem.name = foodName;
         newFoodItem.PoopOnFood = shitOnPackage;
