@@ -46,7 +46,6 @@ public class Butter : MonoBehaviour
 	{
 		if(other.gameObject.GetComponent<ButterBlade>())
 		{
-			Debug.Log(other.name);
 			knife = other.GetComponentInChildren<ButterVelocity>();
 		}
 	}
