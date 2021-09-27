@@ -61,7 +61,9 @@ public class WaveSeagull : MonoBehaviour
         }
 
         oldLeftPosition = leftHandPos;
+        oldLeftPosition.y = 0;
         oldRightPosition = rightHandPos;
+        oldRightPosition.y = 0;
     }
 
     private void ScareSeagulls(Vector3 position)
@@ -78,6 +80,6 @@ public class WaveSeagull : MonoBehaviour
     {
         float distanceTraveled = Vector3.Distance(oldPosition, currentPos);
         distanceTraveled = Mathf.Abs(distanceTraveled);
-        return distanceTraveled * velocityMultiplier;
+        return distanceTraveled / Time.deltaTime;
     }
 }
