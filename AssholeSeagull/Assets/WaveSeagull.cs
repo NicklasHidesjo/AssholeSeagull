@@ -12,7 +12,6 @@ public class WaveSeagull : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         Debug.Log("Head y position is: " + headTransform.position.y);
