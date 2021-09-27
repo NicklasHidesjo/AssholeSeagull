@@ -25,10 +25,13 @@ public class WaveSeagull : MonoBehaviour
         Vector3 headPos = headTransform.position;
 
         Vector3 rightHandPos = rightHandTransform.position;
+
         Vector3 leftHandPos = leftHandTransform.position;
+
 
         if (rightHandPos.y > headPos.y)
         {
+            rightHandPos.y = 0;
             float velocity = GetSpeed(rightHandPos, oldRightPosition);
 
             Debug.Log("Right hand velocity is: " + velocity);
@@ -40,6 +43,7 @@ public class WaveSeagull : MonoBehaviour
         }
         if (leftHandPos.y > headPos.y)
         {
+            leftHandPos.y = 0;
             float velocity = GetSpeed(leftHandPos, oldLeftPosition);
 
             Debug.Log("Left hand velocity is: " + velocity);
