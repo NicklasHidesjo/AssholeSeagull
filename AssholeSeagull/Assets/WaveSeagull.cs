@@ -80,6 +80,6 @@ public class WaveSeagull : MonoBehaviour
     {
         float distanceTraveled = Vector3.Distance(oldPosition, currentPos);
         distanceTraveled = Mathf.Abs(distanceTraveled);
-        return distanceTraveled / Time.deltaTime;
+        return distanceTraveled * velocityMultiplier;
     }
 }
