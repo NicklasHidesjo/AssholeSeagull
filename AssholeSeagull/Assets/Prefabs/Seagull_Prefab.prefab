@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 3272717194131652221}
   - component: {fileID: 4296194220242073953}
   - component: {fileID: 1986341339}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Seagull_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,6 +504,7 @@ MonoBehaviour:
   endSpeed: 0
   acceleration: 6
   deacceleration: 2.17
+  minSpeed: 1
   isPoopingTime: 0
   inDistance: 0
   breadPackage: {fileID: 0}

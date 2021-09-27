@@ -219,6 +219,11 @@ public class SeagullMovement : MonoBehaviour
     //Spelare skrämmer fågel
     public void Scared()
     {
+        if(isPoopingTime)
+        {
+            return;
+        }
+
         if(isScared == false)
         {
             FindObjectOfType<SoundSingleton>().SeagullFx(scaredSound);

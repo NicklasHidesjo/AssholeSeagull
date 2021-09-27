@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class WaveSeagull : MonoBehaviour
 {
+    [SerializeField] float scareRadius;
+    [SerializeField] LayerMask seagullLayer;
+    
     [SerializeField] float velocityMultiplier;
     [SerializeField] float scareVelocityThreshold;
     
@@ -34,11 +37,13 @@ public class WaveSeagull : MonoBehaviour
             rightHandPos.y = 0;
             float velocity = GetSpeed(rightHandPos, oldRightPosition);
 
-            Debug.Log("Right hand velocity is: " + velocity);
+            //Debug.Log("Right hand velocity is: " + velocity);
 
             if(velocity > scareVelocityThreshold)
             {
                 Debug.Log("Scaring seagull using right hand");
+                ScareSeagulls(rightHandTransform.position);
+
             }
         }
         if (leftHandPos.y > headPos.y)
@@ -46,16 +51,27 @@ public class WaveSeagull : MonoBehaviour
             leftHandPos.y = 0;
             float velocity = GetSpeed(leftHandPos, oldLeftPosition);
 
-            Debug.Log("Left hand velocity is: " + velocity);
+            //Debug.Log("Left hand velocity is: " + velocity);
 
             if (velocity > scareVelocityThreshold)
             {
                 Debug.Log("Scaring seagull using left hand");
+                ScareSeagulls(leftHandTransform.position);
             }
         }
 
         oldLeftPosition = leftHandPos;
         oldRightPosition = rightHandPos;
+    }
+
+    private void ScareSeagulls(Vector3 position)
+    {
+        Collider[] seagulls = Physics.OverlapSphere(position, scareRadius, seagullLayer);
+        foreach (var seagull in seagulls)
+        {
+            seagull.GetComponent<SeagullMovement>().Scared();
+            Debug.Log("Scaring a seagull");
+        }
     }
 
     private float GetSpeed(Vector3 currentPos, Vector3 oldPosition)
