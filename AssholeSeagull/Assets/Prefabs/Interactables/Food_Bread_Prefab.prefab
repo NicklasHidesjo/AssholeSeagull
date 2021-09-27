@@ -108,8 +108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   butteringDone: 0
   butterStageInitiation:
-  - 2.5
   - 5
+  - 10
   butterStages:
   - {fileID: 1746450975466940664, guid: 9ab1fe84ef504c540a882007ccdfcb60, type: 3}
   - {fileID: -5018650057742140743, guid: 5ad5b14fbcf7ca645ac5dce0d034b5be, type: 3}
