@@ -95,6 +95,11 @@ public class MainMenuPointer : MonoBehaviour
 		{
             sceneLoader.LoadScene(0);
 		}
+
+        else if(e.target.name == "Free Roam")
+        {
+            sceneLoader.LoadScene("FreeRoamMode");
+        }
     }
 
     public void PointerInside(object sender, PointerEventArgs e)

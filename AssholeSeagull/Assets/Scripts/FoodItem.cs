@@ -114,6 +114,11 @@ public class FoodItem : MonoBehaviour
 	{
 		RaycastFoodLayer();
 
+        if(gameManager.FreeRoam)
+        {
+            return;
+        }
+
 		if (onSandwich || inHand || inPackage || buttered || onPlate)
 		{
 			return;
