@@ -5,7 +5,6 @@ using UnityEngine;
 public class Butter : MonoBehaviour
 {
 	[SerializeField] float butteringDone;
-	[SerializeField] float butterSpeed;
 	[SerializeField] List<float> butterStageInitiation;
 
     [SerializeField] Mesh[] butterStages;

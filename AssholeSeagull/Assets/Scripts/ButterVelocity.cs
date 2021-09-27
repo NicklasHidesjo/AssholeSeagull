@@ -5,7 +5,6 @@ using UnityEngine;
 public class ButterVelocity : MonoBehaviour
 {
     [SerializeField] float velocity;
-    [SerializeField] float velocityMultiplier;
     public float Velocity
     {
         get { return velocity; }
@@ -25,7 +24,8 @@ public class ButterVelocity : MonoBehaviour
         Vector3 currentPos = transform.TransformPoint(transform.position);
         float distanceTraveled = Vector3.Distance(previousPos, currentPos);
         distanceTraveled = Mathf.Abs(distanceTraveled);
-        velocity = distanceTraveled * velocityMultiplier;
+
+        velocity = distanceTraveled / Time.deltaTime;
 
         previousPos = transform.TransformPoint(transform.position);
     }

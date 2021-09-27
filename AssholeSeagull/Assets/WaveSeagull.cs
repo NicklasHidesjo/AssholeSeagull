@@ -6,8 +6,7 @@ public class WaveSeagull : MonoBehaviour
 {
     [SerializeField] float scareRadius;
     [SerializeField] LayerMask seagullLayer;
-    
-    [SerializeField] float velocityMultiplier;
+
     [SerializeField] float scareVelocityThreshold;
     
     [SerializeField] Transform headTransform;
@@ -26,9 +25,7 @@ public class WaveSeagull : MonoBehaviour
     void Update()
     {
         Vector3 headPos = headTransform.position;
-
         Vector3 rightHandPos = rightHandTransform.position;
-
         Vector3 leftHandPos = leftHandTransform.position;
 
 
@@ -80,6 +77,6 @@ public class WaveSeagull : MonoBehaviour
     {
         float distanceTraveled = Vector3.Distance(oldPosition, currentPos);
         distanceTraveled = Mathf.Abs(distanceTraveled);
-        return distanceTraveled * velocityMultiplier;
+        return distanceTraveled / Time.deltaTime;
     }
 }
