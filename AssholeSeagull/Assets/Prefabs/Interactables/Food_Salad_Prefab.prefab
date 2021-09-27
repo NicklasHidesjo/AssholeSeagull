@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4154342536646035882}
   - component: {fileID: 7265105551467670965}
   - component: {fileID: 4778836444035014612}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Food_Salad_Prefab
   m_TagString: Food
   m_Icon: {fileID: 0}
@@ -127,10 +127,10 @@ MonoBehaviour:
   spoiledMaterial: {fileID: 2100000, guid: a0366538d2d73fd40ac03a80c2ba0eed, type: 2}
   poopedMaterial: {fileID: 2100000, guid: 062a4f31df72d0e47b59e3e4c77b291a, type: 2}
   poopOnFood: 0
-  rayDistance: 0.02
+  rayDistance: 0.05
   baseScore: 10
   varietyBonus: 5
-  baseReduction: 5
+  worstIngredientPunishment: 10
   spoiledPunishment: 20
   poopPunishment: 40
   foodLayer:
@@ -339,6 +339,10 @@ PrefabInstance:
     - target: {fileID: 5615186446562917780, guid: a55bd4a7c2aa46647a60456a4a4fd56d, type: 3}
       propertyPath: m_Name
       value: SpoiledFood_Particles_Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 5615186446562917780, guid: a55bd4a7c2aa46647a60456a4a4fd56d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5615186446562917780, guid: a55bd4a7c2aa46647a60456a4a4fd56d, type: 3}
       propertyPath: m_IsActive

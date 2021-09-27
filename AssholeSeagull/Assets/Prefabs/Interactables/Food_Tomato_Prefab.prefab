@@ -130,15 +130,15 @@ MonoBehaviour:
   rayDistance: 0.02
   baseScore: 10
   varietyBonus: 5
-  baseReduction: 5
+  worstIngredientPunishment: 10
   spoiledPunishment: 20
   poopPunishment: 40
   foodLayer:
     serializedVersion: 2
     m_Bits: 64
   foodType: 5
-  worstAbove: 0
-  worstBelow: 0
+  worstAbove: 1
+  worstBelow: 1
 --- !u!114 &3713031942207446203
 MonoBehaviour:
   m_ObjectHideFlags: 0
