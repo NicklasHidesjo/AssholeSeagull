@@ -2833,7 +2833,7 @@ MonoBehaviour:
   scareRadius: 3
   seagullLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   scareVelocityThreshold: 10
   headTransform: {fileID: 238550177}
   rightHandTransform: {fileID: 238550176}
