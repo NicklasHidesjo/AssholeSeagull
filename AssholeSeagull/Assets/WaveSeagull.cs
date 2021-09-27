@@ -22,16 +22,10 @@ public class WaveSeagull : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Head y position is: " + headTransform.position.y);
-
         Vector3 headPos = headTransform.position;
 
         Vector3 rightHandPos = rightHandTransform.position;
         Vector3 leftHandPos = leftHandTransform.position;
-
-        Debug.Log("Left-hand y position is: " + leftHandPos.y);
-        Debug.Log("Right-hand y position is: " + rightHandPos.y);
-
 
         if (rightHandPos.y > headPos.y)
         {
