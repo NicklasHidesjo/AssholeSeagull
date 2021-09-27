@@ -24,8 +24,6 @@ public class SeagullManager : MonoBehaviour
 
     [SerializeField] SeagullMovement seagullPrefab;
 
-    string seagullClone = "Seagull_Prefab(Clone)";
-
     int currentNumberOfSeagulls = 0;
     int maxNumberOfSeagulls = 1;
 
