@@ -197,17 +197,17 @@ public class FoodItem : MonoBehaviour
             score -= worstIngredientPunishment;
         }
 
-        if(foodType != foodAbove)
+        if(foodType != foodAbove && foodAbove != FoodTypes.None)
         {
-            if(foodType != foodAboveAbove)
+            if(foodType != foodAboveAbove && foodAboveAbove != FoodTypes.None && foodAboveAbove != foodAbove)
             {
                 score += varietyBonus;
             }
         }
 
-        if(foodType != foodBelow)
+        if(foodType != foodBelow && foodBelow != FoodTypes.None)
         {
-            if(foodType!= foodBelowBelow)
+            if(foodType!= foodBelowBelow && foodBelowBelow != FoodTypes.None && foodBelowBelow != foodBelow)
             {
                 score += varietyBonus;
             }
