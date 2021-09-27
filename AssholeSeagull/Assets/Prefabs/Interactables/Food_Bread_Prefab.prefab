@@ -108,8 +108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   butteringDone: 0
   butterStageInitiation:
-  - 50
-  - 100
+  - 2.5
+  - 5
   butterStages:
   - {fileID: 1746450975466940664, guid: 9ab1fe84ef504c540a882007ccdfcb60, type: 3}
   - {fileID: -5018650057742140743, guid: 5ad5b14fbcf7ca645ac5dce0d034b5be, type: 3}
@@ -354,15 +354,15 @@ MonoBehaviour:
   rayDistance: 0.04
   baseScore: 10
   varietyBonus: 5
-  baseReduction: 5
+  worstIngredientPunishment: 10
   spoiledPunishment: 20
   poopPunishment: 40
   foodLayer:
     serializedVersion: 2
     m_Bits: 64
   foodType: 1
-  worstAbove: 0
-  worstBelow: 0
+  worstAbove: 5
+  worstBelow: 5
 --- !u!114 &-1333095823606503833
 MonoBehaviour:
   m_ObjectHideFlags: 0

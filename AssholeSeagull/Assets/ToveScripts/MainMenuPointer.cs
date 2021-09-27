@@ -34,7 +34,7 @@ public class MainMenuPointer : MonoBehaviour
     }
     void LoadVolume()
     {
-        volume = PlayerPrefs.GetFloat("VolumeValue");
+        volume = PlayerPrefs.GetFloat("VolumeValue", 0.5f);
         if(slider == null)
         {
             return;

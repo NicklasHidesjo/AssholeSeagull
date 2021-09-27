@@ -130,7 +130,7 @@ MonoBehaviour:
   rayDistance: 0.02
   baseScore: 10
   varietyBonus: 5
-  baseReduction: 5
+  worstIngredientPunishment: 10
   spoiledPunishment: 20
   poopPunishment: 40
   foodLayer:
