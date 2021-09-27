@@ -16,7 +16,6 @@ public class MainMenuPointer : MonoBehaviour
     /// <summary>
     /// /SOUNDMANAGER
     /// </summary>
-    public Slider slider = null;
 
     private void Start()
     {
@@ -30,21 +29,6 @@ public class MainMenuPointer : MonoBehaviour
         sceneLoader = FindObjectOfType<SceneLoader>();
 
         Debug.Log("pointer name: " + rightHand.name);
-        LoadVolume();
-    }
-    void LoadVolume()
-    {
-        volume = PlayerPrefs.GetFloat("VolumeValue", 0.5f);
-        if(slider == null)
-        {
-            return;
-        }
-        slider.value = volume;
-    }
-    void SaveVolume()
-    {
-        slider.value = volume;
-        PlayerPrefs.SetFloat("VolumeValue", volume);
     }
 
     /// <summary>
@@ -63,22 +47,6 @@ public class MainMenuPointer : MonoBehaviour
         {
             sceneLoader.LoadScene("GameScene");
             Debug.Log("Button was clicked");
-        }
-
-        else if (e.target.name == "Decrease")
-        {
-            Debug.Log("sound -");
-            volume -= 0.1f;
-            volume = Mathf.Clamp(volume,0, 1f);
-            SaveVolume();
-        }
-
-        else if (e.target.name == "Increase")
-        {
-            Debug.Log("sound +");
-            volume += 0.1f;
-            volume = Mathf.Clamp(volume, 0, 1f);
-            SaveVolume();
         }
 
         else if(e.target.name == "Replay")
