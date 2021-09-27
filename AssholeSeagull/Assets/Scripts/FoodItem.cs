@@ -35,12 +35,10 @@ public class FoodItem : MonoBehaviour
 
     [Header("Score Settings")]
     [SerializeField] int baseScore;
-    [Tooltip("The value that gets reduced from baseScore when the ingredient above or below is the same")]
-    [SerializeField] int sameReduction;
-    [Tooltip("The value that gets added to baseScore when a perfect ingredient is above")]
-    [SerializeField] int baseIncrease;
+    [Tooltip("The value that gets added when ingredients are not the same above or below (going down two ingredients)")]
+    [SerializeField] int varietyBonus;
     [Tooltip("The value that gets reduced from baseScore when a worst ingredient is above")]
-    [SerializeField] int baseReduction;
+    [SerializeField] int worstIngredientPunishment;
     [Tooltip("Will set the score to the negative value of this (50 on here = -50 in score)")]
     [SerializeField] int spoiledPunishment;
     [Tooltip("Will set the score to the negative value of this (50 on here = -50 in score)")]
@@ -51,20 +49,20 @@ public class FoodItem : MonoBehaviour
     [SerializeField] FoodTypes foodType;
 
     FoodTypes foodAbove;
+    FoodTypes foodAboveAbove;
     [Header("")]
-    [SerializeField] FoodTypes perfectAbove;
     [SerializeField] FoodTypes worstAbove;
+
     FoodTypes foodBelow;
+    FoodTypes foodBelowBelow;
     [Header("")]
-    [SerializeField] FoodTypes perfectBelow;
     [SerializeField] FoodTypes worstBelow;
 
     private Rigidbody body;
 
-    public FoodTypes FoodType
-    {
-        get { return foodType; }
-    }
+    public FoodTypes FoodType => foodType;
+    public FoodTypes FoodAbove => foodAbove;
+    public FoodTypes FoodBelow => foodBelow;
 
     public bool InHand
     {
@@ -179,41 +177,40 @@ public class FoodItem : MonoBehaviour
 
     public int GetScore()
     {
+        if (isSpoiled)
+        {
+            return -spoiledPunishment;
+        }
+        if (PoopOnFood)
+        {
+            return -poopPunishment;
+        }
+        
         int score = baseScore;
+        
+        if (foodAbove == worstAbove)
+        {
+            score -= worstIngredientPunishment;
+        }
+        if(foodBelow == worstBelow)
+        {
+            score -= worstIngredientPunishment;
+        }
 
-        if(foodAbove == perfectAbove)
+        if(foodType != foodAbove)
         {
-            score += baseIncrease;
+            if(foodType != foodAboveAbove)
+            {
+                score += varietyBonus;
+            }
         }
-        else if(foodAbove == worstAbove)
-        {
-            score -= baseReduction;
-        }
-        else if(foodAbove == foodType)
-		{
-            baseScore -= sameReduction;
-		}
 
-        if(foodBelow == perfectBelow)
+        if(foodType != foodBelow)
         {
-            score += baseIncrease;
-        }
-        else if(foodBelow == worstBelow)
-        {
-            score -= baseReduction;
-        }
-        else if(foodBelow == foodType)
-		{
-            baseScore -= sameReduction;
-		}
-
-        if(isSpoiled)
-        {
-            score = -spoiledPunishment;
-        }
-        if(PoopOnFood)
-        {
-            score = -poopPunishment;
+            if(foodType!= foodBelowBelow)
+            {
+                score += varietyBonus;
+            }
         }
 
         return score;
@@ -239,11 +236,13 @@ public class FoodItem : MonoBehaviour
                 return;
             }
 
-            foodAbove = food.foodType;
+            foodAbove = food.FoodType;
+            foodAboveAbove = food.FoodAbove;
         }
         else
         {
             foodAbove = FoodTypes.None;
+            foodAboveAbove = FoodTypes.None;
         }
 
         if (Physics.Linecast(transform.position, transform.position + southSide, out hit, foodLayer))
@@ -256,11 +255,13 @@ public class FoodItem : MonoBehaviour
                 return;
             }
 
-            foodBelow = food.foodType;
+            foodBelow = food.FoodType;
+            foodBelowBelow = food.FoodBelow;
         }
         else
         {
             foodBelow = FoodTypes.None;
+            foodBelowBelow = FoodTypes.None;
         }
     }
 }

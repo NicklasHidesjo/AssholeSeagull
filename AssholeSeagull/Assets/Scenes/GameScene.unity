@@ -2830,8 +2830,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09badd300855377458cf5e1f1aee205b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityMultiplier: 100
-  scareVelocityThreshold: 2
+  scareRadius: 3
+  seagullLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  scareVelocityThreshold: 10
   headTransform: {fileID: 238550177}
   rightHandTransform: {fileID: 238550176}
   leftHandTransform: {fileID: 238550175}
