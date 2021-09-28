@@ -7,13 +7,13 @@ public class EndScreen : MonoBehaviour
 {
     [SerializeField] Text scoreText;
     [SerializeField] Text highscoreText;
+
+
     void Start()
     {
         if(PlayerPrefs.GetInt("newHighscore") == 1)
         {
-            //Lägg in NEW RECORD
-            Debug.Log("New Record");
-            //Ta bort sen
+            FindObjectOfType<NewHighScoreHandler>().NewHighScoreCelebration();
             scoreText.text = PlayerPrefs.GetInt("currentScore").ToString();
             highscoreText.text = PlayerPrefs.GetInt("highscore").ToString();
         }
