@@ -8,13 +8,19 @@ public class WaveSeagull : MonoBehaviour
     [SerializeField] LayerMask seagullLayer;
 
     [SerializeField] float scareVelocityThreshold;
-    
+
     [SerializeField] Transform headTransform;
     [SerializeField] Transform rightHandTransform;
     [SerializeField] Transform leftHandTransform;
 
+    [SerializeField] AudioClip[] shooSounds;
+    [SerializeField] AudioSource shooPlayer;
+
     Vector3 oldLeftPosition;
     Vector3 oldRightPosition;
+
+
+    int lastShooSoundUsed = -1;
 
     void Start()
     {
@@ -71,6 +77,21 @@ public class WaveSeagull : MonoBehaviour
             seagull.GetComponent<SeagullMovement>().Scared();
             Debug.Log("Scaring a seagull");
         }
+
+        PlayShooSound();
+    }
+
+    private void PlayShooSound()
+    {
+        int randomClip = 0;
+        do
+        {
+            randomClip = Random.Range(0, shooSounds.Length);
+        }
+        while (randomClip == lastShooSoundUsed);
+        lastShooSoundUsed = randomClip;
+        shooPlayer.clip = shooSounds[randomClip];
+        shooPlayer.Play();
     }
 
     private float GetSpeed(Vector3 currentPos, Vector3 oldPosition)

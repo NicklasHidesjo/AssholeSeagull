@@ -9,10 +9,9 @@ public class MainMenuPointer : MonoBehaviour
 {
     [SerializeField] SteamVR_LaserPointer rightHand;
     [SerializeField] SteamVR_LaserPointer leftHand;
+
     SceneLoader sceneLoader;
-
-    float volume;
-
+    AudioSource buttonPlayer;
     /// <summary>
     /// /SOUNDMANAGER
     /// </summary>
@@ -25,6 +24,8 @@ public class MainMenuPointer : MonoBehaviour
         leftHand.PointerOut += PointerOutside;
         rightHand.PointerClick += PointerClick;
         leftHand.PointerClick += PointerClick;
+
+        buttonPlayer = FindObjectOfType<AudioSource>();
 
         sceneLoader = FindObjectOfType<SceneLoader>();
 
@@ -39,35 +40,46 @@ public class MainMenuPointer : MonoBehaviour
     {
         if (e.target.name == "Cube")
         {
+            PlayButtonSound();
             sceneLoader.LoadScene("GameScene");
             Debug.Log("Cube was clicked");
         }
 
         else if (e.target.name == "Play")
         {
+            PlayButtonSound();
             sceneLoader.LoadScene("GameScene");
             Debug.Log("Button was clicked");
         }
 
         else if(e.target.name == "Replay")
         {
+            PlayButtonSound();
             sceneLoader.LoadScene("GameScene");
         }    
 
         else if (e.target.name == "Quit")
         {
+            PlayButtonSound();
             sceneLoader.Quit();
         }
 
         else if(e.target.name == "Main Menu")
 		{
+            PlayButtonSound();
             sceneLoader.LoadScene(0);
 		}
 
         else if(e.target.name == "Free Roam")
         {
+            PlayButtonSound();
             sceneLoader.LoadScene("FreeRoamMode");
         }
+    }
+
+    public void PlayButtonSound()
+    {
+        buttonPlayer.Play();
     }
 
     public void PointerInside(object sender, PointerEventArgs e)

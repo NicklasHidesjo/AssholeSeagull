@@ -16,6 +16,8 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] AudioMixer mixer;
 
+    AudioSource buttonPlayer;
+
     float masterVolume;
     float musicVolume;
     float effectsVolume;
@@ -26,6 +28,8 @@ public class AudioManager : MonoBehaviour
     {
         rightHand.PointerClick += PointerClick;
         leftHand.PointerClick += PointerClick;
+
+        buttonPlayer = FindObjectOfType<AudioSource>();
 
         LoadVolume();
     }
@@ -88,6 +92,8 @@ public class AudioManager : MonoBehaviour
     }
     void SaveVolume()
     {
+        buttonPlayer.Play();
+
         PlayerPrefs.SetFloat("MasterVolume", masterVolume);
         PlayerPrefs.SetFloat("EffectsVolume", effectsVolume);
         PlayerPrefs.SetFloat("MusicVolume", musicVolume);
