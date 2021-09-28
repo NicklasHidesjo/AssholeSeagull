@@ -1480,7 +1480,7 @@ AudioSource:
   m_GameObject: {fileID: 296698838}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1692554945288319235, guid: 6158b3ebae3249a4f9ba2902817bd751, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -6213,8 +6213,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newRecordObject: {fileID: 2070468352}
   celebrationSoundPlayer: {fileID: 296698840}
-  celebrationSound: {fileID: 0}
-  CelebrationCanvasObject: {fileID: 0}
+  celebrationSound: {fileID: 8300000, guid: 7a1b97ffbdbef1d44aa8aab723f05560, type: 3}
+  CelebrationCanvasObject: {fileID: 4669344}
 --- !u!4 &1684283531
 Transform:
   m_ObjectHideFlags: 0
