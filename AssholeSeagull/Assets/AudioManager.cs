@@ -20,6 +20,8 @@ public class AudioManager : MonoBehaviour
     float musicVolume;
     float effectsVolume;
 
+    float lowestSound = 0.0000001f;
+
     private void Start()
     {
         rightHand.PointerClick += PointerClick;
@@ -34,39 +36,39 @@ public class AudioManager : MonoBehaviour
         {
             Debug.Log("sound -");
             masterVolume -= 0.1f;
-            masterVolume = Mathf.Clamp(masterVolume, 0, 1f);
+            masterVolume = Mathf.Clamp(masterVolume, lowestSound, 1f);
             SaveVolume();
         }
         else if (e.target.name == "Increase Master")
         {
             Debug.Log("sound +");
             masterVolume += 0.1f;
-            masterVolume = Mathf.Clamp(masterVolume, 0, 1f);
+            masterVolume = Mathf.Clamp(masterVolume, lowestSound, 1f);
             SaveVolume();
         }
         if (e.target.name == "Decrease Music")
         {
             musicVolume -= 0.1f;
-            musicVolume = Mathf.Clamp(musicVolume, 0, 1f);
+            musicVolume = Mathf.Clamp(musicVolume, lowestSound, 1f);
             SaveVolume();
         }
         else if (e.target.name == "Increase Music")
 		{
             musicVolume += 0.1f;
-            musicVolume = Mathf.Clamp(musicVolume, 0, 1f);
+            musicVolume = Mathf.Clamp(musicVolume, lowestSound, 1f);
             SaveVolume();
         }
 
         if (e.target.name == "Decrease Effects")
         {
             effectsVolume -= 0.1f;
-            effectsVolume = Mathf.Clamp(effectsVolume, 0, 1f);
+            effectsVolume = Mathf.Clamp(effectsVolume, lowestSound, 1f);
             SaveVolume();
         }
         else if (e.target.name == "Increase Effects")
 		{
             effectsVolume += 0.1f;
-            effectsVolume = Mathf.Clamp(effectsVolume, 0, 1f);
+            effectsVolume = Mathf.Clamp(effectsVolume, lowestSound, 1f);
             SaveVolume();
         }
     }
