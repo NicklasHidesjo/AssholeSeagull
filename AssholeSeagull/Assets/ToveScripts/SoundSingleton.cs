@@ -21,7 +21,7 @@ public class SoundSingleton : MonoBehaviour
 
     public void PoopOnFood(AudioClip clip)
     {
-        seagullAudio.clip = clip;
-        seagullAudio.Play();
+        poopAudio.clip = clip;
+        poopAudio.Play();
     }
 }
