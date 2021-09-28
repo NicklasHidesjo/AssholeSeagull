@@ -44,9 +44,7 @@ public class WaveSeagull : MonoBehaviour
 
             if(velocity > scareVelocityThreshold)
             {
-                Debug.Log("Scaring seagull using right hand");
                 ScareSeagulls(rightHandTransform.position);
-
             }
         }
         if (leftHandPos.y > headPos.y)
@@ -58,7 +56,6 @@ public class WaveSeagull : MonoBehaviour
 
             if (velocity > scareVelocityThreshold)
             {
-                Debug.Log("Scaring seagull using left hand");
                 ScareSeagulls(leftHandTransform.position);
             }
         }
@@ -75,7 +72,6 @@ public class WaveSeagull : MonoBehaviour
         foreach (var seagull in seagulls)
         {
             seagull.GetComponent<SeagullMovement>().Scared();
-            Debug.Log("Scaring a seagull");
         }
 
         PlayShooSound();

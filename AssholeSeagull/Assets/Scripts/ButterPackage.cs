@@ -8,7 +8,6 @@ public class ButterPackage : MonoBehaviour
 	{
 		if(other.CompareTag("KnifeBlade"))
 		{
-            Debug.Log("Butter is now on blade");
 			ButterBlade blade = other.GetComponent<ButterBlade>();
 			if(blade == null) { return; }
 			blade.ButterOnBlade = true;

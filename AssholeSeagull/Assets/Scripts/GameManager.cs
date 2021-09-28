@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     float gameTimer = 0f;
     [SerializeField] float gameDuration = 60f;
+    public float GameDuration => gameDuration;
 
     [SerializeField] string SceneName;
 
