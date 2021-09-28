@@ -12,21 +12,19 @@ public class VRTrackingController : MonoBehaviour
     //Assign these variables in the inspector, or find them some other way (eg. in Start() )
     [SerializeField] Transform steamCamera;
     [SerializeField] Transform cameraRig;
+
     
     // Start is called before the first frame update
     void Start()
     {
-        //OpenVR.Chaperone.ResetZeroPose(ETrackingUniverseOrigin.TrackingUniverseSeated);
-        //Recenter();
+
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            OpenVR.Chaperone.ResetZeroPose(ETrackingUniverseOrigin.TrackingUniverseSeated);
-            
-            //Recenter();
+            Recenter();
         }
         if(steamCamera.transform.position.y > 0)
         {
