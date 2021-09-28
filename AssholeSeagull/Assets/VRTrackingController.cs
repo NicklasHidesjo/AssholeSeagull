@@ -16,15 +16,17 @@ public class VRTrackingController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        OpenVR.Chaperone.ResetZeroPose(ETrackingUniverseOrigin.TrackingUniverseSeated);
-        Recenter();
+        //OpenVR.Chaperone.ResetZeroPose(ETrackingUniverseOrigin.TrackingUniverseSeated);
+        //Recenter();
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Recenter();
+            OpenVR.Chaperone.ResetZeroPose(ETrackingUniverseOrigin.TrackingUniverseSeated);
+            
+            //Recenter();
         }
         if(steamCamera.transform.position.y > 0)
         {
