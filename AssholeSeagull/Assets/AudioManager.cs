@@ -29,7 +29,7 @@ public class AudioManager : MonoBehaviour
         rightHand.PointerClick += PointerClick;
         leftHand.PointerClick += PointerClick;
 
-        buttonPlayer = FindObjectOfType<AudioSource>();
+        buttonPlayer = GetComponent<AudioSource>();
 
         LoadVolume();
     }
