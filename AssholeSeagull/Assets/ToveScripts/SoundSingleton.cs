@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SoundSingleton : MonoBehaviour
 {
-    public AudioSource seagullAudio;
-    public AudioSource foodAudio;
+    [SerializeField] AudioSource seagullAudio;
+    [SerializeField] AudioSource poopAudio;
 
     public void SeagullFx(AudioClip clip)
     {
@@ -19,7 +19,7 @@ public class SoundSingleton : MonoBehaviour
         seagullAudio.Play();
     }
 
-    public void FoodSound(AudioClip clip)
+    public void PoopOnFood(AudioClip clip)
     {
         seagullAudio.clip = clip;
         seagullAudio.Play();

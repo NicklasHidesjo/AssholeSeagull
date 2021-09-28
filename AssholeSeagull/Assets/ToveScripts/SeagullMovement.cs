@@ -131,7 +131,7 @@ public class SeagullMovement : MonoBehaviour
 
             if (poopingTimer > 1f && !hasPooped)
             {
-                FindObjectOfType<SoundSingleton>().SeagullFx(poopingSound);
+                FindObjectOfType<SoundSingleton>().PoopOnFood(poopingSound);
 
                 pooping.Poop();
                 hasPooped = true;

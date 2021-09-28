@@ -6,7 +6,6 @@ using UnityEngine;
 public class FoodItem : MonoBehaviour
 {
     [SerializeField] AudioClip poopOnFoodSound;
-    [SerializeField] AudioClip foodSpoiledSound;
     [SerializeField] float velocityThreshold = 0.01f;
 
     [SerializeField] private float spoilTime;
@@ -134,7 +133,6 @@ public class FoodItem : MonoBehaviour
 
 		if (isSpoiled && !alreadySpoiled && !onPlate)
 		{
-            FindObjectOfType<SoundSingleton>().FoodSound(foodSpoiledSound);
 			ChangeMaterial(spoiledMaterial);
 		}
 
@@ -160,7 +158,7 @@ public class FoodItem : MonoBehaviour
     {
         if(collider.gameObject.tag == "Poop")
         {
-            FindObjectOfType<SoundSingleton>().SeagullFx(poopOnFoodSound);
+            FindObjectOfType<SoundSingleton>().PoopOnFood(poopOnFoodSound);
             GameObject poop = collider.gameObject;
 
             PoopOnFood = true;
