@@ -34,13 +34,13 @@ public class Butter : MonoBehaviour
 		{
 			meshCollider.sharedMesh = butterStages[1];
 			meshFilter.mesh = butterStages[1];
-			transform.position = butterStagePositions[1];
+			transform.localPosition = butterStagePositions[1];
 		}
 		else if(butteringDone > butterStageInitiation[0])
 		{
 			meshCollider.sharedMesh = butterStages[0];
 			meshFilter.mesh = butterStages[0];
-			transform.position = butterStagePositions[2];
+			transform.localPosition = butterStagePositions[2];
 		}
 	}
 
