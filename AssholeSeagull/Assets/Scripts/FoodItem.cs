@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class FoodItem : MonoBehaviour
 {
@@ -63,6 +64,8 @@ public class FoodItem : MonoBehaviour
     public FoodTypes FoodAbove => foodAbove;
     public FoodTypes FoodBelow => foodBelow;
 
+    Interactable interactable;
+
     public bool InHand
     {
         get { return inHand; }
@@ -107,11 +110,13 @@ public class FoodItem : MonoBehaviour
     {
         body = GetComponent<Rigidbody>();
         gameManager = FindObjectOfType<GameManager>();
+        interactable = GetComponent<Interactable>();
     }
 
     private void Update()
 	{
 		RaycastFoodLayer();
+        inHand = interactable.attachedToHand;
 
         if(gameManager.FreeRoam)
         {

@@ -72,14 +72,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6880798362725678044}
-  m_LocalRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
-  m_LocalPosition: {x: 0.27697027, y: 1.1996403, z: -0.005856633}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.009, y: 0.02, z: 0.1741}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9128503287209855425}
   m_Father: {fileID: 8729185689904201327}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 90, y: -90, z: -90}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!64 &9128503286311475591
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -120,7 +120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9128503285641088889}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.1846, z: 0.1286}
+  m_LocalPosition: {x: 0, y: 0.016, z: 0.218}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8729185689904201327}
@@ -149,7 +149,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.2, z: 0.15}
+  m_Size: {x: 0.3, y: 0.2, z: 0.3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9128503286052801345
 GameObject:
@@ -177,7 +177,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9128503286052801345}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: -0, z: 0.43}
   m_LocalScale: {x: 1.83205, y: 1.83205, z: 1.83205}
   m_Children: []
   m_Father: {fileID: 9128503287209855425}
@@ -258,15 +258,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9128503287209855485}
-  m_LocalRotation: {x: -0.65449363, y: 0.26765293, z: 0.26765293, w: 0.65449363}
-  m_LocalPosition: {x: 0.6409254, y: 0.14105666, z: 1.0441389}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.0032766333, y: 0.003276634, z: 0.050628077}
   m_Children:
   - {fileID: 9128503286052801346}
   - {fileID: 1505851260077509704}
   m_Father: {fileID: 4699578869553666147}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &9128503287209855424
 Animator:
   serializedVersion: 3

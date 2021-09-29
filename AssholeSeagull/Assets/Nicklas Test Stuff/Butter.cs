@@ -9,6 +9,8 @@ public class Butter : MonoBehaviour
 
     [SerializeField] Mesh[] butterStages;
 
+	[SerializeField] Vector3[] butterStagePositions;
+
     MeshFilter meshFilter;
 	[SerializeField] MeshCollider meshCollider;
 
@@ -23,8 +25,6 @@ public class Butter : MonoBehaviour
 	private void Update()
 	{
 		if(knife == null) { return; }
-
-		Debug.Log("Buttering");
 		
 		butteringDone += knife.Velocity;
 
@@ -32,11 +32,13 @@ public class Butter : MonoBehaviour
 		{
 			meshCollider.sharedMesh = butterStages[1];
 			meshFilter.mesh = butterStages[1];
+			transform.localPosition = butterStagePositions[1];
 		}
 		else if(butteringDone > butterStageInitiation[0])
 		{
 			meshCollider.sharedMesh = butterStages[0];
 			meshFilter.mesh = butterStages[0];
+			transform.localPosition = butterStagePositions[2];
 		}
 	}
 
