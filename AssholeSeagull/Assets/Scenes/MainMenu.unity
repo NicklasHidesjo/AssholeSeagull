@@ -5758,6 +5758,7 @@ MonoBehaviour:
   musicSlider: {fileID: 1444801229}
   effectsSlider: {fileID: 846795038}
   mixer: {fileID: 24100000, guid: 6158b3ebae3249a4f9ba2902817bd751, type: 2}
+  soundIncrement: 0.05
 --- !u!4 &1997095382
 Transform:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] AudioMixer mixer;
 
+    [Tooltip("The change that soundvolumes have when pushing either + or - buttons.")]
     [SerializeField] float soundIncrement;
 
     AudioSource buttonPlayer;
