@@ -25,8 +25,6 @@ public class Butter : MonoBehaviour
 	private void Update()
 	{
 		if(knife == null) { return; }
-
-		Debug.Log("Buttering");
 		
 		butteringDone += knife.Velocity;
 

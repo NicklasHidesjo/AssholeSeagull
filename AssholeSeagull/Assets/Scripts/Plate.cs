@@ -65,13 +65,11 @@ public class Plate : MonoBehaviour
 
         RaycastHit[] hits;
         hits = Physics.RaycastAll(transform.position, transform.forward, rayDistance, foodLayer);
-        Debug.Log(hits.Length);
         if(hits.Length > 0)
         {
             for (int i = 0; i < hits.Length; i++)
             {
                 FoodItem food = hits[i].collider.GetComponent<FoodItem>();
-                Debug.Log(food.name);
                 if(food.IsMoving() || food.InHand)
 				{
                     continue;
@@ -80,7 +78,6 @@ public class Plate : MonoBehaviour
                 food.OnPlate = true;
             }
         }
-
 
         Debug.DrawRay(transform.position, transform.forward, Color.blue);
     }

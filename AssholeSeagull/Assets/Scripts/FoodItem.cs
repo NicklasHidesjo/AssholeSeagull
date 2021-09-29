@@ -116,14 +116,12 @@ public class FoodItem : MonoBehaviour
     private void Update()
 	{
 		RaycastFoodLayer();
+        inHand = interactable.attachedToHand;
 
         if(gameManager.FreeRoam)
         {
             return;
         }
-
-        inHand = interactable.attachedToHand;
-        Debug.Log(inHand);
 
 		if (onSandwich || inHand || inPackage || buttered || onPlate)
 		{
