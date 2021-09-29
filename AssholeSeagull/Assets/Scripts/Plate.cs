@@ -72,7 +72,7 @@ public class Plate : MonoBehaviour
             {
                 FoodItem food = hits[i].collider.GetComponent<FoodItem>();
                 Debug.Log(food.name);
-                if(food.IsMoving())
+                if(food.IsMoving() || food.InHand)
 				{
                     continue;
 				}
