@@ -7,20 +7,22 @@ public class FreeRoamEndScreen : MonoBehaviour
 {
     [SerializeField] Text scoreText;
     [SerializeField] Text highscoreText;
+
+    [SerializeField] AudioClip noNewRecordSound;
+    [SerializeField] AudioSource noNewRecordPlayer;
     void Start()
     {
+        scoreText.text = PlayerPrefs.GetInt("currentFreeRoamScore").ToString();
+        highscoreText.text = PlayerPrefs.GetInt("freeRoamHighscore").ToString();
+
         if (PlayerPrefs.GetInt("newHighscore") == 1)
         {
-            //Lägg in NEW RECORD
-            Debug.Log("New Record");
-            //Ta bort sen
-            scoreText.text = PlayerPrefs.GetInt("currentFreeRoamScore").ToString();
-            highscoreText.text = PlayerPrefs.GetInt("freeRoamHighscore").ToString();
+            FindObjectOfType<NewHighScoreHandler>().NewHighScoreCelebration();
         }
         else
         {
-            scoreText.text = PlayerPrefs.GetInt("currentFreeRoamScore").ToString();
-            highscoreText.text = PlayerPrefs.GetInt("freeRoamHighscore").ToString();
+            noNewRecordPlayer.clip = noNewRecordSound;
+            noNewRecordPlayer.Play();
         }
     }
 }
