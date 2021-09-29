@@ -14,6 +14,7 @@ public class NewHighScoreHandler : MonoBehaviour
     {
         newRecordObject.SetActive(true);
         CelebrationCanvasObject.SetActive(true);
+
         // play some confetti effects
 
         celebrationSoundPlayer.clip = celebrationSound;
