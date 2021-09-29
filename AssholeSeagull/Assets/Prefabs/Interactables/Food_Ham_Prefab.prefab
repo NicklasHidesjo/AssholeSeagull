@@ -127,11 +127,11 @@ MonoBehaviour:
   poopedMaterial: {fileID: 2100000, guid: 062a4f31df72d0e47b59e3e4c77b291a, type: 2}
   poopOnFood: 0
   rayDistance: 0.02
-  baseScore: 10
-  varietyBonus: 5
+  baseScore: 35
+  varietyBonus: 15
   worstIngredientPunishment: 10
-  spoiledPunishment: 20
-  poopPunishment: 40
+  spoiledPunishment: 40
+  poopPunishment: 50
   foodLayer:
     serializedVersion: 2
     m_Bits: 64
