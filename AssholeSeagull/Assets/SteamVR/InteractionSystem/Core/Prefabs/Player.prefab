@@ -276,7 +276,7 @@ MonoBehaviour:
   headsetOnHead:
     actionPath: /actions/default/in/HeadsetOnHead
     needsReinit: 0
-  allowToggleTo2D: 1
+  allowToggleTo2D: 0
 --- !u!1 &109154
 GameObject:
   m_ObjectHideFlags: 0
