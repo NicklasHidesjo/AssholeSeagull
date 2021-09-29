@@ -9,23 +9,12 @@ public class VRTrackingController : MonoBehaviour
     [Tooltip("Desired head position of player when seated")]
     [SerializeField] Transform desiredHeadPosition;
 
-    //Assign these variables in the inspector, or find them some other way (eg. in Start() )
     [SerializeField] Transform steamCamera;
     [SerializeField] Transform cameraRig;
 
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Recenter();
-        }
         if(steamCamera.transform.position.y > 0)
         {
             if(cameraRig.transform.position.y == 0)

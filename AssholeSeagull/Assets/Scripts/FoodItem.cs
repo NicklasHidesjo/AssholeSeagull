@@ -123,7 +123,7 @@ public class FoodItem : MonoBehaviour
             return;
         }
 
-		if (onSandwich || inHand || inPackage || buttered || onPlate)
+		if (onSandwich || inHand || inPackage|| onPlate)
 		{
 			return;
 		}
