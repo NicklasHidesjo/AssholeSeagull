@@ -13,12 +13,18 @@ public class VRTrackingController : MonoBehaviour
     [SerializeField] Transform cameraRig;
 
 
-    private void Update()
+	private void Start()
+	{
+		
+	}
+
+	private void Update()
     {
         if(steamCamera.transform.position.y > 0)
         {
             if(cameraRig.transform.position.y == 0)
             {
+                Debug.Log("Recentering");
                 Recenter();
             }
         }
