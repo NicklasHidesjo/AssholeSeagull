@@ -8,7 +8,8 @@ public class EndScreen : MonoBehaviour
     [SerializeField] Text scoreText;
     [SerializeField] Text highscoreText;
 
-
+    [SerializeField] AudioClip noNewRecordSound;
+    [SerializeField] AudioSource noNewRecordPlayer;
     void Start()
     {
         if(PlayerPrefs.GetInt("newHighscore") == 1)
@@ -21,6 +22,8 @@ public class EndScreen : MonoBehaviour
         {
             scoreText.text = PlayerPrefs.GetInt("currentScore").ToString();
             highscoreText.text = PlayerPrefs.GetInt("highscore").ToString();
+            noNewRecordPlayer.clip = noNewRecordSound;
+            noNewRecordPlayer.Play();
         }
     }
 }
