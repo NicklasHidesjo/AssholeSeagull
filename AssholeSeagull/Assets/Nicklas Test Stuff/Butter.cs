@@ -9,6 +9,8 @@ public class Butter : MonoBehaviour
 
     [SerializeField] Mesh[] butterStages;
 
+	[SerializeField] Vector3[] butterStagePositions;
+
     MeshFilter meshFilter;
 	[SerializeField] MeshCollider meshCollider;
 
@@ -32,11 +34,13 @@ public class Butter : MonoBehaviour
 		{
 			meshCollider.sharedMesh = butterStages[1];
 			meshFilter.mesh = butterStages[1];
+			transform.position = butterStagePositions[1];
 		}
 		else if(butteringDone > butterStageInitiation[0])
 		{
 			meshCollider.sharedMesh = butterStages[0];
 			meshFilter.mesh = butterStages[0];
+			transform.position = butterStagePositions[2];
 		}
 	}
 

@@ -78,7 +78,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &688129369
 Transform:
   m_ObjectHideFlags: 0
@@ -87,7 +87,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 688129368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0.033}
+  m_LocalPosition: {x: 0, y: -0, z: 0.0336}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1025815081}
@@ -113,6 +113,10 @@ MonoBehaviour:
   butterStages:
   - {fileID: 1746450975466940664, guid: 9ab1fe84ef504c540a882007ccdfcb60, type: 3}
   - {fileID: -5018650057742140743, guid: 5ad5b14fbcf7ca645ac5dce0d034b5be, type: 3}
+  butterStagePositions:
+  - {x: 0, y: 0, z: 0.0336}
+  - {x: 0, y: 0, z: 0.0251}
+  - {x: 0, y: 0, z: 0.0171}
   meshCollider: {fileID: 1025815082}
   knife: {fileID: 0}
 --- !u!23 &688129372
@@ -340,7 +344,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poopOnFoodSound: {fileID: 8300000, guid: 22c735ff877fadc4bbae400bfdbc48bd, type: 3}
-  foodSpoiledSound: {fileID: 8300000, guid: 6f7f0e32029f0414684d5a4fcb56faee, type: 3}
   velocityThreshold: 0.01
   spoilTime: 10
   selfDestructTime: 20
