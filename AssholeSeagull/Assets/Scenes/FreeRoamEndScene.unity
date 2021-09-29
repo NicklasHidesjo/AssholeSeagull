@@ -4876,7 +4876,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7642723614555115213, guid: 6158b3ebae3249a4f9ba2902817bd751, type: 2}
   m_audioClip: {fileID: 8300000, guid: ac4997aef7879fc4fb336b0f477c70a0, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -6225,7 +6225,7 @@ MonoBehaviour:
   newRecordObject: {fileID: 2070468352}
   celebrationSoundPlayer: {fileID: 296698840}
   celebrationSound: {fileID: 8300000, guid: 75ed659975fdc6045b44a2fefa6522c4, type: 3}
-  CelebrationCanvasObject: {fileID: 0}
+  CelebrationCanvasObject: {fileID: 2150077649144485986}
 --- !u!4 &1684283531
 Transform:
   m_ObjectHideFlags: 0

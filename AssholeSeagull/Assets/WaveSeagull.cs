@@ -20,6 +20,8 @@ public class WaveSeagull : MonoBehaviour
     Vector3 oldRightPosition;
 
 
+    float timePassed = 0; // remove this and make it so that scaring wont get tricked at start
+
     int lastShooSoundUsed = -1;
 
     void Start()
@@ -30,6 +32,12 @@ public class WaveSeagull : MonoBehaviour
 
     void Update()
     {
+        if(timePassed < 1f)
+		{
+            timePassed += Time.deltaTime;
+            return;
+		}
+
         Vector3 headPos = headTransform.position;
         Vector3 rightHandPos = rightHandTransform.position;
         Vector3 leftHandPos = leftHandTransform.position;
@@ -40,8 +48,6 @@ public class WaveSeagull : MonoBehaviour
             rightHandPos.y = 0;
             float velocity = GetSpeed(rightHandPos, oldRightPosition);
 
-            //Debug.Log("Right hand velocity is: " + velocity);
-
             if(velocity > scareVelocityThreshold)
             {
                 ScareSeagulls(rightHandTransform.position);
@@ -51,8 +57,6 @@ public class WaveSeagull : MonoBehaviour
         {
             leftHandPos.y = 0;
             float velocity = GetSpeed(leftHandPos, oldLeftPosition);
-
-            //Debug.Log("Left hand velocity is: " + velocity);
 
             if (velocity > scareVelocityThreshold)
             {
