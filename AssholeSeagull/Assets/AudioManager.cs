@@ -16,6 +16,8 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] AudioMixer mixer;
 
+    [SerializeField] float soundIncrement;
+
     AudioSource buttonPlayer;
 
     float masterVolume;
@@ -39,39 +41,39 @@ public class AudioManager : MonoBehaviour
         if (e.target.name == "Decrease Master")
         {
             Debug.Log("sound -");
-            masterVolume -= 0.1f;
+            masterVolume -= soundIncrement;
             masterVolume = Mathf.Clamp(masterVolume, lowestSound, 1f);
             SaveVolume();
         }
         else if (e.target.name == "Increase Master")
         {
             Debug.Log("sound +");
-            masterVolume += 0.1f;
+            masterVolume += soundIncrement;
             masterVolume = Mathf.Clamp(masterVolume, lowestSound, 1f);
             SaveVolume();
         }
         if (e.target.name == "Decrease Music")
         {
-            musicVolume -= 0.1f;
+            musicVolume -= soundIncrement;
             musicVolume = Mathf.Clamp(musicVolume, lowestSound, 1f);
             SaveVolume();
         }
         else if (e.target.name == "Increase Music")
 		{
-            musicVolume += 0.1f;
+            musicVolume += soundIncrement;
             musicVolume = Mathf.Clamp(musicVolume, lowestSound, 1f);
             SaveVolume();
         }
 
         if (e.target.name == "Decrease Effects")
         {
-            effectsVolume -= 0.1f;
+            effectsVolume -= soundIncrement;
             effectsVolume = Mathf.Clamp(effectsVolume, lowestSound, 1f);
             SaveVolume();
         }
         else if (e.target.name == "Increase Effects")
 		{
-            effectsVolume += 0.1f;
+            effectsVolume += soundIncrement;
             effectsVolume = Mathf.Clamp(effectsVolume, lowestSound, 1f);
             SaveVolume();
         }
