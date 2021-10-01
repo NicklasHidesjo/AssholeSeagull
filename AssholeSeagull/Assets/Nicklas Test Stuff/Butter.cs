@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class Butter : MonoBehaviour
 {
-	[SerializeField] float butteringDone;
+	float butteringDone;
 	[SerializeField] List<float> butterStageInitiation;
 
-    [SerializeField] Mesh[] butterStages;
+	[SerializeField] GameObject[] butterObjects;
 
-	[SerializeField] Vector3[] butterStagePositions;
+    //[SerializeField] Mesh[] butterStages;
 
-    MeshFilter meshFilter;
-	[SerializeField] MeshCollider meshCollider;
+	//[SerializeField] Vector3[] butterStagePositions;
+
+    //MeshFilter meshFilter;
+	//[SerializeField] MeshCollider meshCollider;
 
     [SerializeField] ButterVelocity knife;
 
 
     void Start()
     {
-        meshFilter = GetComponent<MeshFilter>();
+        //meshFilter = GetComponent<MeshFilter>();
     }
 
 	private void Update()
@@ -28,17 +30,30 @@ public class Butter : MonoBehaviour
 		
 		butteringDone += knife.Velocity;
 
-		if (butteringDone > butterStageInitiation[1])
+		if (butteringDone > butterStageInitiation[1] && !butterObjects[1].activeSelf)
 		{
-			meshCollider.sharedMesh = butterStages[1];
-			meshFilter.mesh = butterStages[1];
-			transform.localPosition = butterStagePositions[1];
+			/*			
+				meshCollider.sharedMesh = butterStages[1];
+				meshFilter.mesh = butterStages[1];
+				transform.localPosition = butterStagePositions[1];
+			*/
+
+			butterObjects[0].SetActive(false);
+			butterObjects[1].SetActive(true);
+			butterObjects[2].SetActive(false);
+
 		}
-		else if(butteringDone > butterStageInitiation[0])
+		else if(butteringDone > butterStageInitiation[0] && !butterObjects[2].activeSelf)
 		{
-			meshCollider.sharedMesh = butterStages[0];
-			meshFilter.mesh = butterStages[0];
-			transform.localPosition = butterStagePositions[2];
+			/*			
+			 	meshCollider.sharedMesh = butterStages[0];
+				meshFilter.mesh = butterStages[0];
+				transform.localPosition = butterStagePositions[2];
+			*/
+
+			butterObjects[0].SetActive(false);
+			butterObjects[1].SetActive(false);
+			butterObjects[2].SetActive(true);
 		}
 	}
 
