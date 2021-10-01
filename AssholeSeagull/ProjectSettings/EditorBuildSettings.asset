@@ -16,7 +16,7 @@ EditorBuildSettings:
     guid: f9aa94b4874d84649b8f37ebac3f8c61
   - enabled: 1
     path: Assets/Scenes/FreeRoamMode.unity
-    guid: 78c7e67b1461d9949a7330fbeacc1dca
+    guid: c8278377ce4a8374694bfa7b2d0079e9
   - enabled: 1
     path: Assets/Scenes/FreeRoamEndScene.unity
     guid: 7c0890a6f8b703343af0da114a019694
