@@ -30,7 +30,7 @@ public class Butter : MonoBehaviour
 		
 		butteringDone += knife.Velocity;
 
-		if (butteringDone > butterStageInitiation[1] && !butterObjects[1].activeSelf)
+		if (butteringDone > butterStageInitiation[1] && !butterObjects[2].activeSelf)
 		{
 			/*			
 				meshCollider.sharedMesh = butterStages[1];
@@ -43,7 +43,7 @@ public class Butter : MonoBehaviour
 			butterObjects[2].SetActive(false);
 
 		}
-		else if(butteringDone > butterStageInitiation[0] && !butterObjects[2].activeSelf)
+		else if(butteringDone > butterStageInitiation[0] && !butterObjects[1].activeSelf)
 		{
 			/*			
 			 	meshCollider.sharedMesh = butterStages[0];
