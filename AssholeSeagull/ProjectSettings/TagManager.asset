@@ -9,6 +9,7 @@ TagManager:
   - Poop
   - KnifeBlade
   - Plate
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Butter
   - Knife
   - Seagull
-  - 
+  - KnifeOnly
   - 
   - 
   - 
