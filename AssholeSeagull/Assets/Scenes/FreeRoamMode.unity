@@ -1935,7 +1935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameDuration: 120
-  SceneName: 
+  SceneName: FreeRoamMode
   score: 0
 --- !u!1001 &554746777
 PrefabInstance:

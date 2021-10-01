@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class EndScreen : MonoBehaviour
 {
-    [SerializeField] Text scoreText;
-    [SerializeField] Text highscoreText;
+    [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI highscoreText;
 
     [SerializeField] AudioClip noNewRecordSound;
     [SerializeField] AudioSource noNewRecordPlayer;

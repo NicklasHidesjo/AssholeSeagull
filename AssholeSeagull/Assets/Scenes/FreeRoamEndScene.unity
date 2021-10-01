@@ -958,8 +958,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3565db8fbcce322468f6a82c66a675de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
-  highscoreText: {fileID: 0}
+  scoreText: {fileID: 221376501224181519}
+  highscoreText: {fileID: 221376500867157975}
   noNewRecordSound: {fileID: 8300000, guid: 4fb6b5e5f0a38ae4fab6ca3c0173a165, type: 3}
   noNewRecordPlayer: {fileID: 603960563}
 --- !u!4 &603960562
