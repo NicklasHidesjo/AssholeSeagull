@@ -28,8 +28,6 @@ public class MainMenuPointer : MonoBehaviour
         buttonPlayer = FindObjectOfType<AudioSource>();
 
         sceneLoader = FindObjectOfType<SceneLoader>();
-
-        Debug.Log("pointer name: " + rightHand.name);
     }
 
     /// <summary>
